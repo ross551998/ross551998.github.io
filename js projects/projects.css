@@ -1,0 +1,225 @@
+
+
+
+
+body {
+    --dot-bg: black;
+  --dot-color: white;
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+        color: white;
+    font-family: 'Times New Roman', Times, serif
+}
+nav h3:hover {
+    color: blue;
+    cursor: pointer;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1%;
+}
+.content h3:hover {
+    cursor: pointer;
+    color: blue;
+}
+.content {
+    color: black;
+    justify-content: center;
+    align-items: center;
+    display:  none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 1s ease-in-out;
+    transform: translateX(-100%);
+}
+.content.show {
+    transform: translate(0);
+}
+.open {
+    width: 115px;
+}
+.open:hover {
+    cursor: pointer;
+    color: blue;
+}
+/*idle game*/
+.idlegame-head {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.upgrade-title {
+    display: flex;
+    right: 0;
+    top: 0;
+    margin-left: 1%;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    background-color: blue;
+    height: 660px;
+    width: 400px;
+    border-radius: 4px;
+    border: 2px dotted yellow;
+}
+.upgrades {
+    display: none;
+    flex-direction: column;
+    right: 0;
+}
+.upgrades button {
+    width: 90px;
+    height: 40px;
+}
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*left side of game */
+.gameContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    left: 2%;
+    top: 14%;
+    position: absolute;
+    gap: 5%;
+    width: 350px;
+    background-color: yellow;
+    padding-top: 5px;
+}
+.pennys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    width: 340px;
+    padding-top: 12px;
+    font-size: large;
+}
+.increaseCents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 12px;
+    padding-bottom: 20px;
+}
+.increaseCents button {
+    margin-top: -8%;
+    width: 120px;
+    border-radius: 12px;
+    
+}
+
+    
+
+
+
+
+
+
+
+
+/*unlock currency*/
+#upgradetitle {
+    display: block;
+}
+.dimesunlock {
+    display: none;
+}
+.quaterunlock {
+    display: none;
+}
+.half-dollarunlock {
+    display: none;
+}
+.dollarunlock {
+    display: none;
+}
+/*upgrades*/
+#dimeautocounter {
+    display: none;
+}
+#quaterautocounter {
+    display: none;
+}
+#hdautocounter {
+    display: none;
+}
+#dollarautocounter {
+    display: none;
+}
+
+
+
+/*double amount */
+.double-penny {
+    display: none;
+}
+.double-nickel {
+    display: none;
+}
+.double-dime {
+    display: none;
+}
+.double-quater {
+    display: none;
+}
+.double-hd {
+    display: none;
+}
+.double-dollar {
+    display: none;
+}
+
+
+
+
+
+/* auto counters */
+#increaseCents {
+    display: none;
+}
+#increasenickels {
+    display: none;
+}
+.increasedimes {
+    display: none;
+}
+.increasequaters {
+    display: none;
+}
+.increaseHDs {
+    display: none;
+}
+.increasedollars {
+    display: none;
+}
+/* the item itself */
+.nickels {
+    display: none;
+}
+.dimes {
+    display: none;
+}
+.quaters {
+    display: none;
+}
+.half-dollar {
+    display: none;
+}
+.dollar {
+    display: none;
+}
+
+
+
