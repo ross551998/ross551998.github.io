@@ -264,7 +264,7 @@ function nickelsUnlock() {
     let hide = document.getElementById('nickelsunlock');
     let n = document.getElementById('nickels');
     if(n.style.display === 'none' || n.style.display === '' && total.textContent >= '$ 0.05') {// change later to higher number
-        n.style.display = 'block';
+        n.style.display = 'flex';
         dUnlock.style.display = 'block';
         totalCount -= 0.05;
         total.textContent = `$ ${totalCount.toFixed(2)}`;
@@ -276,7 +276,7 @@ function nickelsUnlock() {
 }
 function dimesUnlock() {
     if(d.style.display === 'none' || d.style.display === '' && total.textContent >= '$ 2.00') {//increase to 12.00 when ready
-        d.style.display = 'block';
+        d.style.display = 'flex';
         qUnlock.style.display = 'block';
         totalCount -= 2.00;//change to 12.00 when ready 
         total.textContent = `$ ${totalCount.toFixed(2)}`;
@@ -289,7 +289,7 @@ function dimesUnlock() {
 }
 function quaterUnlock() {
     if(q.style.display === 'none' || q.style.display === '' && total.textContent >='$ 3.00') {//increase to 30.00 later
-        q.style.display = 'block';
+        q.style.display = 'flex';
         hD.style.display = 'block';
         totalCount -= 3.00;//change later to 30.00
         total.textContent = `$ ${totalCount.toFixed(2)}`;
@@ -302,7 +302,7 @@ function quaterUnlock() {
 }
 function halfDollarUnlock() {
     if(Hd.style.display === 'none' || Hd.style.display === '' && total.textContent >= `$ 4.00`) {
-        Hd.style.display = 'block';
+        Hd.style.display = 'flex';
         dollarunlock.style.display = 'block';
         totalCount -= 4.00;//change later to 75.00
         total.textContent = `${totalCount.toFixed(2)}`;
@@ -315,7 +315,7 @@ function halfDollarUnlock() {
 }
 function dollarUnlock() {//works for now might be bugs in here
     if(dO.style.display === 'none' || dO.style.display === '' && total.textContent >= `$ 5.00`) {
-        dO.style.display = 'block';
+        dO.style.display = 'flex';
         totalCount -= 5.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         dollarunlock.style.display = 'none';
