@@ -18,6 +18,7 @@ rest of the bills
 
 
 let cent = 0.01;
+let main = 0.01;
 let nickel = 0.05;
 let dime = 0.10;
 let quater = 0.25;
@@ -93,6 +94,19 @@ function upDateTotalPerSec() {
     totalPerSec = centPerSec + nickelPerSec + dimePerSec + quaterPerSec + halfDPerSec + dPerSec;
     totalPerSecDisplay.textContent = `$ ${totalPerSec.toFixed(2)} per second`;
 }
+function DMC() {
+    const newDiv = document.createElement("div");
+    const newButton = document.createElement("button");
+    newDiv.id = 'doublemain';
+    newButton.textContent = "Click Me";
+    newDiv.appendChild(newButton);
+    document.getElementById('upgrades').appendChild(newDiv);
+    newDiv.addEventListener('click', function() {
+        main *= 2;
+        console.log('working');
+        newDiv.style.display = 'none';
+    })
+}
 function unlock() {
     let upgrades = document.getElementById('upgrades');
     let total = document.getElementById('display');
@@ -109,6 +123,7 @@ function unlock() {
     if(upgradesUnlocked) {
         if(upgrades.style.display === 'none' || upgrades.style.display === '') {
             upgrades.style.display = 'flex';
+            DMC();
             console.log('open upgrades');
         } else {
             upgrades.style.display = 'none';
@@ -306,6 +321,10 @@ function dollarUnlock() {//works for now might be bugs in here
         dollarunlock.style.display = 'none';
         dollarAuto.style.display = 'block';
     }
+}
+function mainClicker() {
+    totalCount += main;
+    total.textContent = `$ ${totalCount.toFixed(2)}`;
 }
 //cent counter
 function cents() {
