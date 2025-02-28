@@ -218,8 +218,22 @@ nav {
 .double-dollar {
     display: none;
 }
-
-
+/*item itself */
+.nickels {
+    display: none;
+}
+.dimes {
+    display: none;
+}
+.quaters {
+    display: none;
+}
+.half-dollar {
+    display: none;
+}
+.dollar {
+    display: none;
+}
 
 
 
