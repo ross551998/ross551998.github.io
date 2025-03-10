@@ -562,10 +562,10 @@ function nickelsUnlock() {
     let total = document.getElementById('display');
     let hide = document.getElementById('nickelsunlock');
     let n = document.getElementById('nickels');
-    if(n.style.display === 'none' || n.style.display === '' && total.textContent >= '$ 2.00') {// change later to higher number
+    if(n.style.display === 'none' || n.style.display === '' && total.textContent >= '$ 0.50') {// change later to higher number
         n.style.display = 'flex';
         dUnlock.style.display = 'flex';
-        totalCount -= 2.00;
+        totalCount -= 0.50;
         total.textContent = `$ ${totalCount.toFixed(2)}`;
         hide.style.display = 'none';
         console.log('nickels unlocked');
