@@ -11,24 +11,35 @@
     </head>
     <body>
         <nav>
+            <!--
+            <div class="dropDown">
+                <div class="open">
+                    <h3 onclick="openFunction()">Click Here</h3>
+                </div>
+                <div class="content" id="content">
+                    <h3>Idle Games</h3>
+                    <h3>Projects</h3>
+                    <h3>idk</h3>
+                </div>
+            </div>
+            -->
             <h1>Can you become a Billionaire?</h1>
-            <h3 onclick="location.href='/index.html'">Home Page</h3>
+            <h3 onclick="location.href='/portfillo/home page/index.html'">Home Page</h3>
         </nav>
         <main>
-            <p>Here is all my front-end projects<br>From simple games, small projects to real world applications<br>and clone apps</p>
+            <p>click the icons to gain money</p>
             <div class="idlegame-head">
                 <div class="graphics">
-                    
+                
                 </div>
                 <div class="upgrade-title">
-                    <h2 id="upgradetitle">Unlock the upgrades for $1.25</h2>
-                    <button type="button" onclick="unlock()">Click to Upgrade</button>
+                    <h2 id="upgradetitle">Unlock the upgrades for $1.00</h2>
+                    <button type="button" id="upgrade-unlockbuttn" onclick="unlock()">Upgrades</button>
                     <div class="upgrades" id="upgrades">
-
                         <div class="cent-upgrades">
                             <div id="centautocounter">
-                                <label for="centcounter">cost: free</label>
-                                <button type="button" onclick="autoCent()">auto cent counter</button>
+                                <label for="centcounter">Cost: Free</label>
+                                <button type="button" onclick="autoCent()">Auto Cent</button>
                             </div>
                             <div class="double-penny">
                                 <label for="doublepenny">cost: $12.50</label>
@@ -38,7 +49,7 @@
                         <div class="nickel-upgrades">
                             <div id="nickelautocounter">
                                 <label for="nickelcounter">cost: $4.00</label>
-                                <button type="button" onclick="autoNickel()">auto nickel counter</button>
+                                <button type="button" onclick="autoNickel()">Auto Nickel </button>
                             </div>
                             <div class="double-nickel">
                                 <label for="doublenickel">cost: $24.75</label>
@@ -47,8 +58,8 @@
                         </div>
                         <div class="dime-upgrades">
                             <div id="dimeautocounter">
-                                <label for="dimecounter">cost: $ 21.00</label>
-                                <button type="button" onclick="autoDime()">auto dime counter</button>
+                                <label for="dimecounter">Cost: $ 21.00</label>
+                                <button type="button" onclick="autoDime()">Auto Dime </button>
                             </div>
                             <div class="double-dime">
                                 <label for="doubledime">cost: $37.00</label>
@@ -132,7 +143,7 @@
                     </div>
                     <div class="opencurrency">
                         <div class="nickelsunlock" id="nickelsunlock">
-                            <h3>Unlock Nickels at 0.50¢</h3>
+                            <h2>Unlock Nickels at 0.50¢</h2>
                             <button type="button" onclick="nickelsUnlock()" >Next icon</button>
                         </div>
                         <div class="dimesunlock" id="dimesunlock">
@@ -176,43 +187,44 @@
                 <div class="display">
                     <div class="displayword">
                         <h1 id="display">$ 0.00</h1>
-                        <h3 id="per-sec"> $ 0.00 per second</h3> 
+                        <h3 id="per-sec"> $ 0.00 per second</h3>
+                        <h4 id="nomoney"></h4> 
                     </div>
                     <div class="photo" id="mainclicker">
+                        <span class="pop-up" id="mcamount">hey</span>
                         <img src="photos/coin.png" onclick="mainClicker()">
                     </div>
                 </div>
                 <div class="gameContent">
-                          <div class="pennys">
-                            <h1>Pennys</h1>
-                            <div class="photo" id="photo">
-                                <img src="photos/Penny-PNG-Clipart.png" onclick="cents()" id="pennybounce">
+                    <div class="pennys" onclick="cents()" id="pennys">
+                        <h1>Pennys</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="centButton" id="centButton">
+                            <div class="increaseCents" id="increaseCents">
+                                <h4 id="centspersec"></h4>
+                                <button type="button" id="increaseCentamount" onclick="increaseCent()"></button>
                             </div>
-                            <div class="centButton" id="centButton">
-                                <!--<button type="button" onclick="cents()">click me</button> dont remove just yet-->
-                                <div class="increaseCents" id="increaseCents">
-                                    <h4 id="centspersec"></h4>
-                                    <button type="button" id="increaseCentamount" onclick="increaseCent()"></button>
-                                </div>
-                            </div>
+                        </div>
                     </div>
-                    <div class="nickels" id="nickels">
+                    <div class="nickels"  onclick="nickels()" id="nickels">
                         <h1>nickels</h1>
                         <div class="photo" id="photo">
-                            <img src="photos/nickel.png" onclick="nickels()">
+                            
                         </div>
                         <div class="nickelButton">
-                                <!--<button type="button" onclick="nickels()"></button>-->
+                            <!--<button type="button" onclick="nickels()"></button>-->
                             <div class="increasenickels" id="increasenickels">
                                 <h4 id="nickelspersec"></h4>
                                 <button type="button" id="increasenickelamount" onclick="increaseNickel()">click here</button>
                             </div>
                         </div>
                     </div>
-                    <div class="dimes" id="dimes">
+                    <div class="dimes" onclick="dimes()" id="dimes">
                         <h1>dimes</h1>
                         <div class="photo" id="photo">
-                            <img src="photos/dime.png" onclick="dimes()">
+
                         </div>
                         <div class="dimeButton">
                             <div class="increasedimes" id="increasedimes">
@@ -221,10 +233,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="quaters" id="quaters">
+                    <div class="quaters" onclick="quaters()" id="quaters">
                         <h1>quaters</h1>
                         <div class="photo" id="photo">
-                            <img src="photos/quater.png" onclick="quaters()">
+                            
                         </div>
                         <div class="quaterButton">
                             <div class="increasequaters" id="increasequaters">
@@ -233,10 +245,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="half-dollar" id="half-dollar">
+                    <div class="half-dollar" onclick="halfDollars()" id="half-dollar">
                         <h1>half-dollar</h1>
                         <div class="photo" id="photo">
-                            <img src="photos/HalfDollar.png" onclick="halfDollars()">
+                            
                         </div>
                         <div class="HDButton">
                             <div class="increaseHDs" id="increaseHDs">
@@ -245,10 +257,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dollar" id="dollar">
+                    <div class="dollar" onclick="dollars()" id="dollar">
                         <h1>Dollar</h1>
                         <div class="photo" id="photo">
-                            <img src="photos/1dollar.png" onclick="dollars()">
+                            
                         </div>
                         <div class="DollarButton">
                             <div class="increasedollars" id="increasedollars">
