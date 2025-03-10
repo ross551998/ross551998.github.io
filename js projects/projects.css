@@ -1,17 +1,19 @@
-
-
-
-
 body {
     --dot-bg: black;
   --dot-color: white;
   --dot-size: 1px;
-  --dot-space: 22px;
-	background: linear-gradient(to right, #00c6ff, #0072ff);
+    --dot-space: 22px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
     font-family: 'Times New Roman', Times, serif;
     color: snow;
     text-shadow: 8px 4px 8px rgba(255, 252, 252, 0.7);
-    font-family: 'Times New Roman', Times, serif
 }
 :root {
     --flex-display: flex;
@@ -26,6 +28,7 @@ body {
     --button-width: 120px;
     --button-radius: 12px;
     --negative-margin-top: -8%;
+    --hide-display: none;
 }
 nav h3:hover {
     color: blue;
@@ -35,6 +38,12 @@ nav {
     display: flex;
     justify-content: space-between;
     margin-right: 1%;
+}
+nav h1 {
+
+    background: linear-gradient(to right, rgb(52, 79, 90), rgb(26, 48, 73));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .content h3:hover {
     cursor: pointer;
@@ -72,25 +81,90 @@ nav {
     display: flex;
     right: 0;
     top: 0;
+    background-color:  hsla(213, 100%, 50%, 0.7);
     margin-left: 1%;
     flex-direction: column;
     position: absolute;
     align-items: center;
-    background-color: blue;
     height: 660px;
     width: 400px;
     border-radius: 42px;
     border: 3px solid lightblue;
     box-shadow: 2px 2px 2px 2px rgb(173, 216, 230, 0.5);
+    
+}
+#upgrade-unlockbuttn {
+    background-color: green;
+    color: snow;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 18px;
+    width: 220px;
+    height: 35px;
+}
+#upgrade-unlockbuttn:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05);
 }
 .upgrades {
     display: none;
     flex-direction: column;
+    margin-top: 5%;
+    align-items: center;
+    width: 370px;
     right: 0;
+    gap: 10px;
+    margin-right: 15%;
+}
+.upgrades label {
+    font-size: 1.3em;
 }
 .upgrades button {
-    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
     height: 40px;
+    border-radius: 18px;
+    background-color: lightblue;
+    font-size: 1.1em;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+.upgrades button:hover {
+    cursor: pointer;
+    background-color: #00bfff; /* Change background color on hover */
+    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+#centautocounter, #nickelautocounter, #dimeautocounter, #quaterautocounter, #hdautocounter, #dollarautocounter, #fivedollarautocounter, #tendollarautocounter, #twentydollarautocounter, #fiftydollarcounter, #hundreddollarautocounter {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/*right side */
+.nickelsunlock, .dimesunlock, .quaterunlock, .half-dollarunlock, .dollarunlock, .fivedollarunlock, .tendollarunlock, .twentydollarunlock, .fiftydollarunlock, .hundreddollarunlock {
+    flex-direction: column;
+    align-items: center;
+}
+.opencurrency {
+    display: flex;
+    flex-direction: column;
+}
+.opencurrency button {
+    border-radius: 18px;
+    width: 180px;
+    height: 50px;
+    font-size: 1.2em;
+    background-color: gold;
+}
+.opencurrency button:hover {
+    cursor: pointer;
+    background-color: yellow;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05);
 }
 /*middle of the game */
 .display {
@@ -119,6 +193,10 @@ nav {
 .display img:hover {
     cursor: pointer;
 }
+.pop-up {
+    display: none;
+    font-size: 2em;
+}
 /*left side of game */
 .gameContent {
     display: flex;
@@ -132,8 +210,7 @@ nav {
     
     padding-top: 5px;
 }
-
-.pennys, .nickels, .dimes, .quaters, .half-dollar, .dollar {
+.pennys, .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: var(--flex-display);
     justify-content: var(--flex-center);
     align-items: var(--flex-center);
@@ -145,98 +222,36 @@ nav {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
-.increaseCents, .increasenickels, .increasedimes, .increasequaters, .increaseHDs, .increasedollars {
+.increaseCents, .increasenickels, .increasedimes, .increasequaters, .increaseHDs, .increasedollars, .increasefivedollars, .increasetendollars, .increasetwentydollars, .increasefiftydollars, .increasehundreddollars {
     display: var(--flex-display);
     flex-direction: var(--column-direction);
     align-items: var(--flex-center);
     padding-left: 12px;
     padding-bottom: 20px;
 }
-.increaseCents button, .increasenickels button, .increasedimes button, .increasequaters button, .increaseHDs button, .increasedollars button {
+.increaseCents button, .increasenickels button, .increasedimes button, .increasequaters button, .increaseHDs button, .increasedollars button, .increasefivedollars button, .increasetendollars button, .increasetwentydollars button, .increasefiftydollars button, .increasehundreddollars button {
     margin-top: var(--negative-margin-top);
     width: var(--button-width);
     border-radius: var(--button-radius);
 }
-
-    
-
-
-
-
-
-
-
-
+.zoom {
+    transform: scale(1.1);
+}
 /*unlock currency*/
 #upgradetitle {
     display: block;
 }
-.dimesunlock {
-    display: none;
-}
-.quaterunlock {
-    display: none;
-}
-.half-dollarunlock {
-    display: none;
-}
-.dollarunlock {
+.dimesunlock, .quaterunlock, .half-dollarunlock, .dollarunlock, .fivedollarunlock, .tendollarunlock, .twentydollarunlock, .fiftydollarunlock, .hundreddollarunlock {
     display: none;
 }
 /*upgrades*/
-#dimeautocounter {
+#dimeautocounter, #quaterautocounter, #hdautocounter, #dollarautocounter, #fivedollarautocounter, #tendollarautocounter, #twentydollarautocounter, #fiftydollarautocounter, #hundreddollarautocounter {
     display: none;
 }
-#quaterautocounter {
-    display: none;
-}
-#hdautocounter {
-    display: none;
-}
-#dollarautocounter {
-    display: none;
-}
-
-
-
 /*double amount */
-.double-penny {
+.double-penny, .double-nickel, .double-dime, .double-quater, .double-hd, .double-dollar, .double-fivedollar, .double-tendollar, .double-twentydollar {
     display: none;
 }
-.double-nickel {
-    display: none;
-}
-.double-dime {
-    display: none;
-}
-.double-quater {
-    display: none;
-}
-.double-hd {
-    display: none;
-}
-.double-dollar {
-    display: none;
-}
-/*item itself */
-.nickels {
-    display: none;
-}
-.dimes {
-    display: none;
-}
-.quaters {
-    display: none;
-}
-.half-dollar {
-    display: none;
-}
-.dollar {
-    display: none;
-}
-
-
-
 /* auto counters */
 #increaseCents {
     display: none;
@@ -244,19 +259,9 @@ nav {
 #increasenickels {
     display: none;
 }
-.increasedimes {
+.increasedimes, .increasequaters, .increaseHDs, .increasedollars, .increasefivedollars, .increasetendollars, .increasetwentydollars, .increasefiftydollars, .increasehundreddollars {
     display: none;
 }
-.increasequaters {
+.nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
-.increaseHDs {
-    display: none;
-}
-.increasedollars {
-    display: none;
-}
-
-
-
-
