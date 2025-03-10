@@ -11,16 +11,6 @@
     </head>
     <body>
         <nav>
-            <div class="dropDown">
-                <div class="open">
-                    <h3 onclick="openFunction()">Click Here</h3>
-                </div>
-                <div class="content" id="content">
-                    <h3>Idle Games</h3>
-                    <h3>Projects</h3>
-                    <h3>idk</h3>
-                </div>
-            </div>
             <h1>Can you become a Billionaire?</h1>
             <h3 onclick="location.href='/index.html'">Home Page</h3>
         </nav>
@@ -95,6 +85,50 @@
                                 <button type="button" onclick="firstDD()">double dollar amount</button>
                             </div>
                         </div>
+                        <div class="fivedollar-upgrades">
+                            <div id="fivedollarautocounter">
+                                <label for="fivedollarcounter">cost: $ 350.00</label>
+                                <button type="button" onclick="autoFiveDollar()">auto five dollar</button>
+                            </div>
+                            <div class="double-fivedollar">
+                                <label for="doublefivedollar">cost: $ 400.00</label>
+                                <button type="button" onclick="firstDFD()">double five dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="tendollar-upgrades">
+                            <div id="tendollarautocounter">
+                                <label for="tendollarcounter">cost: $ 500.00</label>
+                                <button type="button" onclick="autoTenDollar()">auto ten dollar</button>
+                            </div>
+                            <div class="double-tendollar">
+                                <label for="doubletendollar">cost: $ 600.00</label>
+                                <button type="button" onclick="firstDTD()">double ten dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="twentydollar-upgrades">
+                            <div id="twentydollarautocounter">
+                                <label for="twentydollarcounter">cost: $ 700.00</label>
+                                <button type="button" onclick="autoTwentyDollar()">auto twenty dollar</button>
+                            </div>
+                            <div class="double-twentydollar">
+                                <label for="doubletwentydollar">cost: $ 800.00</label>
+                                <button type="button" onclick="firstD20D()">double twenty dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="fiftyDollar-upgrades">
+                            <div id="fiftydollarautocounter">
+                                <label for="fiftydollarcounter">cost: $ 1,000</label>
+                                <button type="button" onclick="autoFiftyDollar()">auto fifty dollar</button>
+                            </div>
+                            <!--double fifty amount-->
+                        </div>
+                        <div class="hundreddollar-upgrades">
+                            <div id="hundreddollarautocounter">
+                                <label for="hundreddollarcounter">cost: $1,200</label>
+                                <button type="button" onclick="autoHundredDollar()">auto hundred dollar</button>
+                            </div>
+                            <!--double hundred amount-->
+                        </div>
                     </div>
                     <div class="opencurrency">
                         <div class="nickelsunlock" id="nickelsunlock">
@@ -117,7 +151,27 @@
                             <h3>Unlock Dollars at $ 125.00</h3>
                             <button type="button" onclick="dollarUnlock()">Next icon</button>
                         </div>
-                </div>
+                        <div class="fivedollarunlock" id="fivedollarunlock">
+                            <h3>Unlock Five Dollars at $ 200.00</h3>
+                            <button type="button" onclick="fiveDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="tendollarunlock" id="tendollarunlock">
+                            <h3>Unlock Ten Dollars at $ 300.00</h3>
+                            <button type="button" onclick="tenDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="twentydollarunlock" id="twentydollarunlock">
+                            <h3>Unlock Twenty Dollars at $ 400.00</h3>
+                            <button type="button" onclick="twentyDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="fiftydollarunlock" id="fiftydollarunlock">
+                            <h3>Unlock Fifty Dollar at $ 625.00</h3>
+                            <button type="button" onclick="fiftyDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="hundreddollarunlock" id="hundreddollarunlock">
+                            <h3>Unlock hundred dollar at $ 950.00</h3>
+                            <button type="button" onclick="hundredDollarUnlock()">Next icon</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="display">
                     <div class="displayword">
@@ -143,65 +197,125 @@
                             </div>
                     </div>
                     <div class="nickels" id="nickels">
-                            <h1>nickels</h1>
-                            <div class="photo" id="photo">
-                                <img src="photos/nickel.png" onclick="nickels()">
-                            </div>
-                            <div class="nickelButton">
+                        <h1>nickels</h1>
+                        <div class="photo" id="photo">
+                            <img src="photos/nickel.png" onclick="nickels()">
+                        </div>
+                        <div class="nickelButton">
                                 <!--<button type="button" onclick="nickels()"></button>-->
-                                <div class="increasenickels" id="increasenickels">
-                                    <h4 id="nickelspersec"></h4>
-                                    <button type="button" id="increasenickelamount" onclick="increaseNickel()">click here</button>
-                                </div>
+                            <div class="increasenickels" id="increasenickels">
+                                <h4 id="nickelspersec"></h4>
+                                <button type="button" id="increasenickelamount" onclick="increaseNickel()">click here</button>
                             </div>
+                        </div>
                     </div>
                     <div class="dimes" id="dimes">
-                            <h1>dimes</h1>
-                            <div class="photo" id="photo">
-                                <img src="photos/dime.png" onclick="dimes()">
+                        <h1>dimes</h1>
+                        <div class="photo" id="photo">
+                            <img src="photos/dime.png" onclick="dimes()">
+                        </div>
+                        <div class="dimeButton">
+                            <div class="increasedimes" id="increasedimes">
+                                <h4 id="dimepersec"></h4>
+                                <button type="button" id="increasedimeamount" onclick="increasedime()">click here</button>
                             </div>
-                            <div class="dimeButton">
-                                <div class="increasedimes" id="increasedimes">
-                                    <h4 id="dimepersec"></h4>
-                                    <button type="button" id="increasedimeamount" onclick="increasedime()">click here</button>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                     <div class="quaters" id="quaters">
-                            <h1>quaters</h1>
-                            <div class="photo" id="photo">
-                                <img src="photos/quater.png" onclick="quaters()">
+                        <h1>quaters</h1>
+                        <div class="photo" id="photo">
+                            <img src="photos/quater.png" onclick="quaters()">
+                        </div>
+                        <div class="quaterButton">
+                            <div class="increasequaters" id="increasequaters">
+                                <h4 id="quaterspersec"></h4>
+                                <button type="button" id="increasequateramount" onclick="increaseQuaters()">click here</button>
                             </div>
-                            <div class="quaterButton">
-                                <div class="increasequaters" id="increasequaters">
-                                    <h4 id="quaterspersec"></h4>
-                                    <button type="button" id="increasequateramount" onclick="increaseQuaters()">click here</button>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                     <div class="half-dollar" id="half-dollar">
-                            <h1>half-dollar</h1>
-                            <div class="photo" id="photo">
-                                <img src="photos/HalfDollar.png" onclick="halfDollars()">
+                        <h1>half-dollar</h1>
+                        <div class="photo" id="photo">
+                            <img src="photos/HalfDollar.png" onclick="halfDollars()">
+                        </div>
+                        <div class="HDButton">
+                            <div class="increaseHDs" id="increaseHDs">
+                                <h4 id="HDpersec"></h4>
+                                <button type="button" id="increaseHDamount" onclick="increaseHd()">click here</button>
                             </div>
-                            <div class="HDButton">
-                                <div class="increaseHDs" id="increaseHDs">
-                                    <h4 id="HDpersec"></h4>
-                                    <button type="button" id="increaseHDamount" onclick="increaseHd()">click here</button>
-                                </div>
-                            </div>
+                        </div>
                     </div>
                     <div class="dollar" id="dollar">
-                            <h1>Dollar</h1>
-                            <div class="photo" id="photo">
-                                <img src="photos/1dollar.png" onclick="dollars()">
+                        <h1>Dollar</h1>
+                        <div class="photo" id="photo">
+                            <img src="photos/1dollar.png" onclick="dollars()">
+                        </div>
+                        <div class="DollarButton">
+                            <div class="increasedollars" id="increasedollars">
+                                <h4 id="dollarpersec"></h4>
+                                <button type="button" id="increasedollaramount" onclick="increaseDollar()">click here</button>
                             </div>
-                            <div class="DollarButton">
-                                <div class="increasedollars" id="increasedollars">
-                                    <h4 id="dollarpersec"></h4>
-                                    <button type="button" id="increasedollaramount" onclick="increaseDollar()">click here</button>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="fivedollar" onclick="fiveDollars()" id="fivedollar">
+                        <h1>Five Dollar</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="fiveDollarButton">
+                            <div class="increasefivedollars" id="increasefivedollars">
+                                <h4 id="fivedollarpersec"></h4>
+                                <button type="button" id="increasefivedollaramount" onclick="increasefiveDollar()">click here</button>
                             </div>
+                        </div>
+                    </div>
+                    <div class="tendollar" onclick="tenDollars()" id="tendollar">
+                        <h1>Ten Dollar</h1>
+                        <div class="photo" id="photo">
+                        
+                        </div>
+                        <div class="tenDollarButton">
+                            <div class="increasetendollars" id="increasetendollars">
+                                <h4 id="tendollarpersec"></h4>
+                                <button type="button" id="increasetendollaramount" onclick="increasetenDollar()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="twentydollar" onclick="twentyDollars()" id="twentydollar">
+                        <h1>twenty Dollar</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="twentyDollarButton">
+                            <div class="increasetwentydollars" id="increasetwentydollars">
+                                <h4 id="twentydollarpersec"></h4>
+                                <button type="button" id="increasetwentydollaramount" onclick="increasetwentyDollar()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fiftydollar" onclick="fiftyDollars()" id="fiftydollar">
+                        <h1>Fifty Dollar</h1>
+                        <div class="photo" id="photo">
+
+                        </div>
+                        <div class="fiftydollarbutton">
+                            <div class="increasefiftydollars" id="increasefiftydollars">
+                                <h4 id="fiftydollarpersec"></h4>
+                                <button type="button" id="increasefiftydollaramount" onclick="increaseFiftyDollar()">Click Here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hundreddollar" onclick="hundredDollars()" id="hundreddollar">
+                        <h1>Hundred Dollar</h1>
+                        <div class="photo" id="photo">
+
+                        </div>
+                        <div class="hundredDollarButton">
+                            <div class="increasehundreddollars" id="increasehundreddollars">
+                                <h4 id="hundreddollarpersec"></h4>
+                                <button type="button" id="increasehundreddollaramount" onclick="increaseHundredDollar()">Click Here</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
