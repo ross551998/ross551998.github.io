@@ -362,8 +362,8 @@ function autoDime() {
     }
 }
 function autoQuater() {
-    if(totalCount >= 27.00) {//change to75.00 later
-        totalCount = totalCount - 27.00;//change to 75.00 later
+    if(totalCount >= 15.00) {//change to75.00 later
+        totalCount = totalCount - 15.00;//change to 75.00 later
         if(!autoQuaterInterval) {
             autoQuaterInterval =  setInterval(() => {
                 totalCount += values.quarter;
@@ -386,8 +386,8 @@ function autoQuater() {
     }
 }
 function autoHD() {
-    if(totalCount >= 50.00) {//change later
-        totalCount = totalCount - 50.00;//change later
+    if(totalCount >= 30.00) {//change later
+        totalCount = totalCount - 30.00;//change later
         if(!autoHDInterval) {
             autoHDInterval =  setInterval (() => {
                 totalCount += values.halfDollar;
@@ -410,8 +410,8 @@ function autoHD() {
     }
 }
 function autoDollar() {
-    if(totalCount >= 125.00) {//change later to 225.00
-        totalCount = totalCount - 125.00;//change later to 225.00
+    if(totalCount >= 60.00) {//change later to 225.00
+        totalCount = totalCount - 60.00;//change later to 225.00
         if(!autoDInterval) {
             autoDInterval = setInterval(() => {
                 totalCount +=values.dollar;
@@ -434,8 +434,8 @@ function autoDollar() {
     }
 }
 function autoFiveDollar() {
-    if(totalCount >= 200.00) {//change later to 400.00
-        totalCount = totalCount - 200.00;//change later to 400.00
+    if(totalCount >= 100.00) {//change later to 400.00
+        totalCount = totalCount - 100.00;//change later to 400.00
         if(!autoFiveDInterval) {
             autoFiveDInterval = setInterval(() => {
                 totalCount += values.fiveDollar;
@@ -458,8 +458,8 @@ function autoFiveDollar() {
     }
 }
 function autoTenDollar() {
-    if(totalCount >= 300.00) {
-        totalCount = totalCount - 300.00;
+    if(totalCount >= 175.00) {
+        totalCount = totalCount - 175.00;
         if(!autoTenDInterval) {
             autoTenDInterval = setInterval(() => {
                 totalCount += values.tenDollar;
@@ -483,8 +483,8 @@ function autoTenDollar() {
     }
 }
 function autoTwentyDollar() {
-    if(totalCount >= 400.00) {
-        totalCount = totalCount - 400.00;
+    if(totalCount >= 280.00) {
+        totalCount = totalCount - 280.00;
         if(!autoTwentyDInterval) {
             autoTwentyDInterval =  setInterval(() => {
                 totalCount += values.twentyDollar;
@@ -508,8 +508,8 @@ function autoTwentyDollar() {
     }
 }
 function autoFiftyDollar() {
-    if(totalCount >= 625.00) {
-        totalCount = totalCount - 625.00;
+    if(totalCount >= 420.00) {
+        totalCount = totalCount - 420.00;
         if(!autoFityDInterval) {
             autoFityDInterval = setInterval(() => {
                 totalCount += values.fiftyDollar;
@@ -533,8 +533,8 @@ function autoFiftyDollar() {
     } 
 }
 function autoHundredDollar() {
-    if(totalCount >= 950.00) {
-        totalCount =  totalCount - 950.00;
+    if(totalCount >= 560.00) {
+        totalCount =  totalCount - 560.00;
         if(!autoHundredDInterval) {
             autoHundredDInterval = setInterval(() => {
                 totalCount += values.hundredDollar;
@@ -577,11 +577,11 @@ function nickelsUnlock() {
     }
 }
 function dimesUnlock() {
-    if(d.style.display === 'none' || d.style.display === '' && Math.round(totalCount * 100) / 100 >= 8.00) {//increase to 12.00 when ready
+    if(d.style.display === 'none' || d.style.display === '' && Math.round(totalCount * 100) / 100 >= 10.00) {//increase to 12.00 when ready
         console.log('unlocking dimes');
         d.style.display = 'flex';
         qUnlock.style.display = 'flex';
-        totalCount -= 8.00;//change to 12.00 when ready 
+        totalCount -= 10.00;//change to 12.00 when ready 
         total.textContent = `$ ${totalCount.toFixed(2)}`;
         dUnlock.style.display = 'none';
         console.log('dimes unlocked');
@@ -594,10 +594,10 @@ function dimesUnlock() {
     }
 }
 function quaterUnlock() {
-    if(q.style.display === 'none' || q.style.display === '' && Math.round(totalCount * 100) / 100 >= 15.00) {//increase to 30.00 later
+    if(q.style.display === 'none' || q.style.display === '' && Math.round(totalCount * 100) / 100 >= 27.00) {//increase to 30.00 later
         q.style.display = 'flex';
         hD.style.display = 'flex';
-        totalCount -= 15.00;//change later to 30.00
+        totalCount -= 27.00;//change later to 30.00
         total.textContent = `$ ${totalCount.toFixed(2)}`;
         qUnlock.style.display = 'none';
         console.log('quaters unlocked');
@@ -610,10 +610,10 @@ function quaterUnlock() {
     }
 }
 function halfDollarUnlock() {
-    if(Hd.style.display === 'none' || Hd.style.display === '' && Math.round(totalCount * 100) / 100 >= 30.00) {//change later
+    if(Hd.style.display === 'none' || Hd.style.display === '' && Math.round(totalCount * 100) / 100 >= 50.00) {//change later
         Hd.style.display = 'flex';
         dollarunlock.style.display = 'flex';
-        totalCount -= 30.00;//change later to 75.00
+        totalCount -= 50.00;//change later to 75.00
         total.textContent = `${totalCount.toFixed(2)}`;
         hD.style.display = 'none';
         console.log('half dollar unlocked');
@@ -626,10 +626,10 @@ function halfDollarUnlock() {
     }
 }
 function dollarUnlock() {//works for now might be bugs in here
-    if(dO.style.display === 'none' || dO.style.display === '' && Math.round(totalCount * 100) / 100 >= 60.00) {//change later
+    if(dO.style.display === 'none' || dO.style.display === '' && Math.round(totalCount * 100) / 100 >= 125.00) {//change later
         dO.style.display = 'flex';
         fdUnlock.style.display = 'flex';
-        totalCount -= 60.00;
+        totalCount -= 125.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         dollarunlock.style.display = 'none';
         console.log('dollar unlocked');
@@ -642,10 +642,10 @@ function dollarUnlock() {//works for now might be bugs in here
     }
 }
 function fiveDollarUnlock() {
-    if(fiveDollar.style.display === 'none' || fiveDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 100.00) {//change later
+    if(fiveDollar.style.display === 'none' || fiveDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 200.00) {//change later
         fiveDollar.style.display = 'flex';
         tdUnlock.style.display = 'flex';
-        totalCount -= 100.00;//change later
+        totalCount -= 200.00;//change later
         total.textContent = `${totalCount.toFixed(2)}`;
         fdUnlock.style.display = 'none';
         console.log('five dollar unlocked');
@@ -658,10 +658,10 @@ function fiveDollarUnlock() {
     }
 }
 function tenDollarUnlock() {
-    if(tenDollar.style.display === 'none' || tenDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 175.00) {//change later
+    if(tenDollar.style.display === 'none' || tenDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 300.00) {//change later
         tenDollar.style.display = 'flex';
         twdUnlock.style.display = 'flex';
-        totalCount -= 175.00;
+        totalCount -= 300.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         tdUnlock.style.display = 'none';
         console.log('ten dollar unlocked');
@@ -674,10 +674,10 @@ function tenDollarUnlock() {
     }
 }
 function twentyDollarUnlock() {
-    if(twentyDollar.style.display === 'none' || twentyDollar.style.display === '' && Math.round(totalCount * 100) / 100 >=  280.00) {
+    if(twentyDollar.style.display === 'none' || twentyDollar.style.display === '' && Math.round(totalCount * 100) / 100 >=  400.00) {
         twentyDollar.style.display = 'flex';
         fiftyDUnlock.style.display = 'flex';
-        totalCount -= 280.00;
+        totalCount -= 400.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         twdUnlock.style.display = 'none';
         console.log('twenty dollar unlocked');
@@ -690,10 +690,10 @@ function twentyDollarUnlock() {
     }
 }
 function fiftyDollarUnlock() {
-    if(fiftyDollar.style.display === 'none' || fiftyDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 420.00) {
+    if(fiftyDollar.style.display === 'none' || fiftyDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 625.00) {
         fiftyDollar.style.display = 'flex';
         hundredDUnlock.style.display = 'flex';
-        totalCount -= 420.00;
+        totalCount -= 625.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         fiftyDUnlock.style.display = 'none';
         console.log('fifty dollar unlocked');
@@ -707,9 +707,9 @@ function fiftyDollarUnlock() {
 }
 function hundredDollarUnlock() {
     console.log('error 4');
-    if(hundredDollar.style.display === 'none' || hundredDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 560.00) {
+    if(hundredDollar.style.display === 'none' || hundredDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= 950.00) {
         hundredDollar.style.display = 'flex';
-        totalCount -= 560.00;
+        totalCount -= 950.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         hundredDUnlock.style.display = 'none';
         console.log('hundred dollar unlocked');
