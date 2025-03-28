@@ -1,7 +1,7 @@
-body {
+html, body {
     --dot-bg: black;
-  --dot-color: white;
-  --dot-size: 1px;
+    --dot-color: white;
+    --dot-size: 1px;
     --dot-space: 22px;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -10,249 +10,587 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    font-family: 'Times New Roman', Times, serif;
-    color: snow;
-    text-shadow: 8px 4px 8px rgba(255, 252, 252, 0.7);
-}
-:root {
-    --flex-display: flex;
-    --flex-center: center;
-    --column-direction: column;
-    --lightblue-border: solid 3px lightblue;
-    --border-radius: 21px;
-    --box-shadow: 2px 2px 3px rgba(173, 216, 230, 0.5);
-    --common-width: 340px;
-    --common-padding-top: 12px;
-    --large-font-size: large;
-    --button-width: 120px;
-    --button-radius: 12px;
-    --negative-margin-top: -8%;
-    --hide-display: none;
-}
-nav h3:hover {
-    color: blue;
-    cursor: pointer;
-}
-nav {
+    color: 	#333333;
+    font-family: "Roboto";
+    background-color: rgb(112, 128, 144, 0.4);
+    font-size: 24px;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-right: 1%;
-}
-nav h1 {
-
-    background: linear-gradient(to right, rgb(52, 79, 90), rgb(26, 48, 73));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.content h3:hover {
-    cursor: pointer;
-    color: blue;
-}
-.content {
-    color: black;
-    justify-content: center;
-    align-items: center;
-    display:  none;
+    overflow: hidden;
     flex-direction: column;
-    background-color: white;
-    border-radius: 2px;
-    transition: transform 1s ease-in-out;
-    transform: translateX(-100%);
-}
-.content.show {
-    transform: translate(0);
-}
-.open {
-    width: 115px;
-}
-.open:hover {
-    cursor: pointer;
-    color: blue;
-}
-/*idle game*/
-.idlegame-head {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-}
-.upgrade-title {
-    display: flex;
-    right: 0;
-    top: 0;
-    background-color:  hsla(213, 100%, 50%, 0.7);
-    margin-left: 1%;
-    flex-direction: column;
-    position: absolute;
-    align-items: center;
-    height: 660px;
-    width: 400px;
-    border-radius: 42px;
-    border: 3px solid lightblue;
-    box-shadow: 2px 2px 2px 2px rgb(173, 216, 230, 0.5);
+    margin: 0;
+    padding: 0;
     
 }
-#upgrade-unlockbuttn {
-    background-color: green;
+#news {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideInOut 3s;
+}
+@keyframes slideInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+nav {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center; 
+    justify-content: center;
+    background-color: rgb(90, 90, 90);
     color: snow;
-    font-weight: bold;
-    font-size: large;
-    border-radius: 18px;
-    width: 220px;
-    height: 35px;
+    margin-left: 1%;
+    margin-top: 1%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 58px;
+    letter-spacing: 3px;
+    overflow: hidden;
+}
+nav h1 {
+    text-align: left;
+    margin-left: 22.5%;
+    margin-right: auto;
+}
+nav h4 {
+   margin: 0 15px;
+   transition: all 0.3s ease-in-out;
+}
+
+nav h4:hover {
+    scale: 0.9;
+    cursor: pointer;
+    color: rgba(6, 183, 6, 0.8);
+    
+}
+#account {
+    margin-right: 2%;
+}
+.idlegame-head {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    font-size: 2.4lvh;
+    padding-top: 60px;
+}
+.money-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+.money {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    animation: fall linear infinite;
+}
+.money-symbol {
+    position: absolute;
+    font-size: 20px;
+    color: gold;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    from {
+        transform: translateY(-10%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+
+
+/*LEFT SIDE */
+.gold-bar {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(45deg, #ffd700, #ffc107, #b8860b);
+    border-radius: 4px;
+    box-shadow: 4px 4px 10px rgba(255, 215, 0);
+    transform: perspective(100px) rotateX(15deg);
+    animation: bars linear infinite;
+}
+@keyframes bars {
+    from {
+        transform: translateY(-50px) perspective(50px) rotateX(15deg);
+        opacity: 0.7;
+    }
+    to {
+        transform: translateY(40vh) perspective(50px) rotateX(15deg);
+        opacity: 1;
+    }
+}
+.upgrade-title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%;
+    font-size: 3.2lvh;
+    min-height: 350px;
+    overflow: hidden;
+    color: cornsilk;
+    flex-shrink: 0;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    background: url(photos/upgrades2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    
+}
+.upgrades {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    
+}
+#upgradetitle {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    letter-spacing: 8px;
+}
+#upgrade-unlockbuttn {
+    font-size: 1.2em;
+    width: 70%;
+    border-radius: 24px;
+    background: none;
+    border: 1px solid #3A3D98;
+    box-shadow:2px 2px 2px 2px green;
+    
 }
 #upgrade-unlockbuttn:hover {
     cursor: pointer;
-    background-color: lightgreen;
-    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.5);
-    transform: scale(1.05);
+    scale: 1.1;
+    background: #F4C542;
+    box-shadow:3px 3px 3px 3px green inset;
 }
-.upgrades {
+.dime-upgrades, .quater-upgrades, .hd-upgrades, .dollar-upgrades, .fivedollar-upgrades, .tendollar-upgrades, .twentydollar-upgrades, .fiftyDollar-upgrades, .hundreddollar-upgrades {
     display: none;
-    flex-direction: column;
-    margin-top: 5%;
+}
+.cent-upgrades, .nickel-upgrades {
+    border: 2px solid #50C878;
     align-items: center;
-    width: 370px;
+    border-radius: 40px;
+    align-content: center;
+    height: 50px;
     right: 0;
-    gap: 10px;
-    margin-right: 15%;
-}
-.upgrades label {
-    font-size: 1.3em;
-}
-.upgrades button {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 180px;
+}
+.dime-upgrades, .quater-upgrades, .hd-upgrades, .dollar-upgrades, .fivedollar-upgrades, .tendollar-upgrades, .twentydollar-upgrades, .fiftyDollar-upgrades, .hundreddollar-upgrades {
+    justify-content: center;
+    border: 2px solid #50C878;
+    align-items: center;
+    border-radius: 40px;
+    align-content: center;
+    height: 50px;
+    
+    right: 0;
+}
+#centautocounter button, #nickelautocounter button, #dimeautocounter button, #quaterautocounter button, #hdautocounter button, #dollarautocounter button, #fivedollarautocounter button, #tendollarautocounter button, #twentydollarautocounter button, #fiftydollarautocounter button, #hundreddollarautocounter button{
     height: 40px;
-    border-radius: 18px;
-    background-color: lightblue;
-    font-size: 1.1em;
-    border: none;
-    transition: all 0.3s ease-in-out;
+    font-size: 2.5lvh;
+    color: snow;
+    background-color: transparent;
+    border: transparent;
 }
-.upgrades button:hover {
+#centautocounter button:hover {
     cursor: pointer;
-    background-color: #00bfff; /* Change background color on hover */
-    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.5);
-    transform: scale(1.05); /* Slightly increase size on hover */
-}
-#centautocounter, #nickelautocounter, #dimeautocounter, #quaterautocounter, #hdautocounter, #dollarautocounter, #fivedollarautocounter, #tendollarautocounter, #twentydollarautocounter, #fiftydollarcounter, #hundreddollarautocounter {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-/*right side */
-.nickelsunlock, .dimesunlock, .quaterunlock, .half-dollarunlock, .dollarunlock, .fivedollarunlock, .tendollarunlock, .twentydollarunlock, .fiftydollarunlock, .hundreddollarunlock {
-    flex-direction: column;
-    align-items: center;
+
 }
 .opencurrency {
     display: flex;
     flex-direction: column;
 }
+.nickelsunlock, .dimesunlock, .quaterunlock, .half-dollarunlock, .dollarunlock, .fivedollarunlock, .tendollarunlock, .twentydollarunlock, .fiftydollarunlock, .hundreddollarunlock  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .opencurrency button {
-    border-radius: 18px;
-    width: 180px;
-    height: 50px;
-    font-size: 1.2em;
-    background-color: gold;
+    border-radius: 14px;
+    height: 30px;
 }
 .opencurrency button:hover {
     cursor: pointer;
-    background-color: yellow;
-    box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 50px rgba(0, 255, 0, 0.5);
-    transform: scale(1.05);
+    scale: 1.1;
 }
-/*middle of the game */
-.display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 600px;
-}
-.displayword {
-    border: solid 3px lightblue;
-    border-radius: 42px;
-    width: 280px;
+/*left side upgrade portion */
+
+.first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eigth, .nigth, .tenth {
+    display: none;
+    align-content: center;
     justify-content: center;
-    display: flex;
-    box-shadow: 2px 2px 3px rgb(173, 216, 230, 0.5);
-    flex-direction: column;
-    align-items: center;
+    gap: 6%;
+    margin-top: 2%;
 }
-.display .photo {
-    margin-top: auto;
+.extra-upgrades button {
+    border-radius: 20px;
+    background: slategray;
+    color: gold;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border: 2px solid green;
+    box-shadow: 1px 2px 1px 1px black;
 }
-.display .photo img {
-    height: 250px;
-    width: 250px;
-}
-.display img:hover {
+.extra-upgrades button:hover {
+    scale: 1.1;
     cursor: pointer;
+    background-color: yellow;
+    color: black;
+}
+
+
+
+
+/*middle */
+.display {
+   width: 32%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+#mainclicker {
+    margin-top: 16%;
+    width: 240px;
+    height: 240px;
+}
+#mainclicker img {
+    width: 100%;
+    height: 100%;
 }
 .pop-up {
-    display: none;
-    font-size: 2em;
+    font-size: 1.4em;
+    transform: scale(1.8);
 }
-/*left side of game */
+.assest {
+    display: none;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-top: 1%;
+    height: 20vw;
+    background-color: slategrey;
+    border-radius: 22px;
+    width: 85%;
+    text-align: center;
+    gap: 6px;
+    font-size: 1.1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.assest p {
+    font-size: 1.4rem;
+}
+.assest button {
+    display: flex;
+    font-family: "Work Sans";
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-left: 8%;
+    margin-right: 0;
+    font-size: 18px;
+    font-weight: 800;
+    width: 80%;
+    border-radius: 12px;
+    background-color: gold;
+}
+.assest button:hover {
+    font-weight: bold;
+    background-color: #ffd700;
+    cursor: pointer;
+    scale: 1.1;
+    box-shadow: 1px 1px 1px 2px black;
+}
+.personal-vault {
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    margin-top: -2%;
+    background-color: #333333;
+    color: whitesmoke;
+    border-radius: 22px;
+}
+.personal-vault button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    margin-bottom: 4px;
+    text-align: center;
+    margin-left: 5%;
+    width: 90%;
+}
+.personal-vault button:hover {
+    background-color: gold;
+    font-weight: bold;
+    scale: 1.1;
+    cursor: pointer;
+}
+.awards {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    margin-top: -2%;
+    padding: 5px;
+    border-radius: 6px;
+    text-align: center;
+    background: green;
+    height: 18vw;
+}
+.awards p {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+}
+.awards i {
+    
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.awards i:hover {
+    transform: scale(1.2);
+    color: gold;
+}
+#closeawards {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    cursor: pointer;
+}
+/*goods */
+.buy-goods {
+    width: 100%;
+}
+.small-goods {
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 35vh;
+    width: 100%;
+    font-size: 1.9lvh;
+}
+.small-goods h2 {
+    text-decoration: underline;
+    color: royalblue;
+    font-size: 1.4rem;
+}
+.medium-goods {
+    display: none;
+}
+.first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg {
+    display: none;
+}
+
+/*right side */
 .gameContent {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    background-color: slategrey;
     align-items: center;
-    left: 2%;
-    position: absolute;
-    gap: 5%;
-    width: 350px;
+    width: 32%;
+    border-top-right-radius: 14px;
+    border-top-left-radius: 12px;
+    overflow-y: auto;
+    height: 94vh;
     
-    padding-top: 5px;
+}
+.gameContent button {
+    width: 200px;
+    border-radius: 14px;
+    background: gold;
+    border: 3px solid green;
+    font-size: 0.8em;
+}
+.gameContent button:hover {
+    cursor: pointer;
+    scale: 1.1;
 }
 .pennys, .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
-    display: var(--flex-display);
-    justify-content: var(--flex-center);
-    align-items: var(--flex-center);
-    flex: 2;
-    width: var(--common-width);
-    padding-top: var(--common-padding-top);
-    font-size: var(--large-font-size);
-    border: var(--lightblue-border);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    gap: 6%;
+    background-color: blue;
+    border-radius: 16px;
+    height: 130px;
+    color: snow;
+    width: 90%;
 }
-.increaseCents, .increasenickels, .increasedimes, .increasequaters, .increaseHDs, .increasedollars, .increasefivedollars, .increasetendollars, .increasetwentydollars, .increasefiftydollars, .increasehundreddollars {
-    display: var(--flex-display);
-    flex-direction: var(--column-direction);
-    align-items: var(--flex-center);
-    padding-left: 12px;
-    padding-bottom: 20px;
+#increaseCents, #increasenickels, #increasedimes, #increasequaters, #increaseHDs, #increasedollars, #increasefivedollars, #increasetendollars, #increasetwentydollars, #increasefiftydollars, #increasehundreddollars {
+    align-items: center;
+    flex-direction: column;
+    margin-top: -18px;
 }
-.increaseCents button, .increasenickels button, .increasedimes button, .increasequaters button, .increaseHDs button, .increasedollars button, .increasefivedollars button, .increasetendollars button, .increasetwentydollars button, .increasefiftydollars button, .increasehundreddollars button {
-    margin-top: var(--negative-margin-top);
-    width: var(--button-width);
-    border-radius: var(--button-radius);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*image for background */
+.pennys {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/penny\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
 }
-.zoom {
-    transform: scale(1.1);
+.nickels {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/nickel\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
 }
-/*unlock currency*/
+.dimes {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/dime\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.quaters {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/quater\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.half-dollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/half-dollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.dollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/onedollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.fivedollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
+    background: url(photos/fivedollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.tendollar {
+    background: url(photos/tendollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.twentydollar {
+    background: url(photos/twentydollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.fiftydollar {
+    background: url(photos/fiftydollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+.hundreddollar {
+    background: url(photos/hundred\ dollar\ making.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+.upgrades {
+    display: none;
+}
 #upgradetitle {
     display: block;
 }
 .dimesunlock, .quaterunlock, .half-dollarunlock, .dollarunlock, .fivedollarunlock, .tendollarunlock, .twentydollarunlock, .fiftydollarunlock, .hundreddollarunlock {
     display: none;
-}
+} 
 /*upgrades*/
 #dimeautocounter, #quaterautocounter, #hdautocounter, #dollarautocounter, #fivedollarautocounter, #tendollarautocounter, #twentydollarautocounter, #fiftydollarautocounter, #hundreddollarautocounter {
     display: none;
 }
-/*double amount */
 .double-penny, .double-nickel, .double-dime, .double-quater, .double-hd, .double-dollar, .double-fivedollar, .double-tendollar, .double-twentydollar {
     display: none;
 }
-/* auto counters */
 #increaseCents {
     display: none;
 }
