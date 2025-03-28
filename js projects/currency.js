@@ -287,7 +287,7 @@ let newsButtn = document.getElementById('top-news').addEventListener('click', fu
 awardButtn.addEventListener('click', function() {
     if(awardUnlocked) {
         if(awardButtn.style.pointerEvents === 'none' || assestButtn.style.display === 'flex') return;
-        awards.style.display = 'flex';
+        awards.style.display = 'grid';
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
