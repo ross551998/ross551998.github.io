@@ -586,7 +586,7 @@ nav h4:hover {
 .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     html, body {
         width: 100%;
         
