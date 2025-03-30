@@ -603,3 +603,124 @@ nav h4:hover {
 .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
+@media only screen and (max-width: 500px) {
+    html, body {
+        width: 100%;
+        
+    }
+    #bar-for-mobile {
+        display: flex;
+        padding-left: 8px;
+        font-size: 40px;
+    }
+    #bar-for-mobile:hover {
+        scale: 1.4;
+        cursor: pointer;
+        color: #50C878;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: auto;
+        bottom: 0;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    #top-assests, #top-awards, #top-news, #account {
+        display: none;
+    }
+    nav h1 {
+        font-size: 40px;
+        margin-left: 14%;
+    }
+    .mobile-nav {
+        position: fixed;
+        bottom: -100%; /* Start hidden */
+        left: 0;
+        right: 0;
+        height: 50vh;
+        width: 100%;
+        background: #4CAF50;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 7%;
+        align-items: center;
+        padding-top: 12px;
+        transition: bottom 0.5s ease;
+    }
+    .mobile-nav h4 {
+        color: white;
+        font-size: 1.5rem;
+    }
+    .mobile-nav h4:hover {
+        color: yellow;
+        scale: 1.4;
+    }
+    .mobile-nav.show {
+        bottom: 0;
+    }
+    #mobile-close-nav {
+        width: 80%;
+        border-radius: 14px;
+        font-size: 1rem;
+    }
+    #mobile-close-nav:hover {
+        scale: 1.1;
+        cursor: pointer;
+        background: gold;
+    }
+    .display {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-top: 15%;
+    }
+    #mainclicker {
+        margin-top: 33%;
+        width: 360px;
+        height: 360px;
+    }
+    .pop-up {
+        font-size: 1.8em;
+        transform: scale(1.2);
+    }
+    .displayword {
+        width: 620px;
+        font-size: 1rem;
+        align-items: center;
+        justify-content: space-evenly;
+        display: flex;
+        gap: 4%;
+    }
+    .displayword h1 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    /*display or nav area for all the features*/
+    .assests {
+        display: none;
+        
+    }
+    .idlegame-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 80px;
+        padding-top: 2px;
+        
+    }
+    /*working on display none */
+    .upgrade-title {
+        display: none;
+        width: 95%;
+        border-radius: 12px;
+    }
+    .gameContent {
+        display: none;
+    }
+}
