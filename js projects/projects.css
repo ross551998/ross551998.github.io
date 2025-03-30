@@ -21,6 +21,7 @@ html, body {
     margin: 0;
     padding: 0;
     
+    
 }
 #news {
     position: absolute;
@@ -47,7 +48,8 @@ html, body {
     }
 }
 nav {
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 1000;
     width: 100%;
     display: flex;
@@ -73,12 +75,17 @@ nav h4 {
    margin: 0 15px;
    transition: all 0.3s ease-in-out;
 }
-
+#bar-for-mobile {
+    display: none;
+}
 nav h4:hover {
     scale: 0.9;
     cursor: pointer;
     color: rgba(6, 183, 6, 0.8);
     
+}
+.mobile-nav {
+    display: none;
 }
 #account {
     margin-right: 2%;
@@ -271,8 +278,6 @@ nav h4:hover {
 }
 
 
-
-
 /*middle */
 .display {
    width: 32%;
@@ -456,19 +461,6 @@ nav h4:hover {
     margin-top: -18px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*image for background */
 .pennys {
     font-family: 'Times New Roman', Times, serif;
@@ -564,15 +556,6 @@ nav h4:hover {
     background-repeat: no-repeat;
     background-position-y: center;
 }
-
-
-
-
-
-
-
-
-
 
 
 .upgrades {
