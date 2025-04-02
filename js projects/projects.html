@@ -608,32 +608,7 @@
         <Script src="close.js"></Script><!--for opening next level-->
         <script src="currency.js" defer></script><!--for handling the data-->
         <script src="upgrades.js"></script>
-        <script>
-            function createMoney() {
-            const container = document.getElementById('money-container');
-            const money = document.createElement('div');
-            const moneySymbols = ['$', '¢', '€', '¥', '£', '₿'];
-            const randomSymbol = moneySymbols[Math.floor(Math.random() * moneySymbols.length)];
-            money.classList.add('money-symbol');
-            money.innerText = randomSymbol;
-            if (randomSymbol === '¢' && Math.random() > 0.5) {
-                money.classList.add('money');
-                money.style.width = '20px';
-                money.style.height = '20px';
-                money.style.backgroundSize = 'cover';
-                money.innerText = ''; // Remove text to show the icon
-            }
-            money.style.left = Math.random() * 100 + '%';
-            money.style.animationDuration = (Math.random() * 3 + 2) + 's';
-
-            container.appendChild(money);
-            setTimeout(() => {
-                money.remove();
-            }, 5000);
-        }
-
-setInterval(createMoney, 200);
-        </script>
+        
         <script>// come back later
         /*
             function createGoldBar() {
