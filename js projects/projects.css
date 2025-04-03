@@ -327,7 +327,7 @@ nav h4:hover {
     justify-content: center;
     margin-left: 8%;
     margin-right: 0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 800;
     width: 80%;
     border-radius: 12px;
@@ -589,12 +589,13 @@ nav h4:hover {
 @media only screen and (max-width: 700px) {
     html, body {
         width: 100%;
+        touch-action: manipulation;
         
     }
     #bar-for-mobile {
         display: flex;
-        padding-left: 8px;
-        font-size: 40px;
+        padding-left: 3%;
+        font-size: 52px;
     }
     #bar-for-mobile:hover {
         scale: 1.4;
@@ -607,6 +608,7 @@ nav h4:hover {
         align-items: center;
         top: auto;
         bottom: 0;
+        height: 70px;
         margin-top: 0;
         margin-left: 0;
     }
@@ -614,7 +616,7 @@ nav h4:hover {
         display: none;
     }
     nav h1 {
-        font-size: 40px;
+        font-size: 1.5rem;
         margin-left: 14%;
     }
     .mobile-nav {
@@ -660,10 +662,10 @@ nav h4:hover {
         justify-content: center;
         align-content: center;
         align-items: center;
-        margin-top: 15%;
+        
     }
     #mainclicker {
-        margin-top: 33%;
+        margin-top: 8%;
         width: 360px;
         height: 360px;
     }
@@ -673,11 +675,12 @@ nav h4:hover {
     }
     .displayword {
         width: 620px;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         display: flex;
+        gap: 4%;
     }
     .displayword h1 {
         display: flex;
@@ -685,15 +688,18 @@ nav h4:hover {
         flex-direction: row;
     }
     /*display or nav area for all the features*/
-    .assests {
+    .assets {
         display: none;
+        flex-direction: column-reverse;
+        gap: 5%;
+        font-size: 50px;
         
     }
     .idlegame-head {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-bottom: 80px;
+        
         padding-top: 2px;
         
     }
