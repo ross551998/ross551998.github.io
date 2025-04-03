@@ -2,6 +2,7 @@ let mainDisplay = document.getElementById('mainclicker');
 const openMobile_assest = document.getElementById('mobile-assests');
 const mobile_assests = document.getElementById('assests');
 const nav = document.getElementById('mobile-nav');
+const topNav = document.getElementById('navigation');
 
 //for smaller devices
 function isTouchDevice() {
@@ -19,15 +20,15 @@ function setupMobileNav() {
         // Open the sliding navigation
         navIcon.addEventListener('click', () => {
             nav.classList.add('show');
-            d.style.marginTop = '-5%';
-            mainDisplay.style.marginTop = '-5%';
+            d.style.marginTop = '0';
+            mainDisplay.style.marginTop = '0';
             console.log('Navigation opened!');
         });
         // Close the sliding navigation
         closeBtn.addEventListener('click', () => {
             nav.classList.remove('show');
-            d.style.marginTop = '15%';
-            mainDisplay.style.marginTop = '33%';
+            d.style.marginTop = '0';
+            mainDisplay.style.marginTop = '0';
             console.log('Navigation closed!');
         });
     } else {
@@ -46,6 +47,7 @@ window.addEventListener('resize', setupMobileNav);
 //js manipulation of assests
 function showAssests() {
     if(isTouchDevice()) {
+        topNav.style.display = 'none';
         nav.classList.remove('show');
         mobile_assests.style.position = 'fixed';
         mobile_assests.style.display = 'flex';
@@ -53,6 +55,7 @@ function showAssests() {
         mobile_assests.style.height = '50vh';
         mobile_assests.style.width = '100%';
         mobile_assests.style.transition = 'bottom 0.5s ease';
+        document.getElementById(nav);
     } else {
         console.log('no!');
     }
@@ -63,7 +66,8 @@ document.getElementById('closeasset').addEventListener('click', () => {
 function closeMobileAssests() {
     if(isTouchDevice()) {
         nav.classList.add('show');
+        topNav.style.display = 'flex';
         mobile_assests.style.display = 'none';
-
-    }
+    } else {
+        console.log('user expericing problems')
 }
