@@ -798,14 +798,14 @@ nav h4:hover {
         border-radius: 22px;
     }
     .buy-goods {
-        display: flex;
+       
         overflow-y: scroll;
         scrollbar-width: none;
         flex-direction: column;
         background-color: cadetblue;
     }
     .small-goods {
-        display: flex;
+        
         height: 55vh;
         flex-direction: column;
         overflow-y: scroll;
