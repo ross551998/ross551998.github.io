@@ -20,8 +20,6 @@ html, body {
     flex-direction: column;
     margin: 0;
     padding: 0;
-    
-    
 }
 #news {
     position: absolute;
@@ -591,7 +589,7 @@ nav h4:hover {
 .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
-@media screen and (max-width: 700px) and (min-width: 400px) {
+@media screen and (max-width: 896px) and (min-width: 400px) {
     html, body {
         width: 100%;
         touch-action: manipulation;/*prevent double tap-zoom*/
@@ -673,7 +671,6 @@ nav h4:hover {
         justify-content: center;
         align-content: center;
         align-items: center;
-        
     }
     #mainclicker {
         margin-top: 1%;
@@ -803,7 +800,7 @@ nav h4:hover {
         border-radius: 22px;
     }
     .buy-goods {
-       
+    
         overflow-y: scroll;
         scrollbar-width: none;
         flex-direction: column;
