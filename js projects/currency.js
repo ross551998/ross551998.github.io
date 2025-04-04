@@ -210,6 +210,7 @@ let pennytimes275;
 let pennytimes300;
 //nickel
 let autoNickelInterval;
+let nickelsUnlocked = false;
 let increaseNickels = document.getElementById('increasenickels');
 let nickelAuto = document.getElementById('nickelautocounter');
 let nickelAutoBody = document.getElementById('nickel-upgrades');
@@ -513,10 +514,10 @@ mainClickerUpgrade.first.addEventListener('click', function() {
             mainClickerUpgrade.first.style.display = 'none';
             console.log('working');
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with double main clicker');
@@ -529,10 +530,10 @@ mainClickerUpgrade.second.addEventListener('click', function() {
             totalCount = values.main *= 2;
             mainClickerUpgrade.second.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with second main clicker');
@@ -545,10 +546,10 @@ mainClickerUpgrade.third.addEventListener('click', function() {
             totalCount = values.main *= 2;
             mainClickerUpgrade.third.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with third main clicker');
@@ -556,15 +557,15 @@ mainClickerUpgrade.third.addEventListener('click', function() {
 })
 mainClickerUpgrade.fourth.addEventListener('click', function() {
     try { 
-        if(totalCount >= 135.00) {
-            totalCount -= 135.00;
-            totalCount = values.main *= 3;
+        if(totalCount >= 0.00) {
+            totalCount -= 0.00;
+            totalCount = values.main = parseFloat((values.main * 3).toFixed(2));
             mainClickerUpgrade.fourth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with fourth main clicker');
@@ -574,13 +575,13 @@ mainClickerUpgrade.fifth.addEventListener('click', function() {
     try {
         if(totalCount >= 360.00) {
             totalCount -= 360.00;
-            totalCount = values.main *= 2;
+            totalCount = values.main = parseFloat((values.main * 2).toFixed(2));
             mainClickerUpgrade.fourth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with fifth main clicker');
@@ -593,10 +594,10 @@ mainClickerUpgrade.sixth.addEventListener('click', function() {
             totalCount = values.main = 2.00;
             mainClickerUpgrade.sixth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with sixth main clicker');
@@ -609,10 +610,10 @@ mainClickerUpgrade.seventh.addEventListener('click', function() {
             totalCount = values.main = 5.00;
             mainClickerUpgrade.seventh.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with sixth main clicker');
@@ -625,10 +626,10 @@ mainClickerUpgrade.eighth.addEventListener('click', function() {
             totalCount = values.main = 10.00;
             mainClickerUpgrade.eighth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with sixth main clicker');
@@ -638,13 +639,13 @@ mainClickerUpgrade.nighth.addEventListener('click', function() {
     try {
         if(totalCount >= 12000.00) {
             totalCount -= 12000.00;
-            totalCount = values.main = 5.00;
+            totalCount = values.main = 25.00;
             mainClickerUpgrade.nighth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with sixth main clicker');
@@ -657,10 +658,10 @@ mainClickerUpgrade.tenth.addEventListener('click', function() {
             totalCount = values.main = 50.00;
             mainClickerUpgrade.tenth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('error with sixth main clicker');
@@ -681,10 +682,10 @@ pennyClickerUpgrade.pennyFirst.addEventListener('click', function() {
             newsList.style.animation = 'slideInOut 3s';
             newsList.textContent = "you've doubled pennys per second!";
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('first double penny not working');
@@ -701,10 +702,10 @@ pennyClickerUpgrade.pennySecond.addEventListener('click', function() {
             pennyClickerUpgrade.pennySecond.style.display = 'none';
             console.log('double second penny working'); 
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('second double penny not working');
@@ -721,10 +722,10 @@ pennyClickerUpgrade.pennyThird.addEventListener('click', function() {
             pennyClickerUpgrade.pennyThird.style.display = 'none';
             console.log('double second penny working'); 
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('third triple penny not working');
@@ -737,11 +738,10 @@ pennyClickerUpgrade.pennyFourth.addEventListener('click', function() {
             console.log('double click amount');
             pennyClickerUpgrade.pennyFourth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
-            console.log('need more money');
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('working on doubling penny per second');
@@ -754,11 +754,10 @@ pennyClickerUpgrade.pennyFifth.addEventListener('click', function() {
             console.log('double click amount');
             pennyClickerUpgrade.pennyFifth.style.display = 'none';
         } else {
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
-            console.log('need more money');
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } catch(error) {
         console.error('working on doubling penny per second');
@@ -778,10 +777,10 @@ nickeClickerUpgrade.nickelThird.addEventListener('click',function() {
             newsList.style.animation = 'slideInOut 3s';
             newsList.textContent = "you've doubled nickels per second";
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000); 
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!'; 
         }
     } catch(error)  {
         console.error('first double nickle not working');
@@ -801,10 +800,10 @@ dimeClickerUpgrade.dimeThird.addEventListener('click', function() {
             newsList.style.animation = 'slideInOut 3s';
             newsList.textContent = "you've double dime per click";
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000); 
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!'; 
         }
     } catch(error) {
         console.error('error with third dime');
@@ -858,6 +857,14 @@ function autoCent() {
     }
 }
 function autoNickel() {
+    autoNickelCallCount++;
+    if(!nickelsUnlocked) {
+        console.log('nickels not unlocked yet');
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = 'unlock nickels first!';
+    }
     if(totalCount >= 1.00) {//change to 4.00 when ready
         totalCount = totalCount - 1.00; //change to 4.00 when ready
         if(!autoNickelInterval) {
@@ -880,10 +887,10 @@ function autoNickel() {
             newsContext.textContent = 'automating nickels!';
         }
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoDime() {
@@ -905,10 +912,10 @@ function autoDime() {
             console.log('auto dime started');
         }
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoQuater() {
@@ -934,10 +941,10 @@ function autoQuater() {
             newsContext.textContent = 'increased production for quaters!';
         }
     } else  {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoHD() {
@@ -959,10 +966,10 @@ function autoHD() {
             console.log('auto half dollar started');
         }
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoDollar() {
@@ -984,10 +991,10 @@ function autoDollar() {
             console.log('auto dollar started');
         }
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoFiveDollar() {
@@ -1009,10 +1016,10 @@ function autoFiveDollar() {
             console.log('auto five dollar');
         }
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoTenDollar() {
@@ -1033,11 +1040,10 @@ function autoTenDollar() {
             upDateTotalPerSec();
             console.log('auto ten dollar');
         } else {
-            console.log('not working');
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     }
 }
@@ -1059,11 +1065,10 @@ function autoTwentyDollar() {
             upDateTotalPerSec();
             console.log('auto twenty dollar');
         } else {
-            console.log('auto twenty not working');
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     }
 }
@@ -1085,11 +1090,10 @@ function autoFiftyDollar() {
             upDateTotalPerSec();
             console.log('auto fifty dollar');
         } else {
-            console.log('auto fifty not working');
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     } 
 }
@@ -1111,11 +1115,10 @@ function autoHundredDollar() {
             upDateTotalPerSec();
             console.log('auto hundred dollar');
         } else {
-            console.log('auto hundred dollar not working');
-            noMoneyDisplay.textContent = 'need more money';
-            setTimeout(() => {
-                noMoneyDisplay.textContent = '';
-            }, 1000);
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s'
+            newsContext.textContent = 'need more money!';
         }
     }
 }
@@ -1126,6 +1129,7 @@ function nickelsUnlock() {
     let n = document.getElementById('nickels');
     if((n.style.display === 'none' || n.style.display) === '' && totalCount >= 0.50) {// change later to higher number
         console.log('unlocking nickels...');
+        nickelsUnlocked = true;
         n.style.display = 'flex';
         dUnlock.style.display = 'flex';
         totalCount -= 0.50;
@@ -1348,7 +1352,7 @@ function mainClicker() {
         newsContext.innerText = clickerNews[1];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.second.style.display = 'flex';
-        
+        smallGoods.sgFourth.style.display = 'flex';
     }
     if(mainClickerCount === 200) {
         newsContext.style.animation = 'none';
@@ -1492,7 +1496,6 @@ function increaseCent() {// this is done for now, ready for new version
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennyFifth.style.display = 'flex';
     }
-
 }
 //nickel counter
 function nickels() {
@@ -1541,6 +1544,7 @@ function increaseNickel() { // ready for new version
         newsContext.innerText = nickelNews[1];
         index = (index + 1) % nickelNews.length;
         nickeClickerUpgrade.nickelSecond.style.display = 'flex';
+        smallGoods.sgSecond.style.display = 'flex'
     }
     if(autoNickelCallCount === 50) {
         newsContext.style.animation = 'none';
