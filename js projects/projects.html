@@ -18,10 +18,10 @@
             <div class="mobile-nav" id="mobile-nav">
                 <button id="mobile-close-nav">Close</button>
                 <h4 id="mobile-assests">Assets</h4>
+                <h4 id="mobile-gamecontent">Currency</h4>
+                <h4 id="mobile-upgrades">Upgrades</h4>
                 <h4 id="mobile-Awards">Awards</h4>
                 <h4 id="mobile-news">News</h4>
-                <h4 id="mobile-upgrades">Upgrades</h4>
-                <h4 id="mobile-gamecontent">Currency</h4>
             </div>
             <h4 id="top-assests">Asests</h4>
             <h4 id="top-awards">Awards</h4>
@@ -33,6 +33,7 @@
         <main>
             <div class="idlegame-head">
                 <div class="upgrade-title" id="upgrade-title">
+                    <button type="button" id="mobile-upgrades-only">Close</button>
                     <h2 id="upgradetitle">Unlock the upgrades for $0.05</h2>
                     <button type="button" id="upgrade-unlockbuttn" onclick="unlock()">Upgrades</button>
                     <div class="upgrades" id="upgrades">
@@ -296,43 +297,43 @@
                     <div class="opencurrency">
                         <div class="nickelsunlock" id="nickelsunlock">
                             <h2>Unlock Nickels at 0.50¢</h2>
-                            <button type="button" onclick="nickelsUnlock()" >Next icon</button>
+                            <button type="button" id="nextButton" onclick="nickelsUnlock()" >Next icon</button>
                         </div>
                         <div class="dimesunlock" id="dimesunlock">
                             <h3>Unlock Dimes at $5.00</h3>
-                            <button type="button" onclick="dimesUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="dimesUnlock()">Next icon</button>
                         </div>
                         <div class="quaterunlock" id="quaterunlock">
                             <h3>Unlock Quaters at $ 30.00</h3>
-                            <button type="button" onclick="quaterUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="quaterUnlock()">Next icon</button>
                         </div>
                         <div class="half-dollarunlock" id="half-dollarunlock">
                             <h3>Unlock Half-Dollars at $ 75.00</h3>
-                            <button type="button" onclick="halfDollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="halfDollarUnlock()">Next icon</button>
                         </div>
                         <div class="dollarunlock" id="dollarunlock">
                             <h3>Unlock Dollars at $ 215.00</h3>
-                            <button type="button" onclick="dollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="dollarUnlock()">Next icon</button>
                         </div>
                         <div class="fivedollarunlock" id="fivedollarunlock">
                             <h3>Unlock Five Dollars at $ 510.00</h3>
-                            <button type="button" onclick="fiveDollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="fiveDollarUnlock()">Next icon</button>
                         </div>
                         <div class="tendollarunlock" id="tendollarunlock">
                             <h3>Unlock Ten Dollars at $ 2,100.00</h3>
-                            <button type="button" onclick="tenDollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="tenDollarUnlock()">Next icon</button>
                         </div>
                         <div class="twentydollarunlock" id="twentydollarunlock">
                             <h3>Unlock Twenty Dollars at $ 6,000.00</h3>
-                            <button type="button" onclick="twentyDollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="twentyDollarUnlock()">Next icon</button>
                         </div>
                         <div class="fiftydollarunlock" id="fiftydollarunlock">
                             <h3>Unlock Fifty Dollar at $ 20,000.00</h3>
-                            <button type="button" onclick="fiftyDollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="fiftyDollarUnlock()">Next icon</button>
                         </div>
                         <div class="hundreddollarunlock" id="hundreddollarunlock">
                             <h3>Unlock hundred dollar at $ 50,000.00</h3>
-                            <button type="button" onclick="hundredDollarUnlock()">Next icon</button>
+                            <button type="button" id="nextButton" onclick="hundredDollarUnlock()">Next icon</button>
                         </div>
                     </div>
                 </div>
@@ -380,7 +381,6 @@
                         <i class="fa-solid fa-gem"></i>
                         <i class="fa-solid fa-building-columns"></i>
                         <i class="fa-solid fa-earth-asia"></i>
-                        
                         <i class="fa-solid fa-house"></i>
                         <i class="fa-solid fa-landmark" id="1000000-per-sec-upgrade"></i>
                         <button type="button" id="closeawards">Close awards</button>
@@ -457,6 +457,7 @@
                     </div>
                 </div>
                 <div class="gameContent" id="gamecontent">
+                    <button type="button" id="mobile-use-only">Close</button>
                     <div class="pennys" onclick="cents()" id="pennys">
                         <h1>Pennys</h1>
                         <div class="photo" id="photo">
@@ -608,7 +609,6 @@
         <Script src="close.js"></Script><!--for opening next level-->
         <script src="currency.js" defer></script><!--for handling the data-->
         <script src="upgrades.js"></script>
-        
         <script>// come back later
         /*
             function createGoldBar() {
