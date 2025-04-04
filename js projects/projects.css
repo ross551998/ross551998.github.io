@@ -176,6 +176,7 @@ nav h4:hover {
 }
 #mobile-upgrades-only {
     display: none;
+}
 .upgrades {
     display: flex;
     flex-direction: column;
@@ -464,6 +465,7 @@ nav h4:hover {
 }
 #mobile-use-only {
     display: none;
+}
 /*image for background */
 .pennys {
     font-family: 'Times New Roman', Times, serif;
