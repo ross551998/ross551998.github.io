@@ -586,11 +586,11 @@ nav h4:hover {
 .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
-@media only screen and (max-width: 700px) {
+@media screen and (max-width: 700px) and (min-width: 400px) {
     html, body {
         width: 100%;
-        touch-action: manipulation;
-        
+        touch-action: manipulation;/*prevent double tap-zoom*/
+        scroll-behavior: smooth;
     }
     #bar-for-mobile {
         display: flex;
@@ -601,6 +601,12 @@ nav h4:hover {
         scale: 1.4;
         cursor: pointer;
         color: #50C878;
+    }
+    #news {
+        position: absolute;
+        top: 0;
+        font-size: 1.2rem;
+        color: yellow;
     }
     nav {
         display: flex;
@@ -665,7 +671,8 @@ nav h4:hover {
         
     }
     #mainclicker {
-        margin-top: 8%;
+        margin-top: 1%;
+        margin-right: 12%;
         width: 360px;
         height: 360px;
     }
@@ -675,12 +682,12 @@ nav h4:hover {
     }
     .displayword {
         width: 620px;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         display: flex;
-        gap: 4%;
+       
     }
     .displayword h1 {
         display: flex;
@@ -688,8 +695,9 @@ nav h4:hover {
         flex-direction: row;
     }
     /*display or nav area for all the features*/
-    .assets {
+    .assest {
         display: none;
+        
         flex-direction: column-reverse;
         gap: 5%;
         font-size: 50px;
@@ -707,9 +715,107 @@ nav h4:hover {
     .upgrade-title {
         display: none;
         width: 95%;
+        font-size: 1rem;
         border-radius: 12px;
+        overflow-y: scroll;
+        justify-content: center;
+        align-content: center;
+        border-bottom-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+        text-align: center;
+        color:  green;
+        text-shadow: #50C878 1px 1px 1px;
+        scrollbar-width: none;
+        background: none;
+        background-color: darkslategray;
+    }
+    #upgrade-unlockbuttn {
+        background-color: white;
+        box-shadow: none;
+    }
+    #nextButton {
+        margin-bottom: 8%;
+        font-size: 1.2rem;
+        height: 40px;
+        border-radius: 22px;
     }
     .gameContent {
         display: none;
+        overflow-y: scroll;
+        scrollbar-width: none;
     }
+    #mobile-use-only {
+        display: flex;
+        margin-top: 6%;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        border-radius: 26px;
+        width: 80%;
+        height: 40px;
+        
+    }
+    #mobile-upgrades-only {
+        display: flex;
+        width: 70%;
+        height: 35px;
+        margin-top: 6%;
+        border-radius: 24px;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        font-size: 1rem;
+    }
+    .personal-vault {
+        gap: 3%;
+    }
+    #withdraw {
+        font-size: 1em;
+    }
+    #deposit {
+        font-size: 1em;
+    }
+    #bankamount {
+        font-size: 1em;
+    }
+    #transfermoney {
+        font-size: 1em;
+    }
+    #closevault {
+        font-size: 1em;
+    }
+    .awards {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 3fr));
+        gap: 10px;
+        margin-top: -2%;
+        padding: 5px;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+    #closeawards {
+        height: 50px;
+        font-size: 1.4rem;
+        border-radius: 22px;
+    }
+    .buy-goods {
+        display: flex;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        flex-direction: column;
+        background-color: cadetblue;
+    }
+    .small-goods {
+        display: flex;
+        height: 55vh;
+        flex-direction: column;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        font-size: 1rem;
+    }
+    .first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
 }
