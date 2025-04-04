@@ -110,7 +110,7 @@ function showAssests() {
 }
 function closeMobileAssests() {
     if(isTouchDevice()) {
-        
+        nav.classList.add('show');
         topNav.style.display = 'flex';
         mobile_assests.style.display = 'none';
     } else {
