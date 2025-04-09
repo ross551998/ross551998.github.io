@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>javascript projects</title>
+        <meta name="description" content="A brief description of your page content">
+        <link rel="icon" href="/photos/favicon R and S.png" type="image/x-icon">
+        <link rel="stylesheet" href="projects.css">
+        <link rel="stylesheet" href="photos.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans">
+        <script src="https://kit.fontawesome.com/c15646e1a5.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav id="navigation">
+            <i class="fa-solid fa-bars" id="bar-for-mobile"></i>
+            <div class="mobile-nav" id="mobile-nav">
+                <button id="mobile-close-nav">Close</button>
+                <h4 id="mobile-assests">Assets</h4>
+                <h4 id="mobile-gamecontent">Currency</h4>
+                <h4 id="mobile-upgrades">Upgrades</h4>
+                <h4 id="mobile-Awards">Awards</h4>
+                <h4 id="mobile-news">News</h4>
+            </div>
+            <h4 id="top-assests">Asests</h4>
+            <h4 id="top-awards">Awards</h4>
+            <h4 id="top-news">News</h4>
+            <h1>Road to riches!</h1>
+            <h4 id="account" >create a account</h4>
+            <div class="money-container" id="money-container"></div>
+        </nav>
+        <main>
+            <div class="idlegame-head">
+                <div class="upgrade-title" id="upgrade-title">
+                    <button type="button" id="mobile-upgrades-only">Close</button>
+                    <h2 id="upgradetitle">Unlock the upgrades for $0.05</h2>
+                    <button type="button" id="upgrade-unlockbuttn" onclick="unlock()">Upgrades</button>
+                    <div class="upgrades" id="upgrades">
+                        <div class="cent-upgrades" id="cent-upgrades">
+                            <div id="centautocounter">
+                                <label for="centcounter">Cost: Free</label>
+                                <button type="button" onclick="autoCent()">Auto Cent</button>
+                            </div>
+                        </div>
+                        <div class="nickel-upgrades" id="nickel-upgrades">
+                            <div id="nickelautocounter">
+                                <label for="nickelcounter">cost: $1.00</label>
+                                <button type="button" onclick="autoNickel()">Auto Nickel </button>
+                            </div>
+                            <div class="double-nickel">
+                                <label for="doublenickel">cost: $24.75</label>
+                                <button type="button" onclick="firstDN()">double nickel amount</button>
+                            </div>
+                        </div>
+                        <div class="dime-upgrades" id="dime-upgrades">
+                            <div id="dimeautocounter">
+                                <label for="dimecounter">Cost: $ 8.00</label>
+                                <button type="button" onclick="autoDime()">Auto Dime </button>
+                            </div>
+                            <div class="double-dime">
+                                <label for="doubledime">cost: $37.00</label>
+                                <button type="button" onclick="firstDD()">double dime amount</button>
+                            </div>
+                        </div>
+                        <div class="quater-upgrades" id="quater-upgrades">
+                            <div id="quaterautocounter">
+                                <label for="quatercounter">cost: $ 75.00</label>
+                                <button type="button" onclick="autoQuater()">auto quater counter</button>
+                            </div>
+                            <div class="double-quater">
+                                <label for="doublequater">cost: $ 110.00</label>
+                                <button type="button" onclick="firstQD()">double quater amount</button>
+                            </div>
+                        </div>
+                        <div class="hd-upgrades" id="hd-upgrades">
+                            <div id="hdautocounter">
+                                <label for="hdcounter">cost: $ 160.00</label>
+                                <button type="button" onclick="autoHD()">auto half dollar</button>
+                            </div>
+                            <div class="double-hd">
+                                <label for="doublehd">cost: $ 205.00</label>
+                                <button type="button" onclick="firstDHD()">double half dollar</button>
+                            </div>
+                        </div>
+                        <div class="dollar-upgrades" id="dollar-upgrades">
+                            <div id="dollarautocounter">
+                                <label for="dollarcounter">cost: $ 225.00</label>
+                                <button type="button" onclick="autoDollar()">auto dollar</button>
+                            </div>
+                            <div class="double-dollar">
+                                <label for="doubledollar">cost: $ 295.00</label>
+                                <button type="button" onclick="firstDD()">double dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="fivedollar-upgrades" id="fivedollar-upgrades">
+                            <div id="fivedollarautocounter">
+                                <label for="fivedollarcounter">cost: $ 350.00</label>
+                                <button type="button" onclick="autoFiveDollar()">auto five dollar</button>
+                            </div>
+                            <div class="double-fivedollar">
+                                <label for="doublefivedollar">cost: $ 400.00</label>
+                                <button type="button" onclick="firstDFD()">double five dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="tendollar-upgrades" id="tendollar-upgrades">
+                            <div id="tendollarautocounter">
+                                <label for="tendollarcounter">cost: $ 500.00</label>
+                                <button type="button" onclick="autoTenDollar()">auto ten dollar</button>
+                            </div>
+                            <div class="double-tendollar">
+                                <label for="doubletendollar">cost: $ 600.00</label>
+                                <button type="button" onclick="firstDTD()">double ten dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="twentydollar-upgrades" id="twentydollar-upgrades">
+                            <div id="twentydollarautocounter">
+                                <label for="twentydollarcounter">cost: $ 700.00</label>
+                                <button type="button" onclick="autoTwentyDollar()">auto twenty dollar</button>
+                            </div>
+                            <div class="double-twentydollar">
+                                <label for="doubletwentydollar">cost: $ 800.00</label>
+                                <button type="button" onclick="firstD20D()">double twenty dollar amount</button>
+                            </div>
+                        </div>
+                        <div class="fiftyDollar-upgrades" id="fiftyDollar-upgrades">
+                            <div id="fiftydollarautocounter">
+                                <label for="fiftydollarcounter">cost: $ 1,000</label>
+                                <button type="button" onclick="autoFiftyDollar()">auto fifty dollar</button>
+                            </div>
+                            <!--double fifty amount-->
+                        </div>
+                        <div class="hundreddollar-upgrades" id="hundreddollar-upgrades">
+                            <div id="hundreddollarautocounter">
+                                <label for="hundreddollarcounter">cost: $1,200</label>
+                                <button type="button" onclick="autoHundredDollar()">auto hundred dollar</button>
+                            </div>
+                            <!--double hundred amount-->
+                        </div>
+                        <div class="extra-upgrades">
+                            <div class="main-clicker-upgrades">
+                                <div class="first" id="mainFirst">
+                                    <label for="firstmain">cost: $ 5.00</label>
+                                    <button type="button">main clicker $ 0.05</button>
+                                </div>
+                                <div class="second" id="mainSecond">
+                                    <label for="firstmain">cost: $ 15.00</label>
+                                    <button type="button">double main clicker</button>
+                                </div>
+                                <div class="third" id="mainThird">
+                                    <label for="firstmain">cost: $ 90.00</label>
+                                    <button type="button">double main clicker</button>
+                                </div>
+                                <div class="fourth" id="mainForth">
+                                    <label for="firstmain">cost: $ 135.00</label>
+                                    <button type="button">triple main clicker</button>
+                                </div>
+                                <div class="fifth" id="mainFifth">
+                                    <label for="firstmain">cost: $ 360.00</label>
+                                    <button type="button">double main clicker</button>
+                                </div>
+                                <div class="sixth" id="mainSixth">
+                                    <label for="firstmain">cost: $ 740.00</label>
+                                    <button type="button">main clicker at $ 2.00</button>
+                                </div>
+                                <div class="seventh" id="mainSeventh">
+                                    <label for="firstmain">cost: $ 1,250.00</label>
+                                    <button type="button">main clicker at $ 5.00</button>
+                                </div>
+                                <div class="eigth" id="maineigth">
+                                    <label for="firstmain">cost: $ 3,000</label>
+                                    <button type="button">main clicker at $ 10.00</button>
+                                </div>
+                                <div class="nigth" id="mainnigth">
+                                    <label for="firstmain">cost: $12,000</label>
+                                    <button type="button">main clicker at $ 25.00</button>
+                                </div>
+                                <div class="tenth" id="maintenth">
+                                    <label for="firstmain">cost: $ 23,000</label>
+                                    <button type="button">main clicker at $ 50.00</button>
+                                </div>
+
+                                
+                            </div>
+                            <div class="penny-clicker-upgrades">
+                                <div class="first" id="pennyFirst">
+                                    <label for="firstPenny">cost: $ 25.00</label>
+                                    <button type="button">increase pennys by 100%</button>
+                                </div>
+                                <div class="second" id="pennySecond">
+                                    <label for="secondPenny">cost: $ 115.00</label>
+                                    <button type="button">increase pennys by 100%</button>
+                                </div>
+                                <div class="third" id="pennyThird">
+                                    <label for="thirdPenny">cost: $ 250.00</label>
+                                    <button type="button">increase pennys by 150%</button>
+                                </div>
+                                <div class="fourth" id="pennyFourth">
+                                    <label for="fourthPenny">cost: $ 625.00</label>
+                                    <button type="button">double penny click upgrade</button>
+                                </div>
+                                <div class="fifth" id="pennyfifth">
+                                    <label for="fifthPenny">cost: $890.00</label>
+                                    <button type="button">increase penny by 100%</button>
+                                </div>
+                            </div>
+                            <div class="nickel-clicker-upgrades">
+                                <div class="first" id="nickelFirst">
+                                    <label for="firstNickel">Cost: $ 35.00</label>
+                                    <button type="button">increase nickels by 100%</button>
+                                </div>
+                                <div class="second" id="nickelSecond">
+                                    <label for="firstNickel">Cost: $ 165.00</label>
+                                    <button type="button">increase nickels by 100%</button>
+                                </div>
+                                <div class="third" id="nickelThird">
+                                    <label for="firstNickel">Cost: $ 370.00</label>
+                                    <button type="button">double nickel click upgrade</button>
+                                </div>
+                                <div class="fourth" id="nickelFourth">
+                                    <label for="firstNickel">Cost: $ 815.00</label>
+                                    <button type="button">increase nickels by 150%</button>
+                                </div>
+                                <div class="fifth" id="nickelFifth">
+                                    <label for="firstNickel">Cost: $ 1080.00</label>
+                                    <button type="button">increase nickels by 100%</button>
+                                </div>
+                            </div>
+                            <div class="dime-clicker-upgrades">
+                                <div class="first" id="dimeFirst">
+                                    <label for="firstDime">Cost: $ 56.00</label>
+                                    <button type="button">increase nickels by 100%</button>
+                                </div>
+                                <div class="second" id="dimeSecond">
+                                    <label for="firstDime">Cost: $ 198.00</label>
+                                    <button type="button">increase nickels by 100%</button>
+                                </div>
+                                <div class="third" id="dimeThird">
+                                    <label for="firstDime">Cost: $ 482.00</label>
+                                    <button type="button">double nickel click upgrade</button>
+                                </div>
+                                <div class="fourth" id="dimeFourth">
+                                    <label for="firstDime">Cost: $ 964.00</label>
+                                    <button type="button">increase nickels by 150%</button>
+                                </div>
+                                <div class="fifth" id="dimeFifth">
+                                    <label for="firstDime">Cost: $ 1124.00</label>
+                                    <button type="button">increase nickels by 100%</button>
+                                </div>
+                            </div>
+                            <div class="quater-clicker-upgrades">
+                                <div class="first" id="quaterFirst">
+                                    <label for="firstQuater">cost: $ 82.00</label>
+                                    <button type="button">increase quaters by 100%</button>
+                                </div>
+                                <div class="second" id="quaterSecond">
+                                    <label for="firstQuater">cost: $ 240.00</label>
+                                    <button type="button">increase quaters by 100%</button>
+                                </div>
+                                <div class="third" id="quaterThird">
+                                    <label for="firstQuater">cost: $ 623.00</label>
+                                    <button type="button">double quater click upgrade</button>
+                                </div>
+                                <div class="fourth" id="quaterFourth">
+                                    <label for="firstQuater">cost: $ 1040.00</label>
+                                    <button type="button">increase quaters by 150%</button>
+                                </div>
+                                <div class="fifth" id="quaterFifth">
+                                    <label for="firstQuater">cost: $ 1260.00</label>
+                                    <button type="button">increase quaters by 100%</button>
+                                </div>
+                            </div> 
+                            <div class="hd-clicker-upgrade">
+                                <div class="first" id="hdFirst">
+                                    <label for="firsthd">Cost: $160.00</label>
+                                    <button type="button">increasee half dollar by 100%</button>
+                                </div>
+                                <div class="second" id="hdSecond">
+                                    <label for="firsthd">Cost: $430.00</label>
+                                    <button type="button">increasee half dollar by 150%</button>
+                                </div>
+                                <div class="third" id="hdThird">
+                                    <label for="firsthd">Cost: $1,098.00</label>
+                                    <button type="button">double clicker value</button>
+                                </div>
+                                <div class="fourth" id="hdFourth">
+                                    <label for="firsthd">Cost: $1,290.00</label>
+                                    <button type="button">increasee half dollar by 100%</button>
+                                </div>
+                                <div class="fifth" id="hdFifth">
+                                    <label for="firsthd">Cost: $1,452.00</label>
+                                    <button type="button">increasee half dollar by 150%</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="opencurrency">
+                        <div class="nickelsunlock" id="nickelsunlock">
+                            <h2>Unlock Nickels at 0.50¢</h2>
+                            <button type="button" id="nextButton" onclick="nickelsUnlock()" >Next icon</button>
+                        </div>
+                        <div class="dimesunlock" id="dimesunlock">
+                            <h3>Unlock Dimes at $5.00</h3>
+                            <button type="button" id="nextButton" onclick="dimesUnlock()">Next icon</button>
+                        </div>
+                        <div class="quaterunlock" id="quaterunlock">
+                            <h3>Unlock Quaters at $ 30.00</h3>
+                            <button type="button" id="nextButton" onclick="quaterUnlock()">Next icon</button>
+                        </div>
+                        <div class="half-dollarunlock" id="half-dollarunlock">
+                            <h3>Unlock Half-Dollars at $ 75.00</h3>
+                            <button type="button" id="nextButton" onclick="halfDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="dollarunlock" id="dollarunlock">
+                            <h3>Unlock Dollars at $ 215.00</h3>
+                            <button type="button" id="nextButton" onclick="dollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="fivedollarunlock" id="fivedollarunlock">
+                            <h3>Unlock Five Dollars at $ 510.00</h3>
+                            <button type="button" id="nextButton" onclick="fiveDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="tendollarunlock" id="tendollarunlock">
+                            <h3>Unlock Ten Dollars at $ 2,100.00</h3>
+                            <button type="button" id="nextButton" onclick="tenDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="twentydollarunlock" id="twentydollarunlock">
+                            <h3>Unlock Twenty Dollars at $ 6,000.00</h3>
+                            <button type="button" id="nextButton" onclick="twentyDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="fiftydollarunlock" id="fiftydollarunlock">
+                            <h3>Unlock Fifty Dollar at $ 20,000.00</h3>
+                            <button type="button" id="nextButton" onclick="fiftyDollarUnlock()">Next icon</button>
+                        </div>
+                        <div class="hundreddollarunlock" id="hundreddollarunlock">
+                            <h3>Unlock hundred dollar at $ 50,000.00</h3>
+                            <button type="button" id="nextButton" onclick="hundredDollarUnlock()">Next icon</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="display" id="wholedisplay">
+                    <div class="photo" id="mainclicker">
+                        <span class="pop-up" id="mcamount"></span>
+                        <img src="photos/coin.png" onclick="mainClicker()">
+                    </div>
+                    <div class="displayword">
+                        <h1 id="display">$ 0.00</h1>
+                        <h3 id="per-sec"> $ 0.00 per second</h3>
+                        
+                    </div>
+                    <div class="assest" id="assests">
+                        <button type="button" id="closeasset">Close Assets</button>
+                        <p>These are your assests.<br> click to open!</p>
+                        <button type="button" id="vault">Open Vault</button>
+                        <button type="button" id="markets">Open markets</button>
+                        <button type="button" id="goods">Buy goods</button>
+                    </div>
+                    <div class="personal-vault" id="personal-vault">
+                        <h2>welcome to your personal vault!</h2>
+                        <p>where you can deposit, transfer, or save money to spend later</p>
+                        <button type="button" id="withdraw">withdraw Money</button>
+                        <button type="button" id="deposit">deposit money</button>
+                        <button type="button" id="bankamount">see bank account amount</button>
+                        <button type="button" id="transfermoney">transfer money</button>
+                        <button type="button" id="closevault">close vault</button>
+                    </div>
+                    <div class="awards" id="awards">
+                        <P>Claim the awards for cash prizes</P>
+                        <i class="fa-solid fa-money-bill" id="one-dollar-award"></i>
+                        <i class="fa-solid fa-coins" id="100-penny-award"></i>
+                        <i class="fa-solid fa-web-awesome" id="1,000-mainclick-award"></i>
+                        <i class="fa-solid fa-vault" id="100,000-bank-award"></i>
+                        <i class="fa-solid fa-oil-well" id="10,000-per-sec-upgrade"></i>
+                        <i class="fa-solid fa-plane" id="10,000,000-bank-award"></i>
+                        <i class="fa-solid fa-arrow-trend-up" id="500-per-sec-upgrade"></i>
+                        <i class="fa-solid fa-industry"></i>
+                        <i class="fa-solid fa-gift"></i>
+                        <i class="fa-solid fa-handshake"></i>
+                        <i class="fa-solid fa-key"></i>
+                        <i class="fa-solid fa-plane-up"></i>
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                        <i class="fa-solid fa-gem"></i>
+                        <i class="fa-solid fa-building-columns"></i>
+                        <i class="fa-solid fa-earth-asia"></i>
+                        <i class="fa-solid fa-house"></i>
+                        <i class="fa-solid fa-landmark" id="1000000-per-sec-upgrade"></i>
+                        <button type="button" id="closeawards">Close awards</button>
+                    </div>
+                    <div class="buy-goods" id="buy-goods">
+                        <div class="small-goods" id="small-goods">
+                            <h2>small size goods</h2>
+                            <div class="first-sg" id="sg-first">
+                                <h1>Piggy Bank</h1>
+                                <p>double all coin value</p>
+                                <label for="piggy-bank">Cost: $ 110.00</label>
+                                <button type="button">open piggy bank</button>
+                            </div>
+                            <div class="second-sg" id="sg-second">
+                                <h1>Coin Jar</h1>
+                                <p>triple click value</p>
+                                <label for="coin-jar">Cost: $ 68.00</label>
+                                <button type="button">click to activate</button>
+                            </div>
+                            <div class="third-sg" id="sg-third">
+                                <h1>Yard Sale</h1>
+                                <p>small cash burst</p>
+                                <label for="yard-sale">Cost: $115.00</label>
+                                <button type="button">click to activate</button>
+                            </div>
+                            <div class="fourth-sg" id="sg-fourth">
+                                <h1>small cash drone</h1>
+                                <p>adds small coin value</p>
+                                <label for="cashe-drone">Cost: $ 97.00</label>
+                                <button type="button">click to activate</button>
+                            </div>
+                            <div class="fifth-sg" id="sg-fifth">
+                                <h1>Car Wash</h1>
+                                <p>dispenses small cash burst</p>
+                                <label for="car-wash">Cost: $ 132.00</label>
+                                <button type="button">click to activate</button>
+                            </div>
+                            <br>
+                            <div class="medium-goods" id="medium-goods">
+                                <h2>medium size goods</h2>
+                                <div class="first-mg" id="mg-first">
+                                    <h1>Bitcoin Mine</h1>
+                                    <p>mid-size cash burst</p>
+                                    <label for="bitcoin-mine">Cost: $ 250.00</label>
+                                    <button type="button">Click  to activate</button>
+                                </div>
+                                <div class="second-mg" id="mg-second">
+                                    <h1>Subriction bussiness</h1>
+                                    <p>triple all money values</p>
+                                    <label for="subriction">Cost: $ 420.00</label>
+                                    <button type="button">click to activate</button>
+                                </div>
+                                <div class="third-mg" id="mg-third">
+                                    <h1>Mint Press</h1>
+                                    <p>main clicker at $12.00</p>
+                                    <label for="main-clicker">Cost: $500.00</label>
+                                    <button type="button">click to activate</button>
+                                </div>
+                                <div class="fourth-mg" id="mg-fourth">
+                                    <h1>E-commernce website</h1>
+                                    <p>double $1.00, $5.00, $10.00 value</p>
+                                    <label for="ecomerece">Cost: $ 380.00</label>
+                                    <button type="button">click to activate</button>
+                                </div>
+                                <div class="fifth-mg" id="mg-fifth">
+                                    <h1>Gem Detector</h1>
+                                    <p>medium size cash burst</p>
+                                    <label for="gem">Cost: $ 620.00</label>
+                                    <button type="button">click to activate</button>
+                                </div>
+                            </div>
+                            <button id="close-goods" type="button">close small-goods</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gameContent" id="gamecontent">
+                    <button type="button" id="mobile-use-only">Close</button>
+                    <div class="pennys" onclick="cents()" id="pennys">
+                        <h1>Pennys</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="centButton" id="centButton">
+                            <div class="increaseCents" id="increaseCents">
+                                <h4 id="centspersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increaseCentamount" onclick="increaseCent()"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nickels"  onclick="nickels()" id="nickels">
+                        <h1>nickels</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="nickelButton">
+                            <!--<button type="button" onclick="nickels()"></button>-->
+                            <div class="increasenickels" id="increasenickels">
+                                <h4 id="nickelspersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasenickelamount" onclick="increaseNickel()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dimes" onclick="dimes()" id="dimes">
+                        <h1>dimes</h1>
+                        <div class="photo" id="photo">
+
+                        </div>
+                        <div class="dimeButton" id="dimeButton">
+                            <div class="increasedimes" id="increasedimes">
+                                <h4 id="dimepersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasedimeamount" onclick="increasedime()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quaters" onclick="quaters()" id="quaters">
+                        <h1>quaters</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="quaterButton">
+                            <div class="increasequaters" id="increasequaters">
+                                <h4 id="quaterspersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasequateramount" onclick="increaseQuaters()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="half-dollar" onclick="halfDollars()" id="half-dollar">
+                        <h1>half-dollar</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="HDButton">
+                            <div class="increaseHDs" id="increaseHDs">
+                                <h4 id="HDpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increaseHDamount" onclick="increaseHd()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dollar" onclick="dollars()" id="dollar">
+                        <h1>Dollar</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="DollarButton">
+                            <div class="increasedollars" id="increasedollars">
+                                <h4 id="dollarpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasedollaramount" onclick="increaseDollar()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fivedollar" onclick="fiveDollars()" id="fivedollar">
+                        <h1>Five Dollar</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="fiveDollarButton">
+                            <div class="increasefivedollars" id="increasefivedollars">
+                                <h4 id="fivedollarpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasefivedollaramount" onclick="increasefiveDollar()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tendollar" onclick="tenDollars()" id="tendollar">
+                        <h1>Ten Dollar</h1>
+                        <div class="photo" id="photo">
+                        
+                        </div>
+                        <div class="tenDollarButton">
+                            <div class="increasetendollars" id="increasetendollars">
+                                <h4 id="tendollarpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasetendollaramount" onclick="increasetenDollar()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="twentydollar" onclick="twentyDollars()" id="twentydollar">
+                        <h1>twenty Dollar</h1>
+                        <div class="photo" id="photo">
+                            
+                        </div>
+                        <div class="twentyDollarButton">
+                            <div class="increasetwentydollars" id="increasetwentydollars">
+                                <h4 id="twentydollarpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasetwentydollaramount" onclick="increasetwentyDollar()">click here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fiftydollar" onclick="fiftyDollars()" id="fiftydollar">
+                        <h1>Fifty Dollar</h1>
+                        <div class="photo" id="photo">
+
+                        </div>
+                        <div class="fiftydollarbutton">
+                            <div class="increasefiftydollars" id="increasefiftydollars">
+                                <h4 id="fiftydollarpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasefiftydollaramount" onclick="increaseFiftyDollar()">Click Here</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hundreddollar" onclick="hundredDollars()" id="hundreddollar">
+                        <h1>Hundred Dollar</h1>
+                        <div class="photo" id="photo">
+
+                        </div>
+                        <div class="hundredDollarButton">
+                            <div class="increasehundreddollars" id="increasehundreddollars">
+                                <h4 id="hundreddollarpersec"></h4>
+                                <label>increase per second</label>
+                                <button type="button" id="increasehundreddollaramount" onclick="increaseHundredDollar()">Click Here</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="news"></h2>
+            </div>
+        </main>
+    </body>
+    <Script src="close.js"></Script><!--for opening next level-->
+    <script src="currency.js" defer></script><!--for handling the data-->
+    <script src="upgrades.js"></script>
+    <script src="awards.js"></script>
+    <script src="goods.js"></script>
+    <script src="saveprogress.js"></script>
+    <script src="mobile.js"></script>
+</html>

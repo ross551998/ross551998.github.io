@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Journey</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="/photos/favicon R and S.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <link rel="icon" href="photos/favicon R and S.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c15646e1a5.js" crossorigin="anonymous"></script>
+    <meta name="description" content="A brief description of your page content">
+    <!--bug of the js animations not working propely and the slide show is working properly-->
+  </head>
+    <body>
+      <div class="hidden" id="hidden">
+        <a href="#">Home Page</a>
+        <div class="accounts">
+          <a href="/portfillo/home page/accountpage/accountPage.html"">Create Account</a>
+          <a href="/portfillo/home page/sigin page/signin.html">Sign In</a>
+        </div>
+        <a href="js projects/projects.html">Javascript Projects</a>
+        <a href="#">Testing</a>
+      </div>
+      <div class="headerpage">
+        <div class="parralax">
+          <img class="firstphoto" src="/photos/forest line.jpg">
+        </div>
+        <div class="dropDown" id="dropDown">
+          <i class="fa-solid fa-grip-lines" onclick="menu()"></i>
+        </div>
+        <div class="header-content">
+          <h2>Welcome to my website</h2>
+          <h1 class="decrease">Scroll into the future</h1>
+          <h5 class="increase">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste inventore hic quam dolore omnis veniam modi deleniti rerum eligendi nesciunt nemo tenetur incidunt, asperiores maiores, voluptates unde beatae recusandae ullam!</h5>
+        </div>
+      </div>
+      <!--for the rest of the website-->
+      <main>
+        <div class="photos" id="photos">
+          <img src="/photos/mist forest slanted line.jpg" title="forest slanted line" >
+          <img src="/photos/snowy forest road.jpg" title="snow forest road">
+          <img src="/photos/forest circle.jpg" title="forest circle" class="lastphoto">
+        </div>
+        <section>
+          <div class="combine">
+            <h3 onclick="popAvator()">Creator Of This Website</h3>
+            <span id="popbox">
+              <div class="container" id="container">
+                <img src="/photos/old firebird.jpg">
+                <h1 style="color: black;">Ross Sims</h1>
+                <p>front-end Developer/engineer</p>
+                <button type="button">Contact</button>
+              </div>
+            </span>
+          </div>
+          <h1 onclick="description()">Click Here</h1>
+          <h3 onclick="location.href='#'">Weather App</h3>
+          <!--<div id="weatherapi-weather-widget-2"></div><script type='text/javascript' src='https://www.weatherapi.com/weather/widget.ashx?loc=4045234&wid=2&tu=2&div=weatherapi-weather-widget-2' async></script><noscript><a href="https://www.weatherapi.com/weather/q/kansas-city-4045234" alt="Hour by hour Kansas City weather">10 day hour by hour Kansas City weather</a></noscript>-->
+        </section>
+        <div class="section2">
+          <div class="projects">
+            <div class="box1">
+              <h1>front-end</h1>
+            </div>
+            <div class="box2">
+              <h1>javascript</h1>
+            </div>
+            <div class="box3">
+              <h1>react</h1>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </body>
+
+      <!--
+      <div class="cameradisplay">
+        <button type="button" id="startcamera">start camera</button>
+        <button type="button" id="stopcamera">stop camera</button>
+        <h3 id="totalcount"></h3>
+      </div>
+      <input type="file" id="fileupload">
+      <img id="uploadedimage" alt="your image will apear here">
+      <div class="container">
+        <video id="video" muted autoplay></video>
+        <canvas id="overlay"></canvas>
+      </div>-->
+    <script src="index2.js"></script>
+    <script src="specialaffects.js"></script>
+    <script src="pop.js"></script>
+</html>

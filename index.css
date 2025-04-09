@@ -1,0 +1,252 @@
+body {
+    color: whitesmoke;
+    font-family: HelveticaNowText, Helvetica, Arial, sans-serif;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+}
+/*welcome screen*/
+.headerpage {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.firstphoto {
+    height: 1200px;
+    width: 100%;
+    opacity: 0.8;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;/*increasee or decrease for smooth transitions*/
+    will-change: opacity;
+}
+.header-content {
+    width: 100%;
+    position: absolute;
+    top: 36%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+.header-content h1 {
+    font-size: 88px;
+    color: rgba(245, 245, 245,);
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;/*increasee or decrease for smooth transitions*/
+    will-change: opacity;
+}
+.header-content h2 {
+    color: #1abc9c;
+    font-size: 2em;
+  
+}
+.increase {
+    position: absolute;
+    right: 0;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 42px;
+    width: 500px;
+    margin-right: 5%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;/*increasee or decrease for smooth transitions*/
+    will-change: opacity;
+    word-wrap: break-word; 
+}
+    /*drop down menu */
+/*the box for the nav bar */
+.dropDown {
+    position: absolute;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: #16a085;
+    width: 150px;
+    top: 0%;
+    left: 42%;
+    height: 25px;
+    z-index: 10;
+    border-radius: 0 0 10px 10px;
+}
+.dropDown i:hover {
+    color: green;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    background-color: rgb(255, 255, 255, 0.3);
+    gap: 12%;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    font-size: 26px;
+    height: 98px;
+    opacity: 1;
+    z-index: 20;
+    transition: opacity 1s ease-in-out;
+}
+.dropDown:hover + .hidden {
+    display: flex;
+}
+.hidden a {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+}
+.hidden a:hover {
+    color: deepskyblue;
+    transition: ease-in-out 0.2s;
+}
+/*image gallery */
+.section1 {
+    width: 100%;
+}
+.photos {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    margin-top: 3%;
+    justify-content: space-between;
+    gap: 4%;
+    margin-left: 2%;
+}
+.photos img {
+    width: 650px;
+    height: 500px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+/*section below gallery */
+section {
+    margin-top: 5%;
+    color: rgb(95, 111, 14);
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    gap: 23%;
+    margin-right: 4%;
+    opacity: 0;
+    transition: transform 2s ease-out, opacity 2s ease-out;
+}
+section .visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+section h1:hover {
+    transition: ease-in-out 0.3s;
+    color: blue;
+    cursor: pointer;
+}
+section h3:hover {
+    transition: ease-in-out 0.3s;
+    color: blue;
+    cursor: pointer;
+}
+
+    /*pop up text */
+.container {
+    display: none;
+    z-index: 3;
+    width: 260px;/*adjust size when ready*/
+    height: 400px;
+    background-color: blue;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-left: 8%;
+}
+
+.container img {
+    width: 260px;/*adjust size when ready*/
+    height: 180px;
+}
+.container h1, p {
+    text-align: center;
+}
+.container button {
+    width: 100%;
+    height: 40px;
+    background-color: black;
+    color: whitesmoke;
+    border: black;
+}
+.container button:hover {
+    cursor: pointer;
+    color: blue;
+}
+@media screen and (max-width: 600px) {
+   .dropDown {
+        position: absolute;
+        background-color: rgb(255, 255, 255, 0.6);
+        color: #16a085;
+        width: 150px;
+        top: 0%;
+        left: 36%;
+        height: 25px;
+        z-index: 10;
+        border-radius: 0 0 10px 10px;
+   }
+   .hidden {
+        display: none;
+        position: absolute;
+        justify-content: center;
+        background-color: rgb(255, 255, 255, 0.3);
+        top: 0;
+        width: 100%;
+        align-items: center;
+        font-size: 22px;
+        height: 98px;
+        opacity: 1;
+        z-index: 20;
+        transition: opacity 1s ease-in-out;
+    }
+    .hidden a {
+        text-decoration: none;
+        color: green;
+        font-weight: bold;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .header-content {
+        top: 28%;
+    }
+    .header-content h1 {
+        font-size: 70px;
+    }
+    .header-content h2 {
+        font-size: 2em;
+    }
+    .increase {
+        font-size: 32px;
+        width: 275px;
+    }
+    .photos {
+        margin-left: 3%;
+    }
+    .photos img {
+        width: 380px;
+        height: 290px;
+    }
+    section {
+        font-size: 1.2rem;
+        display: flex;
+        margin-left: 2%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
