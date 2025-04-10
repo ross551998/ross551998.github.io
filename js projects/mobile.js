@@ -37,14 +37,12 @@ function setupMobileNav() {
             nav.classList.add('show');
             d.style.marginTop = '0';
             mainDisplay.style.marginTop = '0';
-            console.log('Navigation opened!');
         });
         // Close the sliding navigation
         closeBtn.addEventListener('click', () => {
             nav.classList.remove('show');
             d.style.marginTop = '0';
             mainDisplay.style.marginTop = '0';
-            console.log('Navigation closed!');
         });
     } else {
         console.log("Non-touch device detected. Navigation is disabled.");

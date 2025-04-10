@@ -62,7 +62,7 @@ pennyIncrement = 0.01;
 nickelIncrement = 0.05;
 dimeIncrement = 0.10;
 quaterIncrement = 0.25;
-hfDollarIncrement = 1.00;
+hfDollarIncrement = 0.50;
 let mainClickerCount = 0;
 let totalPerSec = 0;
 let totalPerSecDisplay = document.getElementById('per-sec');
@@ -142,6 +142,14 @@ const pennyClickerUpgrade = {
     pennyFourth: document.getElementById('pennyFourth'),
     pennyFifth: document.getElementById('pennyfifth')
 }
+let coinsUnlocked = {
+    penny: false,
+    nickel: false,
+    dime: false,
+    quarter: false,
+    halfDollar: false
+}
+
 let dimeMoney = 2.75;//change later
 let quaterMoney = 7.00;//change later
 let halfDollarMoney = 14.50;//change later
@@ -210,7 +218,7 @@ let pennytimes275;
 let pennytimes300;
 //nickel
 let autoNickelInterval;
-let nickelsUnlocked = false;
+
 let increaseNickels = document.getElementById('increasenickels');
 let nickelAuto = document.getElementById('nickelautocounter');
 let nickelAutoBody = document.getElementById('nickel-upgrades');
@@ -424,37 +432,7 @@ function upDateTotalPerSec() {
     }
 }
 
-/* disable for not when ready
-function DMC() {
-    let existingDiv = document.getElementById('doublemain');
-    if(!existingDiv) {
-        const newDiv = document.createElement("div");
-        const newButton = document.createElement("button");
-        newDiv.id = 'doublemain';
-        newButton.textContent = "Click Me";
-        newDiv.appendChild(newButton);
-        document.getElementById('upgrades').appendChild(newDiv);
-        newDiv.addEventListener('click', function() {
-            if(totalCount >= doubleMC.firstMain) {
-                values.main *= 2;
-                console.log(values.main);
-                console.log(`user double mainer clicker to ${values.main}`);
-                newDiv.style.display = 'none';
-            } else {
-                console.log('not enough money');
-                noMoneyDisplay.textContent = 'not enough money, need $3.00';
-                setTimeout(() => {
-                    noMoneyDisplay.textContent = '';
-                }, 1500);
-            }
-        });
-    } else {
-        // If the element exists, just make it visible
-        existingDiv.style.display = 'block';
-    }
-    
-}
-    */
+
 
 
 function unlock() {
@@ -557,8 +535,8 @@ mainClickerUpgrade.third.addEventListener('click', function() {
 })
 mainClickerUpgrade.fourth.addEventListener('click', function() {
     try { 
-        if(totalCount >= 0.00) {
-            totalCount -= 0.00;
+        if(totalCount >= 135.00) {
+            totalCount -= 135.00;
             totalCount = values.main = parseFloat((values.main * 3).toFixed(2));
             mainClickerUpgrade.fourth.style.display = 'none';
         } else {
@@ -576,7 +554,7 @@ mainClickerUpgrade.fifth.addEventListener('click', function() {
         if(totalCount >= 360.00) {
             totalCount -= 360.00;
             totalCount = values.main = parseFloat((values.main * 2).toFixed(2));
-            mainClickerUpgrade.fourth.style.display = 'none';
+            mainClickerUpgrade.fifth.style.display = 'none';
         } else {
             newsContext.style.animation = 'none';
             void newsContext.offsetWidth;
@@ -849,6 +827,7 @@ function autoCent() {
         perSecData.centPerSec = values.cent;
         upDateTotalPerSec();
         console.log('auto cent started');
+        coinsUnlocked.penny = true;
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
@@ -858,7 +837,7 @@ function autoCent() {
 }
 function autoNickel() {
     autoNickelCallCount++;
-    if(!nickelsUnlocked) {
+    if(!coinsUnlocked.nickel) {
         console.log('nickels not unlocked yet');
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -880,6 +859,7 @@ function autoNickel() {
             }, 1000);
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
+            coinsUnlocked.nickel = true;
             console.log('auto nickel started');
             newsContext.style.animation = 'none';
             void newsContext.offsetWidth;
@@ -910,6 +890,7 @@ function autoDime() {
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             console.log('auto dime started');
+            coinsUnlocked.dime = true;
         }
     } else {
         newsContext.style.animation = 'none';
@@ -934,6 +915,7 @@ function autoQuater() {
             }, 1000);
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
+            coinsUnlocked.quarter = true;
             console.log('auto quater started');
             newsContext.style.animation = 'none';
             void newsContext.offsetWidth;
@@ -963,6 +945,7 @@ function autoHD() {
             }, 1000);
             perSecData.halfDPerSec = values.halfDollar;
             upDateTotalPerSec();
+            coinsUnlocked.halfDollar = true;
             console.log('auto half dollar started');
         }
     } else {
@@ -1128,14 +1111,11 @@ function nickelsUnlock() {
     let hide = document.getElementById('nickelsunlock');
     let n = document.getElementById('nickels');
     if((n.style.display === 'none' || n.style.display) === '' && totalCount >= 0.50) {// change later to higher number
-        console.log('unlocking nickels...');
-        nickelsUnlocked = true;
         n.style.display = 'flex';
         dUnlock.style.display = 'flex';
         totalCount -= 0.50;
         total.textContent = `$ ${totalCount.toFixed(2)}`;
         hide.style.display = 'none';
-        console.log('nickels unlocked');
         goodsUnlocked = true;
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth; 
@@ -1150,7 +1130,7 @@ function nickelsUnlock() {
 }
 function dimesUnlock() {
     if ((d.style.display === 'none' || d.style.display === '') && totalCount >= 5.00) { 
-        console.log('Unlocking dimes...');
+        
         d.style.display = 'flex';
         dimeAutoBody.style.display = 'flex';
         qUnlock.style.display = 'flex';
@@ -1158,12 +1138,13 @@ function dimesUnlock() {
         total.textContent = `$ ${totalCount.toFixed(2)}`;
         dUnlock.style.display = 'none';
         dimeAuto.style.display = 'flex';
-        console.log('Dimes unlocked!');
+        
     } else {
-        noMoneyDisplay.textContent = 'Need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
+        
     }
 }
 function quaterUnlock() {
@@ -1174,13 +1155,12 @@ function quaterUnlock() {
         totalCount -= 30.00;//change later to 30.00
         total.textContent = `$ ${totalCount.toFixed(2)}`;
         qUnlock.style.display = 'none';
-        console.log('quaters unlocked');
         quaterAuto.style.display = 'flex';
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function halfDollarUnlock() {
@@ -1191,13 +1171,12 @@ function halfDollarUnlock() {
         totalCount -= 75.00;//change later to 75.00
         total.textContent = `${totalCount.toFixed(2)}`;
         hD.style.display = 'none';
-        console.log('half dollar unlocked');
         hDAuto.style.display = 'flex';
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function dollarUnlock() {//works for now might be bugs in here
@@ -1208,7 +1187,7 @@ function dollarUnlock() {//works for now might be bugs in here
         totalCount -= 215.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         dollarunlock.style.display = 'none';
-        console.log('dollar unlocked');
+        
         dollarAuto.style.display = 'flex';
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1232,13 +1211,13 @@ function fiveDollarUnlock() {
         totalCount -= 510.00;//change later
         total.textContent = `${totalCount.toFixed(2)}`;
         fdUnlock.style.display = 'none';
-        console.log('five dollar unlocked');
+        
         fiveDollarAuto.style.display = 'flex';
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function tenDollarUnlock() {
@@ -1249,13 +1228,13 @@ function tenDollarUnlock() {
         totalCount -= 2100.00;
         total.textContent = `${totalCount.toFixed(2)}`;
         tdUnlock.style.display = 'none';
-        console.log('ten dollar unlocked');
+        
         tenDollarAuto.style.display = 'flex';
     }  else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function twentyDollarUnlock() {
@@ -1269,10 +1248,10 @@ function twentyDollarUnlock() {
         console.log('twenty dollar unlocked');
         twentyDollarAuto.style.display = 'flex';
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = ''
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function fiftyDollarUnlock() {
@@ -1286,10 +1265,10 @@ function fiftyDollarUnlock() {
         console.log('fifty dollar unlocked');
         fiftyDollarAuto.style.display = 'flex';
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = ''
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function hundredDollarUnlock() {
@@ -1302,10 +1281,10 @@ function hundredDollarUnlock() {
         console.log('hundred dollar unlocked');
         hundredDollarAuto.style.display = 'flex';
     } else {
-        noMoneyDisplay.textContent = 'need more money';
-        setTimeout(() => {
-            noMoneyDisplay.textContent = ''
-        }, 1000);
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth; 
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 //clickers
@@ -1422,8 +1401,6 @@ function mainClicker() {
     totalCount += values.main;
     mcdisplay.textContent = values.main;
     total.textContent = `$ ${totalCount.toFixed(2)}`;
-    console.log(mainClickerCount);
-    console.log(values.main);
 }
 //cent counter
 function cents() {
@@ -1575,18 +1552,15 @@ function increaseNickel() { // ready for new version
 function dimes() {
     totalCount += 0.10;
     total.textContent = `$ ${totalCount.toFixed(2)}`;
-    console.log('user clicked dimes');
+    
 }
 function increasedime() {
     dimeTotal.textContent = `${values.dime.toFixed(2)} cents per second`;
     if(totalCount >= dimeMoney) {
-        values.dime += 0.10;
+        values.dime += dimeIncrement;
         totalCount -= dimeMoney;
         dimeMoney += dimeMoney * 0.48;
         increaseDimeAmount.textContent = dimeMoney.toFixed(2);
-        console.log(values.dime);
-        console.log(dimeMoney);
-        console.log(totalCount);
         dimes();
         perSecData.dimePerSec = values.dime;
         upDateTotalPerSec();
@@ -1651,13 +1625,10 @@ function quaters() {
 function increaseQuaters() {
     qauterTotal.textContent = `${values.quarter.toFixed(2)} cents per second`;
     if(totalCount >= quaterMoney) {
-        values.quarter += 0.25;
+        values.quarter += quaterIncrement;
         totalCount -= quaterMoney;
         quaterMoney += quaterMoney * 0.96;
         increaseQuaterAmount.textContent = quaterMoney.toFixed(2);
-        console.log(values.quarter);
-        console.log(quaterMoney);
-        console.log(totalCount);
         quaters();
         perSecData.quarterPerSec = values.quarter;
         upDateTotalPerSec();
@@ -1719,13 +1690,10 @@ function halfDollars() {
 function increaseHd() {
     hDTotal.textContent = `${values.halfDollar.toFixed(2)} cents per second`;
     if(totalCount >= halfDollarMoney) {
-        values.halfDollar += 0.50;
+        values.halfDollar += hfDollarIncrement;
         totalCount -= halfDollarMoney;
         halfDollarMoney += halfDollarMoney * 0.97;
         increaseHDAmount.textContent = halfDollarMoney.toFixed(2);
-        console.log(values.halfDollar);
-        console.log(halfDollarMoney);
-        console.log(totalCount);
         halfDollars();
         perSecData.halfDPerSec = values.halfDollar;
         upDateTotalPerSec();
@@ -1749,9 +1717,6 @@ function increaseDollar() {
         totalCount -= dollarMoney;
         dollarMoney *= 2.00;
         increaseDollarAmount.textContent = dollarMoney.toFixed(2);
-        console.log(values.dollar);
-        console.log(dollarMoney);
-        console.log(totalCount);
         dollars();
         perSecData.dPerSec = values.dollar;
         upDateTotalPerSec();

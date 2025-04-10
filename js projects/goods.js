@@ -19,7 +19,11 @@ Object.entries(smallGoods, mediumGoods).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
 // for adding any click value
-addClickValue(smallGoods.sgSecond, 150.0, "you' tripled click value");
+addClickValue(smallGoods.sgSecond, 68.00, 22.25, "you' tripled click value");
+buySmallGood(smallGoods.sgFirst, 110.00, 2, "you've doubled all coin values");
+buySmallGood(smallGoods.sgFourth, 97.00, 1.5, "you've add a small coin value");
+smallCashBurst(smallGoods.sgThird, 115.00, 22.25, "you've added small cash burst");
+smallCashBurst(smallGoods.sgFifth, 132.00, 32.25, "you've added small cash burst");
 
 function addClickValue(button, cost, message) {
     const c = 5;
@@ -28,8 +32,10 @@ function addClickValue(button, cost, message) {
             if(totalCount >= cost) {
                 totalCount -= cost;
                 pennyIncrement *= 3;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                nickelIncrement *= 3;
                 perSecData.centPerSec = values.cent;
+                perSecData.nickelPerSec = values.nickel;
+                total.textContent = `$ ${totalCount.toFixed(2)}`;
                 upDateTotalPerSec();
                 button.style.display = 'none';
                 newsList.style.animation = 'none';
@@ -48,84 +54,81 @@ function addClickValue(button, cost, message) {
         }
     })
 }
-smallGoods.sgThird.addEventListener('click', () => {
+function smallCashBurst(button, cost, add, message) {
     try {
-        if(totalCount >= 115.00) {
-            totalCount -= 115.00;
-            setInterval(() => {
-                totalCount += 22.25;
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = 'here\'s $22.25';
-            }, 100000);
-            smallGoods.sgThird.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = 'you\'ve activated small cash burst';
-        } else {
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = 'need more money..';
-        }
-    } catch(error) {
-        console.error(`error with first cash burst`, error);
-    }
-})
-smallGoods.sgFifth.addEventListener('click', () => {
-    try {
-        if(totalCount >= 132.00) {
-            totalCount -= 132.00;
-            setInterval(() => {
-                totalCount += 32.25;
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = 'here\'s $32.25';
-            }, 100000);
-            smallGoods.sgFifth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = 'you\'ve activated small cash burst';
-        } else {
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = 'need more money..';
-        }
-    } catch(error) {
-        console.error(`error with second cash burst`, error);
-    }
-})
-//things for doubling the coin values, can add more if want
-buySmallGood(smallGoods.sgFirst, 110.0, 2, "you've doubled all coin values");
-buySmallGood(smallGoods.sgFourth, 97.00, 1.5, "you've add a small coin value");
-//function itself
-function buySmallGood(button, cost, multiplier, message) {
-    const n = 5;
-    button.addEventListener('click', () => {
-        try {
-            if(totalCount >= cost) {
+        button.addEventListener('click', () => {
+            if(totalCount >=  cost) {
                 totalCount -= cost;
-                const firstEntries = Object.entries(values).slice(0, n);
-                for(const [key, value] of firstEntries) {
-                    if(key in values) {
-                        firstEntries[key] = value * multiplier;
-                        console.log('formula working');
-                    }
-                }
-                upDateTotalPerSec();
+                setInterval(() => {
+                    totalCount += add;
+                    total.textContent = `$ ${totalCount.toFixed(2)}`;
+                    
+                    newsList.style.animation = 'none';
+                    void newsList.offsetWidth;
+                    newsList.style.animation = 'slideInOut 3s';
+                    newsList.textContent = `you've added ${add} to your total`;
+                }, 100000);
                 button.style.display = 'none';
                 newsList.style.animation = 'none';
                 void newsList.offsetWidth;
                 newsList.style.animation = 'slideInOut 3s';
                 newsList.textContent = message;
-                console.log('function working');
+            } else {
+                newsList.style.animation = 'none';
+                void newsList.offsetWidth;
+                newsList.style.animation = 'slideInOut 3s';
+                newsList.textContent = 'need more money..';
             }
-             else {
+        })
+    } catch(error) {
+        console.error(`error with small cash burst`, error);
+    }
+}
+//function itself
+function buySmallGood(button, cost, multiplier, message) {
+    button.addEventListener('click', () => {
+        try {
+            if(totalCount >= cost) {
+                totalCount -= cost;
+                for(let coin in coinsUnlocked) {
+                   if(coinsUnlocked[coin]) {
+                    console.log(`coin ${coin} is unlocked`);
+                    switch (coin) {
+                        case 'penny':
+                            values.cent *= multiplier,
+                            perSecData.centPerSec = values.cent;
+                            break;
+                        case 'nickel':
+                            values.nickel *= multiplier,
+                            perSecData.nickelPerSec = values.nickel;
+                            break;
+                        case 'dime':
+                            values.dime *= multiplier,
+                            perSecData.dimePerSec = values.dime;
+                            break;
+                        case 'quarter':
+                            values.quarter *= multiplier,
+                            perSecData.quarterPerSec = values.quarter;
+                            break;
+                        case 'halfDollar':
+                            values.halfDollar *= multiplier,
+                            perSecData.hfDollarPerSec = values.halfDollar;
+                            break;
+                        default:
+                            console.warn(`coin ${coin} is not recognized`);
+                            break;
+                    }
+                   }
+                }
+                upDateTotalPerSec();
+                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                button.style.display = 'none';
+                newsList.style.animation = 'none';
+                void newsList.offsetWidth;
+                newsList.style.animation = 'slideInOut 3s';
+                newsList.textContent = message;
+                console.log('working');
+            } else {
                 newsList.style.animation = 'none';
                 void newsList.offsetWidth;
                 newsList.style.animation = 'slideInOut 3s';
