@@ -46,7 +46,7 @@ function futureUpgrade(button, cost, multiplier, message) {
             if(totalCount >= cost) {
                 totalCount -= cost;
                 values.halfDollar *= multiplier;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 perSecData.halfDPerSec = values.halfDollar;
                 upDateTotalPerSec();
                 button.style.display = 'none';
@@ -84,7 +84,7 @@ nickeClickerUpgrade.nickelFirst.addEventListener('click',function() {
         if(totalCount >= 35.00) {
             totalCount -= 35.00;
             totalCount = values.nickel *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFirst.style.display = 'none';
@@ -107,7 +107,7 @@ nickeClickerUpgrade.nickelSecond.addEventListener('click',function() {
         if(totalCount >= 165.00) {
             totalCount -= 165.00;
             totalCount = values.nickel *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelSecond.style.display = 'none';
@@ -130,7 +130,7 @@ nickeClickerUpgrade.nickelFourth.addEventListener('click',function() {
         if(totalCount >= 815.00) {
             totalCount -= 815.00;
             totalCount = values.nickel *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFourth.style.display = 'none';
@@ -153,7 +153,7 @@ nickeClickerUpgrade.nickelFifth.addEventListener('click',function() {
         if(totalCount >= 1080.00) {
             totalCount -= 1080.00;
             totalCount = values.nickel *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFifth.style.display = 'none';
@@ -177,7 +177,7 @@ dimeClickerUpgrade.dimeFirst.addEventListener('click', function() {
         if(totalCount >= 56.00) {
             totalCount -= 56.00;
             totalCount = values.dime *=2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeFirst.style.display = 'none';
@@ -200,7 +200,7 @@ dimeClickerUpgrade.dimeSecond.addEventListener('click', function() {
         if(totalCount >= 198.00) {
             totalCount -= 198.00;
             totalCount = values.dime *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeSecond.style.display = 'none';
@@ -223,7 +223,7 @@ dimeClickerUpgrade.dimeFourth.addEventListener('click', function() {
         if(totalCount >= 964.00) {
             totalCount -= 964.00;
             totalCount = values.dime *= 3;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeFourth.style.display = 'none';
@@ -246,7 +246,7 @@ dimeClickerUpgrade.dimeFifth.addEventListener('click', function() {
         if(totalCount >= 1124.00) {
             totalCount -= 1124.00;
             totalCount = values.dime *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeFifth.style.display = 'none';
@@ -270,7 +270,7 @@ quaterClickerUpgrade.quaterFirst.addEventListener('click', function() {
         if(totalCount >= 82.00) {
             totalCount -= 82.00;
             totalCount = values.quarter *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterFirst.style.display = 'none';
@@ -293,7 +293,7 @@ quaterClickerUpgrade.quaterSecond.addEventListener('click', function() {
         if(totalCount >= 240.00) {
             totalCount -= 240.00;
             totalCount = values.quarter *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterSecond.style.display = 'none';
@@ -316,7 +316,7 @@ quaterClickerUpgrade.quaterFourth.addEventListener('click', function() {
         if(totalCount >= 1040.00) {
             totalCount -= 1040.00;
             totalCount = values.quarter *= 3;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterFourth.style.display = 'none';
@@ -339,7 +339,7 @@ quaterClickerUpgrade.quaterFifth.addEventListener('click', function() {
         if(totalCount >= 1260.00) {
             totalCount -= 1260.00;
             totalCount = values.quarter *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterFifth.style.display = 'none';

@@ -35,7 +35,7 @@ function addClickValue(button, cost, message) {
                 nickelIncrement *= 3;
                 perSecData.centPerSec = values.cent;
                 perSecData.nickelPerSec = values.nickel;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 upDateTotalPerSec();
                 button.style.display = 'none';
                 newsList.style.animation = 'none';
@@ -61,7 +61,7 @@ function smallCashBurst(button, cost, add, message) {
                 totalCount -= cost;
                 setInterval(() => {
                     totalCount += add;
-                    total.textContent = `$ ${totalCount.toFixed(2)}`;
+                    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                     
                     newsList.style.animation = 'none';
                     void newsList.offsetWidth;
@@ -121,7 +121,7 @@ function buySmallGood(button, cost, multiplier, message) {
                    }
                 }
                 upDateTotalPerSec();
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 button.style.display = 'none';
                 newsList.style.animation = 'none';
                 void newsList.offsetWidth;

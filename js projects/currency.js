@@ -443,7 +443,7 @@ function unlock() {
     if(!upgradesUnlocked && parseFloat(total.textContent.replace('$', '').trim()) >= 0.05) {// change to different number when ready
         upgradesUnlocked = true;
         totalCount = totalCount - 0.05;//change to different number when ready
-        total.textContent = `$ ${totalCount.toFixed(2)}`;
+        total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
         console.log('unlocked upgrades');
         hideTitle.textContent = 'upgrades';
         hideTitle.style.fontSize = '2.6rem';
@@ -651,7 +651,7 @@ pennyClickerUpgrade.pennyFirst.addEventListener('click', function() {
         if(totalCount >= 25.00) {
             totalCount -= 25.00;
             totalCount = values.cent *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.centPerSec = values.cent;
             upDateTotalPerSec();
             pennyClickerUpgrade.pennyFirst.style.display = 'none';
@@ -674,7 +674,7 @@ pennyClickerUpgrade.pennySecond.addEventListener('click', function() {
         if(totalCount >= 115.00) {
             totalCount -= 115.00;
             totalCount = values.cent *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.centPerSec = values.cent;
             upDateTotalPerSec();
             pennyClickerUpgrade.pennySecond.style.display = 'none';
@@ -694,7 +694,7 @@ pennyClickerUpgrade.pennyThird.addEventListener('click', function() {
         if(totalCount >= 250.00) {
             totalCount -= 250.00;
             totalCount = values.cent *= 3;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.centPerSec = values.cent;
             upDateTotalPerSec();
             pennyClickerUpgrade.pennyThird.style.display = 'none';
@@ -746,7 +746,7 @@ nickeClickerUpgrade.nickelThird.addEventListener('click',function() {
         if(totalCount >= 370.00) {
             totalCount -= 370.00;
             nickelIncrement = 0.10;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFirst.style.display = 'none';
@@ -769,7 +769,7 @@ dimeClickerUpgrade.dimeThird.addEventListener('click', function() {
         if(totalCount >= 482.00) {
             totalCount -= 482.00;
             dimeIncrement = 0.20;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeThird.style.display = 'none';
@@ -792,7 +792,7 @@ quaterClickerUpgrade.quaterThird.addEventListener('click', function() {
         if(totalCount >= 623.00) {
             totalCount -= 623.00;
             quaterIncrement *= 2;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterThird.style.display = 'none';
@@ -816,7 +816,7 @@ function autoCent() {
     if(!autoCentInterval) {
         autoCentInterval = setInterval(() => {
             totalCount += values.cent;
-            total.textContent = `$ ${totalCount.toFixed(2)}`;
+            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             centAuto.style.display = 'none';
             centAutoBody.style.display = 'none';
             increaseCents.style.display = 'flex';
@@ -849,7 +849,7 @@ function autoNickel() {
         if(!autoNickelInterval) {
             autoNickelInterval = setInterval(() => {
                 totalCount += values.nickel;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 nickelAuto.style.display = 'none';
                 nickelAutoBody.style.display = 'none';
                 increaseNickels.style.display = 'flex';
@@ -879,7 +879,7 @@ function autoDime() {
         if(!autoDimeInterval) {
             autoDimeInterval = setInterval(() => {
                 totalCount += values.dime;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 dimeAuto.style.display = 'none';
                 dimeAutoBody.style.display = 'none';
                 increaseDimes.style.display = 'flex';
@@ -905,7 +905,7 @@ function autoQuater() {
         if(!autoQuaterInterval) {
             autoQuaterInterval =  setInterval(() => {
                 totalCount += values.quarter;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 quaterAuto.style.display = 'none';
                 qauterAutoBody.style.display = 'none';
                 increaseQuater.style.display = 'flex';
@@ -935,7 +935,7 @@ function autoHD() {
         if(!autoHDInterval) {
             autoHDInterval =  setInterval (() => {
                 totalCount += values.halfDollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 hDAuto.style.display = 'none';
                 hDAutoBody.style.display = 'none';
                 increaseHD.style.display = 'flex';
@@ -961,7 +961,7 @@ function autoDollar() {
         if(!autoDInterval) {
             autoDInterval = setInterval(() => {
                 totalCount +=values.dollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 dollarAuto.style.display = 'none';
                 dollarAutoBody.style.display = 'none';
                 increaseDollars.style.display = 'flex';
@@ -986,7 +986,7 @@ function autoFiveDollar() {
         if(!autoFiveDInterval) {
             autoFiveDInterval = setInterval(() => {
                 totalCount += values.fiveDollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 fiveDollarAuto.style.display = 'none';
                 fiveDollarAutoBody.style.display = 'none';
                 increaseFiveDollars.style.display = 'flex';
@@ -1011,7 +1011,7 @@ function autoTenDollar() {
         if(!autoTenDInterval) {
             autoTenDInterval = setInterval(() => {
                 totalCount += values.tenDollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 tenDollarAuto.style.display = 'none';
                 tenDollarAutoBody.style.display = 'none';
                 increaseTenDollars.style.display = 'flex';
@@ -1036,7 +1036,7 @@ function autoTwentyDollar() {
         if(!autoTwentyDInterval) {
             autoTwentyDInterval =  setInterval(() => {
                 totalCount += values.twentyDollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 twentyDollarAuto.style.display = 'none';
                 increaseTwentyDollars.style.display = 'flex';
                 twentyDollarAutoBody.style.display = 'none';
@@ -1061,7 +1061,7 @@ function autoFiftyDollar() {
         if(!autoFityDInterval) {
             autoFityDInterval = setInterval(() => {
                 totalCount += values.fiftyDollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 fiftyDollarAuto.style.display = 'none';
                 fiftyDollarAutoBody.style.display = 'none';
                 increaseFiftyDollars.style.display = 'flex';
@@ -1086,7 +1086,7 @@ function autoHundredDollar() {
         if(!autoHundredDInterval) {
             autoHundredDInterval = setInterval(() => {
                 totalCount += values.hundredDollar;
-                total.textContent = `$ ${totalCount.toFixed(2)}`;
+                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 hundredDollarAuto.style.display = 'none';
                 hundredDollarAutoBody.style.display = 'none';
                 increaseHundredDollars.style.display = 'flex';
@@ -1114,7 +1114,7 @@ function nickelsUnlock() {
         n.style.display = 'flex';
         dUnlock.style.display = 'flex';
         totalCount -= 0.50;
-        total.textContent = `$ ${totalCount.toFixed(2)}`;
+        total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
         hide.style.display = 'none';
         goodsUnlocked = true;
         newsContext.style.animation = 'none';
@@ -1135,7 +1135,7 @@ function dimesUnlock() {
         dimeAutoBody.style.display = 'flex';
         qUnlock.style.display = 'flex';
         totalCount -= 5.00; // Update to 12.00 when ready
-        total.textContent = `$ ${totalCount.toFixed(2)}`;
+        total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
         dUnlock.style.display = 'none';
         dimeAuto.style.display = 'flex';
         
@@ -1153,7 +1153,7 @@ function quaterUnlock() {
         qauterAutoBody.style.display = 'flex';
         hD.style.display = 'flex';
         totalCount -= 30.00;//change later to 30.00
-        total.textContent = `$ ${totalCount.toFixed(2)}`;
+        total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
         qUnlock.style.display = 'none';
         quaterAuto.style.display = 'flex';
     } else {
@@ -1169,7 +1169,7 @@ function halfDollarUnlock() {
         dollarunlock.style.display = 'flex';
         hDAutoBody.style.display = 'flex';
         totalCount -= 75.00;//change later to 75.00
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         hD.style.display = 'none';
         hDAuto.style.display = 'flex';
     } else {
@@ -1185,7 +1185,7 @@ function dollarUnlock() {//works for now might be bugs in here
         fdUnlock.style.display = 'flex';
         dollarAutoBody.style.display = 'flex';
         totalCount -= 215.00;
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         dollarunlock.style.display = 'none';
         
         dollarAuto.style.display = 'flex';
@@ -1209,7 +1209,7 @@ function fiveDollarUnlock() {
         tdUnlock.style.display = 'flex';
         fiveDollarAutoBody.style.display = 'flex';
         totalCount -= 510.00;//change later
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         fdUnlock.style.display = 'none';
         
         fiveDollarAuto.style.display = 'flex';
@@ -1226,7 +1226,7 @@ function tenDollarUnlock() {
         twdUnlock.style.display = 'flex';
         tenDollarAutoBody.style.display = 'flex';
         totalCount -= 2100.00;
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         tdUnlock.style.display = 'none';
         
         tenDollarAuto.style.display = 'flex';
@@ -1243,7 +1243,7 @@ function twentyDollarUnlock() {
         fiftyDUnlock.style.display = 'flex';
         twentyDollarAutoBody.style.display = 'flex';
         totalCount -= 6000.00;
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         twdUnlock.style.display = 'none';
         console.log('twenty dollar unlocked');
         twentyDollarAuto.style.display = 'flex';
@@ -1260,7 +1260,7 @@ function fiftyDollarUnlock() {
         hundredDUnlock.style.display = 'flex';
         fiftyDollarAutoBody.style.display = 'flex';
         totalCount -= 20000.00;
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         fiftyDUnlock.style.display = 'none';
         console.log('fifty dollar unlocked');
         fiftyDollarAuto.style.display = 'flex';
@@ -1276,7 +1276,7 @@ function hundredDollarUnlock() {
         hundredDollar.style.display = 'flex';
         hundredDollarAutoBody.style.display = 'flex';
         totalCount -= 50000.00;
-        total.textContent = `${totalCount.toFixed(2)}`;
+        total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         hundredDUnlock.style.display = 'none';
         console.log('hundred dollar unlocked');
         hundredDollarAuto.style.display = 'flex';
@@ -1400,12 +1400,12 @@ function mainClicker() {
     }
     totalCount += values.main;
     mcdisplay.textContent = values.main;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 //cent counter
 function cents() {
     totalCount += 0.01;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     
 }
 function increaseCent() {// this is done for now, ready for new version
@@ -1477,7 +1477,7 @@ function increaseCent() {// this is done for now, ready for new version
 //nickel counter
 function nickels() {
     totalCount += 0.05;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     
    
 }
@@ -1551,7 +1551,7 @@ function increaseNickel() { // ready for new version
 //dime counter
 function dimes() {
     totalCount += 0.10;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     
 }
 function increasedime() {
@@ -1620,7 +1620,7 @@ function increasedime() {
 //quater counter
 function quaters() {
     totalCount += 0.25;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 function increaseQuaters() {
     qauterTotal.textContent = `${values.quarter.toFixed(2)} cents per second`;
@@ -1685,7 +1685,7 @@ function increaseQuaters() {
 //halfdollar counter
 function halfDollars() {
     totalCount += 0.50;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 function increaseHd() {
     hDTotal.textContent = `${values.halfDollar.toFixed(2)} cents per second`;
@@ -1707,7 +1707,7 @@ function increaseHd() {
 //dollar counter 
 function dollars() {
     totalCount += 1.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
    
 }
 function increaseDollar() {
@@ -1730,7 +1730,7 @@ function increaseDollar() {
 //five dollar counter
 function fiveDollars() {
     totalCount += 5.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 function increasefiveDollar() {
     fiveDollarTotal.textContent = `${values.fiveDollar.toFixed(2)} dollar per second`;
@@ -1755,7 +1755,7 @@ function increasefiveDollar() {
 //ten dollar counter
 function tenDollars() {
     totalCount += 10.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 function increasetenDollar() {
     tenDollarTotal.textContent =  `${values.tenDollar.toFixed(2)} dollar per second`;
@@ -1780,7 +1780,7 @@ function increasetenDollar() {
 //twenty dollar counter
 function twentyDollars() {
     totalCount += 20.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 function increasetwentyDollar() {
     twentyDollarTotal.textContent = `${values.twentyDollar.toFixed(2)} dollars per second`;
@@ -1805,7 +1805,7 @@ function increasetwentyDollar() {
 //fifty dollar counter 
 function fiftyDollars() {
     totalCount += 50.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 }
 function increaseFiftyDollar() {
     fiftyDollarTotal.textContent = `${values.fiftyDollar.toFixed(2)} dollar per second`;
@@ -1830,7 +1830,7 @@ function increaseFiftyDollar() {
 //hundred dollar counter
 function hundredDollars() {
     totalCount += 100.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
 } 
 function increaseHundredDollar() {
     hundredDollarTotal.textContent = `${values.hundredDollar.toFixed(2)} dollar per second`;

@@ -8,27 +8,27 @@ const seventhAward = document.getElementById('500-per-sec-upgrade');
 
 firstAward.addEventListener('click', function() {
     totalCount += 600.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     firstAward.style.display = 'none';
 })
 secondAward.addEventListener('click', function() {
     totalCount += 500.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     secondAward.style.display = 'none';
 })
 thirdAward.addEventListener('click', function() {
     totalCount += 3000.00;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     thirdAward.style.display = 'none';
 })
 fourthAward.addEventListener('click', function() {
     totalCount += 15000;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     fourthAward.style.display = 'none';
 })
 fifthAward.addEventListener('click', function() {
     totalCount += 120000;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     fifthAward.style.display = 'none';
     newsList.style.animation = 'none';
     void newsList.offsetWidth;
@@ -37,7 +37,7 @@ fifthAward.addEventListener('click', function() {
 })
 sixthAward.addEventListener('click', function() {
     totalCount += 260000;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     sixthAward.style.display = 'none';
     newsList.style.animation = 'none';
     void newsList.offsetWidth;
@@ -46,7 +46,7 @@ sixthAward.addEventListener('click', function() {
 })
 seventhAward.addEventListener('click', function() {
     totalCount += 6000;
-    total.textContent = `$ ${totalCount.toFixed(2)}`;
+    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     seventhAward.style.display = 'none';
     newsList.style.animation = 'none';
     void newsList.offsetWidth;
