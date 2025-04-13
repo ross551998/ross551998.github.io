@@ -291,7 +291,7 @@ let newsButtn = document.getElementById('top-news').addEventListener('click', fu
     newsContext.style.animation = 'none';
     void newsContext.offsetWidth;
     newsContext.style.animation = 'slideInOut 3s';
-    newsContext.innerText = 'not avaible right now..';
+    newsContext.textContext = 'not avaible right now..';
 })
 awardButtn.addEventListener('click', function() {
     if(awardUnlocked) {
@@ -300,14 +300,14 @@ awardButtn.addEventListener('click', function() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = 'awards opened!';
+        newsContext.textContext = 'awards opened!';
         awardButtn.style.pointerEvents = 'none';
         awardButtn.style.opacity = '0.5' 
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = 'not avaible right now..';
+        newsContext.textContext = 'not avaible right now..';
     }
     
 })
@@ -324,8 +324,7 @@ assestButtn.addEventListener('click', function() {
     if(assestButtn.style.pointerEvents === 'none' || awards.style.display === 'flex') return;
     newsContext.style.animation = 'none';
     void newsContext.offsetWidth;
-    newsContext.style.animation = 'slideInOut 3s';
-    newsContext.innerText = 'Assets opened!';
+    newsContext.style.animation = 'slideInOut 3s'; 
     document.getElementById('assests').style.display = 'flex';
     assestButtn.style.pointerEvents = 'none';
     assestButtn.style.opacity = '0.5';
@@ -374,7 +373,7 @@ moneyInbank.addEventListener('click', function() {
     newsList.style.animation = 'none';
     void newsList.offsetWidth;
     newsList.style.animation = 'slideInOut 4s';
-    newsList.innerText = `$ ${account.toFixed(2)}`
+    newsList.textContext = `$ ${account.toFixed(2)}`
 })
 withDraw.addEventListener('click', function() {
     if(account >= 5.00) {
@@ -831,7 +830,7 @@ function autoCent() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = pennyNews[0];
+        newsContext.textContent = pennyNews[0];
         index = (index + 1) % pennyNews.length;
     }
 }
@@ -1192,7 +1191,7 @@ function dollarUnlock() {//works for now might be bugs in here
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = overallNew[0] || "you've unlocked medium goods";
+        newsContext.textContext = overallNew[0] || "you've unlocked medium goods";
         index = (index + 1) % overallNew.length;
         document.getElementById('medium-goods').style.display = 'block';
         firstAward.style.display = 'block';
@@ -1320,7 +1319,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[0];
+        newsContext.textContext = clickerNews[0];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.first.style.display = 'flex';
     }
@@ -1328,7 +1327,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[1];
+        newsContext.textContext = clickerNews[1];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.second.style.display = 'flex';
         smallGoods.sgFourth.style.display = 'flex';
@@ -1337,7 +1336,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[2];
+        newsContext.textContext = clickerNews[2];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.third.style.display = 'flex';
     }
@@ -1345,7 +1344,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[3];
+        newsContext.textContext = clickerNews[3];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.fourth.style.display = 'flex';
     }
@@ -1353,7 +1352,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[4];
+        newsContext.textContext = clickerNews[4];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.fifth.style.display = 'flex';
     }
@@ -1361,7 +1360,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[5];
+        newsContext.textContext = clickerNews[5];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.sixth.style.display = 'flex';
         secondAward.style.display = 'block';
@@ -1370,7 +1369,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[6];
+        newsContext.textContext = clickerNews[6];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.seventh.style.display = 'flex';
     }
@@ -1378,7 +1377,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[7];
+        newsContext.textContext = clickerNews[7];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.eighth.style.display = 'flex';
     }
@@ -1386,7 +1385,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[8];
+        newsContext.textContext = clickerNews[8];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.nighth.style.display = 'flex';
     }
@@ -1394,7 +1393,7 @@ function mainClicker() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = clickerNews[9];
+        newsContext.textContext = clickerNews[9];
         index = (index + 1) % pennyNews.length;
         mainClickerUpgrade.tenth.style.display = 'flex';
     }
@@ -1429,14 +1428,14 @@ function increaseCent() {// this is done for now, ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = "you've unlocked a good to buy!";
+        newsContext.textContext = "you've unlocked a good to buy!";
         smallGoods.sgFirst.style.display = 'flex';
     }
     if(autoCentCallCount === 10) {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = pennyNews[1];
+        newsContext.textContext = pennyNews[1];
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennyFirst.style.display = 'flex';
     }
@@ -1444,7 +1443,7 @@ function increaseCent() {// this is done for now, ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = pennyNews[2];
+        newsContext.textContext = pennyNews[2];
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennySecond.style.display = 'flex';
         awardUnlocked = true;
@@ -1453,7 +1452,7 @@ function increaseCent() {// this is done for now, ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = pennyNews[3];
+        newsContext.textContext = pennyNews[3];
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennyThird.style.display = 'flex';
     }
@@ -1461,7 +1460,7 @@ function increaseCent() {// this is done for now, ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = pennyNews[4];
+        newsContext.textContext = pennyNews[4];
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennyFourth.style.display = 'flex';
     }
@@ -1469,7 +1468,7 @@ function increaseCent() {// this is done for now, ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = pennyNews[5];
+        newsContext.textContext = pennyNews[5];
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennyFifth.style.display = 'flex';
     }
@@ -1510,7 +1509,7 @@ function increaseNickel() { // ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = nickelNews[0];
+        newsContext.textContext = nickelNews[0];
         index = (index + 1) % nickelNews.length;
         nickeClickerUpgrade.nickelFirst.style.display = 'flex';
     }
@@ -1518,7 +1517,7 @@ function increaseNickel() { // ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = nickelNews[1];
+        newsContext.textContext = nickelNews[1];
         index = (index + 1) % nickelNews.length;
         nickeClickerUpgrade.nickelSecond.style.display = 'flex';
         smallGoods.sgSecond.style.display = 'flex'
@@ -1527,7 +1526,7 @@ function increaseNickel() { // ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = nickelNews[2];
+        newsContext.textContext = nickelNews[2];
         index = (index + 1) % nickelNews.length;
         nickeClickerUpgrade.nickelThird.style.display = 'flex';
     }
@@ -1535,7 +1534,7 @@ function increaseNickel() { // ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = nickelNews[3];
+        newsContext.textContext = nickelNews[3];
         index = (index + 1) % nickelNews.length;
         nickeClickerUpgrade.nickelFourth.style.display = 'flex';
     }
@@ -1543,7 +1542,7 @@ function increaseNickel() { // ready for new version
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = nickelNews[4];
+        newsContext.textContext = nickelNews[4];
         index = (index + 1) % nickelNews.length;
         pennyClickerUpgrade.pennyFifth.style.display = 'flex';
     }
@@ -1580,7 +1579,7 @@ function increasedime() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = dimeNews[0];
+        newsContext.textContext = dimeNews[0];
         index = (index + 1) % dimeNews.length;
         dimeClickerUpgrade.dimeFirst.style.display = 'flex';
     }
@@ -1588,7 +1587,7 @@ function increasedime() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = dimeNews[1];
+        newsContext.textContext = dimeNews[1];
         index = (index + 1) % dimeNews.length;
         dimeClickerUpgrade.dimeSecond.style.display = 'flex';
     }
@@ -1596,7 +1595,7 @@ function increasedime() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = dimeNews[2];
+        newsContext.textContext = dimeNews[2];
         index = (index + 1) % dimeNews.length;
         dimeClickerUpgrade.dimeThird.style.display = 'flex';
     }
@@ -1604,7 +1603,7 @@ function increasedime() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = dimeNews[3];
+        newsContext.textContext = dimeNews[3];
         index = (index + 1) % dimeNews.length;
         dimeClickerUpgrade.dimeFourth.style.display = 'flex';
     }
@@ -1612,7 +1611,7 @@ function increasedime() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = dimeNews[4];
+        newsContext.textContext = dimeNews[4];
         index = (index + 1) % dimeNews.length;
         dimeClickerUpgrade.dimeFifth.style.display = 'flex';
     }
@@ -1645,7 +1644,7 @@ function increaseQuaters() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = qauterNews[0];
+        newsContext.textContext = qauterNews[0];
         index = (index + 1) % qauterNews.length;
         quaterClickerUpgrade.quaterFirst.style.display = 'flex';
     }
@@ -1653,7 +1652,7 @@ function increaseQuaters() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = qauterNews[1];
+        newsContext.textContext = qauterNews[1];
         index = (index + 1) % qauterNews.length;
         quaterClickerUpgrade.quaterSecond.style.display = 'flex';
     }
@@ -1661,7 +1660,7 @@ function increaseQuaters() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = qauterNews[2];
+        newsContext.textContext = qauterNews[2];
         index = (index + 1) % qauterNews.length;
         quaterClickerUpgrade.quaterThird.style.display = 'flex';
     }
@@ -1669,7 +1668,7 @@ function increaseQuaters() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = qauterNews[3];
+        newsContext.textContext = qauterNews[3];
         index = (index + 1) % qauterNews.length;
         quaterClickerUpgrade.quaterFourth.style.display = 'flex';
     }
@@ -1677,7 +1676,7 @@ function increaseQuaters() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
-        newsContext.innerText = qauterNews[4];
+        newsContext.textContext = qauterNews[4];
         index = (index + 1) % qauterNews.length;
         quaterClickerUpgrade.quaterFifth.style.display = 'flex';
     }

@@ -66,7 +66,8 @@ nav {
 }
 nav h1 {
     text-align: left;
-    margin-left: 22.5%;
+    font-size: 1.6rem;
+    margin-left: 12%;
     margin-right: auto;
 }
 nav h4 {
@@ -589,6 +590,7 @@ nav h4:hover {
 .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
+/*phone view*/
 @media screen and (max-width: 896px) and (min-width: 400px) {
     html, body {
         width: 100%;
@@ -820,4 +822,66 @@ nav h4:hover {
         align-items: center;
     }
     
+}
+/*tablet view*/
+@media screen and (min-width: 896px) and (max-width: 1300px) {
+    html, body {
+        width: 100%;
+        touch-action: manipulation;/*prevent double tap-zoom*/
+        scroll-behavior: smooth;
+    }
+    nav h1 {
+        font-size: 1.2rem;
+        margin-right: 3%;
+        margin-left: auto;
+        text-align: right;
+    }
+    .gameContent {
+        overflow-y: auto;
+        height: 84vh;
+        
+    }
+    #news {
+        position: absolute;
+        margin-top: 50%;
+        font-size: 1.2rem;
+        color: yellow;
+    }
+    .assest {
+        margin-top: -153%;
+        gap: 3%;
+        height: 28vw;
+        width: 94%;
+
+    }
+    .buy-goods {
+        width: 100%;
+        margin-top: -77%;
+        
+    }
+    .displayword {
+        width: 620px;
+        font-size: 1.4rem;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+    }
+    .pennys, .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
+        font-family: 'garamond', 'helvetica', sans-serif;
+        font-size: 24px;
+        height: 240px;
+    }
+    #increaseCents, #increasenickels, #increasedimes, #increasequaters, #increaseHDs, #increasedollars, #increasefivedollars, #increasetendollars, #increasetwentydollars, #increasefiftydollars, #increasehundreddollars {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    #increaseCents button, #increasenickels button, #increasedimes button, #increasequaters button, #increaseHDs button, #increasedollars button, #increasefivedollars button, #increasetendollars button, #increasetwentydollars button, #increasefiftydollars button, #increasehundreddollars button {
+        width: 95%;
+        
+    }
+    
+
 }
