@@ -28,7 +28,9 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
     emailjs.sendForm("service_jutg1vj", "template_n0cyenc", this)
         .then(() => {
             alert('problem report sent successfully! Thank you!');
-            p.style.display = 'none';
+            nav.classList.add('show');
+            topNav.style.display = 'flex';
+            mp.style.display = 'none';
             this.reset();
         }, (error) => {
             console.error('failed...', error);
