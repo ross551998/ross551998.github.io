@@ -1,4 +1,4 @@
-let newsList = document.getElementById('news');
+
 let r = document.getElementById('small-goods');
 let goodsUnlocked = false;
 
@@ -34,13 +34,13 @@ const halfDollarClickerUpgrade = {
     hdFourth: document.getElementById('hdFourth'),
     hdFifth: document.getElementById('hdFifth')
 }
-futureUpgrade(halfDollarClickerUpgrade.hdFirst, 160.00, 2, "you've doubled half-dollar per second");
-futureUpgrade(halfDollarClickerUpgrade.hdSecond, 430.00, 3, "you've tripled the half-dollar per second ");
-futureUpgrade(halfDollarClickerUpgrade.hdFourth, 1290.00, 2, "you've double half-dollar per second");
-futureUpgrade(halfDollarClickerUpgrade.hdFifth, 1452.00, 3, "you've tripled half-dollar per seccond");
+futureUpgrade(halfDollarClickerUpgrade.hdFirst, 160.00, 2, "you've doubled half-dollar per second", 'first');
+futureUpgrade(halfDollarClickerUpgrade.hdSecond, 430.00, 3, "you've tripled the half-dollar per second", 'second');
+futureUpgrade(halfDollarClickerUpgrade.hdFourth, 1290.00, 2, "you've double half-dollar per second", 'four');
+futureUpgrade(halfDollarClickerUpgrade.hdFifth, 1452.00, 3, "you've tripled half-dollar per seccond", 'five');
 //new way more advanced and more efficent
 
-function futureUpgrade(button, cost, multiplier, message) {
+function futureUpgrade(button, cost, multiplier, message, HFCUKey) {
     button.addEventListener('click', () => {
         try {
             if(totalCount >= cost) {
@@ -50,17 +50,17 @@ function futureUpgrade(button, cost, multiplier, message) {
                 perSecData.halfDPerSec = values.halfDollar;
                 upDateTotalPerSec();
                 button.style.display = 'none';
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = message;
-                console.log('working');
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = message;
+                HFCU[HFCUKey] = false;
             } else {
                 button.style.display = 'none';
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = message;
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = message;
                 console.log('not working');
             }
         } catch(error) {
@@ -68,13 +68,53 @@ function futureUpgrade(button, cost, multiplier, message) {
         }
     })
 }
+//new and more updated function for the upgrades 
 
 
 //error for finding anything thats not right in the objects above
 Object.entries(halfDollarClickerUpgrade, quaterClickerUpgrade, dimeClickerUpgrade, nickeClickerUpgrade).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
-//functions for upgrades
+let NCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
+let DCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
+let QCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
+let HFCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -88,10 +128,11 @@ nickeClickerUpgrade.nickelFirst.addEventListener('click',function() {
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFirst.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled nickels per second";
+            NCU.first = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled nickels per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -111,10 +152,11 @@ nickeClickerUpgrade.nickelSecond.addEventListener('click',function() {
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelSecond.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled nickels per second";
+            NCU.two = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled nickels per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -134,10 +176,11 @@ nickeClickerUpgrade.nickelFourth.addEventListener('click',function() {
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFourth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled nickels per second";
+            NCU.four = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled nickels per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -157,10 +200,11 @@ nickeClickerUpgrade.nickelFifth.addEventListener('click',function() {
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFifth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled nickels per second";
+            NCU.five = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled nickels per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -181,10 +225,11 @@ dimeClickerUpgrade.dimeFirst.addEventListener('click', function() {
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeFirst.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled dimes per second";
+            DCU.first = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled dimes per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -204,10 +249,11 @@ dimeClickerUpgrade.dimeSecond.addEventListener('click', function() {
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeSecond.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled dimes per second";
+            DCU.two = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled dimes per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -227,10 +273,11 @@ dimeClickerUpgrade.dimeFourth.addEventListener('click', function() {
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeFourth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've tripled dimes per second"
+            DCU.four = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've tripled dimes per second"
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -250,10 +297,11 @@ dimeClickerUpgrade.dimeFifth.addEventListener('click', function() {
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
             dimeClickerUpgrade.dimeFifth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled dimes per second"
+            DCU.five = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled dimes per second"
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -274,10 +322,11 @@ quaterClickerUpgrade.quaterFirst.addEventListener('click', function() {
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterFirst.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled quaters per second";
+            QCU.first = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled quaters per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -297,10 +346,11 @@ quaterClickerUpgrade.quaterSecond.addEventListener('click', function() {
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterSecond.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled quaters per second";
+            QCU.two = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled quaters per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -320,10 +370,11 @@ quaterClickerUpgrade.quaterFourth.addEventListener('click', function() {
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterFourth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've tripled quater per second";
+            QCU.four = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've tripled quater per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -343,10 +394,11 @@ quaterClickerUpgrade.quaterFifth.addEventListener('click', function() {
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
             quaterClickerUpgrade.quaterFifth.style.display = 'none';
-            newsList.style.animation = 'none';
-            void newsList.offsetWidth;
-            newsList.style.animation = 'slideInOut 3s';
-            newsList.textContent = "you've doubled quater per second";
+            QCU.five = false;
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "you've doubled quater per second";
         } else {
             noMoneyDisplay.textContent = 'need more money!';
             setTimeout(() => {
@@ -357,7 +409,8 @@ quaterClickerUpgrade.quaterFifth.addEventListener('click', function() {
         console.error('error with quater fifth upgrade');
     }
 })
-//half-dollar
+
+
 
 
 
@@ -424,30 +477,26 @@ let closeVault = document.getElementById('closevault').addEventListener('click',
 })
     //markets
 let openMarkets = document.getElementById('markets').addEventListener('click', function() {
-    newsList.style.animation = 'none';
-    void newsList.offsetWidth;
-    newsList.style.animation = 'slideInOut 3s';
-    newsList.innerText = 'coming soon...!';
+    newsContext.style.animation = 'none';
+    void newsContext.offsetWidth;
+    newsContext.style.animation = 'slideInOut 3s';
+    newsContext.innerText = 'coming soon...!';
 })
     //goods
 let openGoods = document.getElementById('goods').addEventListener('click', function() {
     if(goodsUnlocked) {
         r.style.display = 'flex';
         document.getElementById('assests').style.display = 'none';
-        newsList.style.animation = 'none';
-        void newsList.offsetWidth;
-        newsList.style.animation = 'slideInOut 3s';
-        newsList.textContent = 'goods opened!';
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = 'goods opened!';
     } else {
-        newsList.style.animation = 'none';
-        void newsList.offsetWidth;
-        newsList.style.animation = 'slideInOut 3s';
-        newsList.innerText = 'unlock nickels first!';
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.innerText = 'unlock nickels first!';
     }
-    
-    
-    
-    
 })
 let closeGoods = document.getElementById('close-goods').addEventListener('click', function() {
     document.getElementById('small-goods').style.display = 'none';
@@ -455,17 +504,17 @@ let closeGoods = document.getElementById('close-goods').addEventListener('click'
 })
 
 //account 
-document.getElementById('account').addEventListener('click', function() {
-    newsList.style.animation = 'none';
-    void newsList.offsetWidth;
-    newsList.style.animation = 'slideInOut 3s';
-    newsList.innerText = 'coming soon...!';
-})
+/*document.getElementById('account').addEventListener('click', function() {
+    newsContext.style.animation = 'none';
+    void newsContext.offsetWidth;
+    newsContext.style.animation = 'slideInOut 3s';
+    newsContext.innerText = 'coming soon...!';
+}) */
 document.getElementById('transfermoney').addEventListener('click', function() {
-    newsList.style.animation = 'none';
-    void newsList.offsetWidth;
-    newsList.style.animation = 'slideInOut 3s';
-    newsList.innerText = 'coming soon...!';
+    newsContext.style.animation = 'none';
+    void newsContext.offsetWidth;
+    newsContext.style.animation = 'slideInOut 3s';
+    newsContext.innerText = 'coming soon...!';
 })
 
 

@@ -5,7 +5,8 @@ const smallGoods = {
     sgSecond: document.getElementById('sg-second'),//triple click value of coins only
     sgThird: document.getElementById('sg-third'),//small cash burst
     sgFourth: document.getElementById('sg-fourth'),//add small coin value
-    sgFifth: document.getElementById('sg-fifth')//small cash burst
+    sgFifth: document.getElementById('sg-fifth'),//small cash burst
+    sgSixth: document.getElementById('sg-sixth')//add small coin value
 }
 const mediumGoods = {
     mgFirst: document.getElementById('mg-first'),
@@ -19,14 +20,14 @@ Object.entries(smallGoods, mediumGoods).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
 // for adding any click value
-addClickValue(smallGoods.sgSecond, 68.00, 22.25, "you' tripled click value");
+addClickValue(smallGoods.sgSecond, 68.00, "you've tripled click value");
+addClickValue(smallGoods.sgSixth, 142.00, "you've doubled click value of dimes");
 buySmallGood(smallGoods.sgFirst, 110.00, 2, "you've doubled all coin values");
 buySmallGood(smallGoods.sgFourth, 97.00, 1.5, "you've add a small coin value");
 smallCashBurst(smallGoods.sgThird, 115.00, 22.25, "you've added small cash burst");
 smallCashBurst(smallGoods.sgFifth, 132.00, 32.25, "you've added small cash burst");
 
 function addClickValue(button, cost, message) {
-    const c = 5;
     button.addEventListener('click', () => {
         try {
             if(totalCount >= cost) {
@@ -38,16 +39,17 @@ function addClickValue(button, cost, message) {
                 total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 upDateTotalPerSec();
                 button.style.display = 'none';
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent =  message;
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent =  message;
                 console.log('working');
+                saveGame();
             } else {
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = 'need more money';
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = 'need more money';
             }
         } catch(error) {
             console.error(`error with add click value`, error);
@@ -62,22 +64,22 @@ function smallCashBurst(button, cost, add, message) {
                 setInterval(() => {
                     totalCount += add;
                     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                    
-                    newsList.style.animation = 'none';
-                    void newsList.offsetWidth;
-                    newsList.style.animation = 'slideInOut 3s';
-                    newsList.textContent = `you've added ${add} to your total`;
+                    newsContext.style.animation = 'none';
+                    void newsContext.offsetWidth;
+                    newsContext.style.animation = 'slideInOut 3s';
+                    newsContext.textContent = `you've added ${add} to your total`;
                 }, 100000);
                 button.style.display = 'none';
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = message;
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = message;
+                saveGame();
             } else {
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = 'need more money..';
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = 'need more money..';
             }
         })
     } catch(error) {
@@ -123,16 +125,17 @@ function buySmallGood(button, cost, multiplier, message) {
                 upDateTotalPerSec();
                 total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
                 button.style.display = 'none';
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = message;
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = message;
                 console.log('working');
+                saveGame();
             } else {
-                newsList.style.animation = 'none';
-                void newsList.offsetWidth;
-                newsList.style.animation = 'slideInOut 3s';
-                newsList.textContent = 'need more money..';
+                newsContext.style.animation = 'none';
+                void newsContext.offsetWidth;
+                newsContext.style.animation = 'slideInOut 3s';
+                newsContext.textContent = 'need more money..';
             }
         } catch(error) {
             console.error(`error with ${button}`, error);

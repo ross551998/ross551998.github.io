@@ -13,6 +13,8 @@ const open_Awards = document.getElementById('mobile-Awards');
 const mobile_awards = document.getElementById('awards');
 const open_goods = document.getElementById('goods');
 const mobile_goods = document.getElementById('buy-goods');
+const mobileCloseButtn = document.getElementById('mobile-upgrades-only');
+const mp = document.getElementById('problem');
 
 //for smaller devices
 function isTouchDevice() {
@@ -98,9 +100,10 @@ function showAssests() {
         mobile_assests.style.position = 'fixed';
         mobile_assests.style.display = 'flex';
         mobile_assests.style.bottom = '0';
-        mobile_assests.style.height = '55vh';
+        mobile_assests.style.height = '50vh';
         mobile_assests.style.width = '100%';
         mobile_assests.style.transition = 'bottom 0.5s ease';
+        mobile_assests.style.overflowY = 'scroll';
         document.getElementsByTagName(nav);
     } else {
         console.log('no!');
@@ -142,9 +145,11 @@ function showUpgrades() {
         mobile_upgrades.style.position = 'fixed';
         mobile_upgrades.style.display = 'flex';
         mobile_upgrades.style.bottom = '0';
-        mobile_upgrades.style.height = '58vh';
+        mobile_upgrades.style.height = '60vh';
         mobile_upgrades.style.width = '100%';
         mobile_upgrades.style.transition = 'bottom 0.5s ease';
+        mobile_upgrades.style.overflowY = 'scroll';
+        mobileCloseButtn.style.display = 'flex';
         document.getElementById(nav);
     } 
 } 
@@ -186,7 +191,7 @@ function show_Awards() {
             newsContext.style.animation = 'none';
             void newsContext.offsetWidth;
             newsContext.style.animation = 'slideInOut 3s';
-            newsContext.innerText = 'not avaible right now..';
+            newsContext.innerText = 'reach 25 penny workers to unlock awards';
         }
     } 
 }
@@ -220,5 +225,26 @@ function close_goods() {
         mobile_goods.style.display = 'none';
     } else {
         console.log('user expericing problems with goods closing');
+    }
+}
+function reportProblem() {
+    if(isTouchDevice()) {
+        topNav.style.display = 'none';
+        mp.style.display = 'flex';
+        mp.style.position = 'fixed';
+        mp.style.bottom = '0';
+        mp.style.height = '70vh';
+        mp.style.width = '100%';
+        mp.style.transition = 'bottom 0.5s ease';
+        document.getElementById(nav);
+    }
+}
+function mobileCloseForm() {
+    if(isTouchDevice()) {
+        nav.classList.add('show');
+        topNav.style.display = 'flex';
+        mp.style.display = 'none';
+    } else {
+        console.log('report form isnt working');
     }
 }

@@ -21,6 +21,54 @@ html, body {
     margin: 0;
     padding: 0;
 }
+/*report problem */
+.problem {
+    display: none;
+    z-index: 9999;
+    position:absolute;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #333333;
+    color: wheat;
+    margin-top: 4.8%;
+    margin-left: 15%;
+    width: 130lvh;
+    height: 80lvh;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+.problem-category {
+    display: flex;
+    flex-direction: column;
+}
+form button {
+    height: 30px;
+    margin-top: 3%;
+    border-radius: 16px;
+}
+#disclosure {
+    font-size: 12px;
+}
+#mobile-use-close-form {
+    display: none;
+}
+
+
+.settings {
+    display: none;
+}
+
+.overlay {
+    display: none;
+    width: 18%;
+    height: 20lvh;
+    flex-direction: column;
+    z-index: 9999;
+}
 #news {
     position: absolute;
     opacity: 0;
@@ -77,6 +125,15 @@ nav h4 {
 #bar-for-mobile {
     display: none;
 }
+#bar-for-web {
+    margin-right: 3%;
+    font-size: 2rem;
+}
+#bar-for-web:hover {
+    scale: 1.4;
+    cursor: pointer;
+    color: #50C878;
+} 
 nav h4:hover {
     scale: 0.9;
     cursor: pointer;
@@ -85,9 +142,6 @@ nav h4:hover {
 }
 .mobile-nav {
     display: none;
-}
-#account {
-    margin-right: 2%;
 }
 .idlegame-head {
     position: relative;
@@ -165,8 +219,8 @@ nav h4:hover {
     overflow: hidden;
     color: cornsilk;
     flex-shrink: 0;
-    border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     background: url(photos/upgrades2.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -384,7 +438,7 @@ nav h4:hover {
     margin-bottom: 10px;
 }
 .awards i {
-    
+    display: none;
     font-size: 22px;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -418,7 +472,7 @@ nav h4:hover {
 .medium-goods {
     display: none;
 }
-.first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg {
+.first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg, .sixth-sg {
     display: none;
 }
 
@@ -591,7 +645,10 @@ nav h4:hover {
     display: none;
 }
 /*phone view*/
-@media screen and (max-width: 896px) and (min-width: 400px) {
+@media screen and (max-width: 896px) {
+    .overlay {
+        display: none;
+    }
     html, body {
         width: 100%;
         touch-action: manipulation;/*prevent double tap-zoom*/
@@ -599,6 +656,7 @@ nav h4:hover {
     }
     #bar-for-mobile {
         display: flex;
+        
         padding-left: 3%;
         font-size: 52px;
     }
@@ -606,6 +664,9 @@ nav h4:hover {
         scale: 1.4;
         cursor: pointer;
         color: #50C878;
+    }
+    #bar-for-web {
+        display: none;
     }
     #news {
         position: absolute;
@@ -622,17 +683,43 @@ nav h4:hover {
         height: 70px;
         margin-top: 0;
         margin-left: 0;
+        
+    }
+    .problem {
+        display: none;
+        font-size: 18px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-left: 0;
+    }
+    #problem-category {
+        margin-top: 1%;
+    }
+    #report-form input, select {
+        height: 25px;
+    }
+    #closeform {
+        display: none;
+    }
+    #mobile-use-close-form {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
     #top-assests, #top-awards, #top-news, #account {
         display: none;
     }
     nav h1 {
         font-size: 1.5rem;
-        margin-left: 14%;
+        margin-left: 5%;
+        
     }
     .mobile-nav {
         position: fixed;
         bottom: -100%; /* Start hidden */
+        
         left: 0;
         right: 0;
         height: 50vh;
@@ -645,6 +732,8 @@ nav h4:hover {
         align-items: center;
         padding-top: 12px;
         transition: bottom 0.5s ease;
+        overflow-y: scroll;
+        scrollbar-width: none;
     }
     .mobile-nav h4 {
         color: white;
@@ -653,6 +742,9 @@ nav h4:hover {
     .mobile-nav h4:hover {
         color: yellow;
         scale: 1.4;
+    }
+    .mobile-nav p {
+        margin-top: -1.2%;
     }
     .mobile-nav.show {
         bottom: 0;
@@ -691,7 +783,6 @@ nav h4:hover {
         justify-content: center;
         flex-direction: column;
         display: flex;
-       
     }
     .displayword h1 {
         display: flex;
@@ -701,23 +792,22 @@ nav h4:hover {
     /*display or nav area for all the features*/
     .assest {
         display: none;
-        
         flex-direction: column-reverse;
         gap: 5%;
         font-size: 50px;
-        
+        scrollbar-width: none;
     }
     .idlegame-head {
         display: flex;
         flex-direction: column;
         align-items: center;
-        
         padding-top: 2px;
-        
     }
     /*working on display none */
     .upgrade-title {
         display: none;
+        z-index: 100;
+        overflow: visible;
         width: 95%;
         font-size: 1rem;
         border-radius: 12px;
@@ -757,18 +847,22 @@ nav h4:hover {
         border-radius: 26px;
         width: 80%;
         height: 40px;
-        
     }
     #mobile-upgrades-only {
-        display: flex;
-        width: 70%;
-        height: 35px;
         margin-top: 6%;
+        display: flex;
+        width: 80%;
+        height: 35px;
         border-radius: 24px;
-        text-align: center;
-        align-content: center;
+        align-items: center;
         justify-content: center;
         font-size: 1rem;
+        
+    }
+    #mobile-upgrades-only:hover {
+        scale: 1.1;
+        cursor: pointer;
+        background-color: gold;
     }
     .personal-vault {
         gap: 3%;
@@ -802,26 +896,62 @@ nav h4:hover {
         border-radius: 22px;
     }
     .buy-goods {
-    
         overflow-y: scroll;
         scrollbar-width: none;
         flex-direction: column;
         background-color: cadetblue;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
     }
     .small-goods {
-        
-        height: 55vh;
+        height: 65vh;
         flex-direction: column;
         overflow-y: scroll;
         scrollbar-width: none;
         font-size: 1rem;
     }
-    .first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg {
+    .small-goods h2 {
+        background: linear-gradient(to right, gold, green, white, lightgreen, gold);
+        font-weight: bolder;
+        -webkit-background-clip: text;
+        color: transparent;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    .first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg, .sixth-sg {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    
+    .first-sg button, .second-sg button, .third-sg button, .fourth-sg button, .fifth-sg button, .sixth-sg button {
+        width: 80%;
+        height: 40px;
+        font-size: 1.2rem;
+        border-radius: 22px;
+    }
+    .fifth-sg button:hover, .first-sg button:hover, .second-sg button:hover, .third-sg button:hover, .fourth-sg button:hover, .sixth-sg button:hover {
+        scale: 1.1;
+        cursor: pointer;
+        background-color: gold;
+    }
+    #close-goods {
+        display: flex;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-left: 5%;
+        font-size: 1.4rem;
+        border-radius: 26px;
+        background-color: #50C878;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px 1px black;
+    }
+    #close-goods:hover {
+        scale: 1.1;
+        cursor: pointer;
+        background-color: gold;
+    }
 }
 /*tablet view*/
 @media screen and (min-width: 896px) and (max-width: 1300px) {
@@ -836,6 +966,9 @@ nav h4:hover {
         margin-left: auto;
         text-align: right;
     }
+    #bar-for-mobile {
+        display: none;
+    }
     .gameContent {
         overflow-y: auto;
         height: 84vh;
@@ -848,16 +981,15 @@ nav h4:hover {
         color: yellow;
     }
     .assest {
-        margin-top: -153%;
+        margin-top: 3%;
+        position: absolute;
         gap: 3%;
-        height: 28vw;
-        width: 94%;
-
+        height: 41vh;
+        width: 31%;
     }
     .buy-goods {
         width: 100%;
         margin-top: -77%;
-        
     }
     .displayword {
         width: 620px;
