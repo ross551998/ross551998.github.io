@@ -39,7 +39,7 @@
             <div class="settings" id="settings">
                 <h4 id="web-savegame" onclick="webSaveGame()">Save Game</h4>
                 <h4 id="web-loadgame" onclick="webLoadGame()">Load Game</h4>
-                <h4 id="web-feedback" onclick="reportButtn()">Rerport Problem</h4>
+                <h4 id="web-feedback" onclick="reportButtn()">Report Problem</h4>
             </div>
             <div class="money-container" id="money-container"></div>
         </nav>
@@ -67,6 +67,7 @@
                         <option value="other">other</option>
                     </select>
                     <label for="problem-description">Describe problem</label>
+                    <input type="hidden" name="debug-info" id="debug-info">
                     <textarea id="problem-description" name="problem-description" rows="5" placeholder="Explain what happen..." required></textarea>
                     <button type="submit">submit problem</button>
                     <button type="button" id="closeform">Close</button>

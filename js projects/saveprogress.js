@@ -37,6 +37,11 @@ function webLoadGame() {
     newsContext.style.animation = 'slideInOut 3s';
     newsContext.textContent = 'coming soon...!';
 }
+//log errors, warn, logs
+let logs = [];
+function logError() {
+    logs.push(`${new Date().toISOString()}: ${console.error()}`);
+}
  
 
 
@@ -436,7 +441,7 @@ function doubleCheckall() {
         smallGoods.sgSixth.style.display = 'flex';
     }
 }
-//for per sec timer
+//for per sec timer*/
 function startAutoCent() {
     if (!autoCentInterval) {
         autoCentInterval = setInterval(() => {
@@ -517,4 +522,3 @@ function startAutoHFD() {
         upDateTotalPerSec();
     }
 }
-*/

@@ -52,6 +52,7 @@ function addClickValue(button, cost, message) {
                 newsContext.textContent = 'need more money';
             }
         } catch(error) {
+            logError(error.message);
             console.error(`error with add click value`, error);
         }
     })
@@ -138,16 +139,9 @@ function buySmallGood(button, cost, multiplier, message) {
                 newsContext.textContent = 'need more money..';
             }
         } catch(error) {
+            logError(error.message);
             console.error(`error with ${button}`, error);
         }
     })
     
 }
-
-
-
-
-
-
-
-

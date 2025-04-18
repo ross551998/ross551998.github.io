@@ -25,6 +25,18 @@ const p = document.getElementById('problem');
 //for sending me problem forms
 document.getElementById('report-form').addEventListener('submit', function(e) {
     e.preventDefault();
+    let debugInfo = '';
+    try {
+        debugInfo += `totalCount: ${totalCount}\n`;
+        debugInfo += `halfDollarPerSec: ${perSecData.halfDPerSec}\n`;
+        debugInfo += `values.halfDollar: ${values.halfDollar}\n`;
+        debugInfo += `Current Date: ${new Date().toISOString()}\n`;
+        debugInfo += `Error Log:\n${errorLog.join('\n')}\n`;
+    } catch(err) {
+        debugInfo += `error collecting debug info: ${err.message}\n`;
+        logError(err.message);
+    }
+    document.getElementById('debug_info').value = debugInfo;
     emailjs.sendForm("service_jutg1vj", "template_n0cyenc", this)
         .then(() => {
             alert('problem report sent successfully! Thank you!');
@@ -58,8 +70,5 @@ function reportButtn() {
 closeForm.addEventListener('click', function() {
     p.style.display = 'none';
 })
-
-
-
 
 

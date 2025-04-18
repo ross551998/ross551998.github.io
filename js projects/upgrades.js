@@ -64,6 +64,7 @@ function futureUpgrade(button, cost, multiplier, message, HFCUKey) {
                 console.log('not working');
             }
         } catch(error) {
+            logError(error.message);
             console.error(`error with ${button.id} upgrade`, error);
         }
     })
@@ -409,49 +410,6 @@ quaterClickerUpgrade.quaterFifth.addEventListener('click', function() {
         console.error('error with quater fifth upgrade');
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //bounce the photos/ icons
 document.querySelectorAll('.photo').forEach(photo => {
