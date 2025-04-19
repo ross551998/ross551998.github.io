@@ -34,6 +34,13 @@ const halfDollarClickerUpgrade = {
     hdFourth: document.getElementById('hdFourth'),
     hdFifth: document.getElementById('hdFifth')
 }
+const dollarClickerUpgrade = {
+    DFirst: document.getElementById('DFirst'),
+    DSecond: document.getElementById('DSecond'),
+    DThird: document.getElementById('DThird'),
+    DFourth: document.getElementById('DFourth'),
+    DFifth: document.getElementById('DFifth')
+}
 futureUpgrade(halfDollarClickerUpgrade.hdFirst, 160.00, 2, "you've doubled half-dollar per second", 'first');
 futureUpgrade(halfDollarClickerUpgrade.hdSecond, 430.00, 3, "you've tripled the half-dollar per second", 'second');
 futureUpgrade(halfDollarClickerUpgrade.hdFourth, 1290.00, 2, "you've double half-dollar per second", 'four');
@@ -73,7 +80,7 @@ function futureUpgrade(button, cost, multiplier, message, HFCUKey) {
 
 
 //error for finding anything thats not right in the objects above
-Object.entries(halfDollarClickerUpgrade, quaterClickerUpgrade, dimeClickerUpgrade, nickeClickerUpgrade).forEach(([key, value]) => {
+Object.entries(dollarClickerUpgrade, halfDollarClickerUpgrade, quaterClickerUpgrade, dimeClickerUpgrade, nickeClickerUpgrade).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
 let NCU = {

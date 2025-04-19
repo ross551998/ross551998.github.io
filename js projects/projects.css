@@ -729,6 +729,9 @@ nav h4:hover {
         font-size: 1.2rem;
         color: yellow;
     }
+    .settings {
+        display: none;
+    }
     nav {
         display: flex;
         justify-content: center;
@@ -767,7 +770,7 @@ nav h4:hover {
         display: none;
     }
     nav h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin-left: 5%;
         
     }
