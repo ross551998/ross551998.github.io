@@ -346,6 +346,11 @@ let awards = document.getElementById('awards');
 let awardButtn = document.getElementById('top-awards');
 let closeAwards = document.getElementById('closeawards');
 let awardUnlocked = false;
+//commas in the totalcount
+function UpdateTotalDisplay() {
+    total.textContent =  `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+}
+//commas in the upgrade amount
 
 
 
@@ -367,6 +372,7 @@ awardButtn.addEventListener('click', function() {
         newsContext.textContent = 'awards opened!';
         awardButtn.style.pointerEvents = 'none';
         awardButtn.style.opacity = '0.5' 
+        assestButtn.style.pointerEvents = 'none';
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1353,7 +1359,6 @@ coins.forEach(coin => {
 
 //main clicker
 function mainClicker() {
-    
     let mcdisplay = document.getElementById('mcamount');
     mainClickerCount++;
     if(timeID) {
@@ -1461,12 +1466,12 @@ function mainClicker() {
     }
     totalCount += values.main;
     mcdisplay.textContent = values.main;
-    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+    UpdateTotalDisplay();
 }
 //cent counter
 function cents() {
     totalCount += 0.01;
-    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+    UpdateTotalDisplay();
     
 }
 function increaseCent() {// this is done for now, ready for new version
@@ -1546,7 +1551,7 @@ function increaseCent() {// this is done for now, ready for new version
 //nickel counter
 function nickels() {
     totalCount += 0.05;
-    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+    UpdateTotalDisplay();
     
    
 }

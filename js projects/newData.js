@@ -22,21 +22,24 @@ let e = document.getElementById('bar-for-web');
 let u = document.getElementById('settings');
 const t = document.getElementById('title');
 const p = document.getElementById('problem');
+const centralTime = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
 //for sending me problem forms
 document.getElementById('report-form').addEventListener('submit', function(e) {
     e.preventDefault();
     let debugInfo = '';
     try {
         debugInfo += `totalCount: ${totalCount}\n`;
-        debugInfo += `halfDollarPerSec: ${perSecData.halfDPerSec}\n`;
-        debugInfo += `values.halfDollar: ${values.halfDollar}\n`;
-        debugInfo += `Current Date: ${new Date().toISOString()}\n`;
+        debugInfo += `main clicker count: ${mainClickerCount}\n`;
+        debugInfo += `upgrades unlockec ${coinsUnlocked2}\n`;
+        debugInfo += `awards unlocked ${awardUnlocked}\n`;
+        debugInfo += `money info ${money}\n`;
+        debugInfo += `Current Date: ${centralTime}\n`;
         debugInfo += `Error Log:\n${errorLog.join('\n')}\n`;
     } catch(err) {
         debugInfo += `error collecting debug info: ${err.message}\n`;
         logError(err.message);
     }
-    document.getElementById('debug_info').value = debugInfo;
+    document.getElementById('debug-info').value = debugInfo;
     emailjs.sendForm("service_jutg1vj", "template_n0cyenc", this)
         .then(() => {
             alert('problem report sent successfully! Thank you!');

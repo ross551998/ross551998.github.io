@@ -40,16 +40,11 @@
                 <h4 id="web-savegame" onclick="webSaveGame()">Save Game</h4>
                 <h4 id="web-loadgame" onclick="webLoadGame()">Load Game</h4>
                 <h4 id="web-feedback" onclick="reportButtn()">Report Problem</h4>
+                <h4 id="web-tutorial" onclick="showSteps()">how to play</h4>
             </div>
             <div class="money-container" id="money-container"></div>
         </nav>
-        <div class="overlay" id="overlay">
-            <div class="box"></div>
-            <div class="tutorial-box"></div>
-            <button type="button" id="startbuttn">Start</button>
-            <button type="button" id="nextbuttn">Next</button>
-            <button type="button" id="skipbuttn">Skip</button>
-        </div>
+        
         <main>
             <div class="problem" id="problem">
                 <form id="report-form">
@@ -74,6 +69,13 @@
                     <button type="button" id="mobile-use-close-form" onclick="mobileCloseForm()">Close</button>
                     <p id="disclosure"><strong>Privacy Notice:</strong> We do not collect, store, or share any personal information. This form is used solely to help us improve the game based on your feedback.<br>Your name is optional, and no data is saved beyond the problem report email we receive. </p>
                 </form>
+            </div>
+            <div class="overlay" id="overlay">
+                <h2 id="tt"></h2>
+                <p id="tc"></p>
+                <button type="button" id="startbuttn">Start</button>
+                <button type="button" id="nextbuttn">Next</button>
+                <button type="button" id="skipbuttn">Skip</button>
             </div>
             <div class="idlegame-head">
                 <div class="upgrade-title" id="upgrade-title">
@@ -474,7 +476,7 @@
                 </div>
                 <div class="gameContent" id="gamecontent">
                     <button type="button" id="mobile-use-only">Close</button>
-                    <div class="pennys" onclick="cents()" id="pennys">
+                    <div class="pennys" id="pennys">
                         <h1>Pennys</h1>
                         <div class="photo" id="photo">
                             
@@ -487,7 +489,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="nickels"  onclick="nickels()" id="nickels">
+                    <div class="nickels"  id="nickels">
                         <h1>nickels</h1>
                         <div class="photo" id="photo">
                             
@@ -501,7 +503,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dimes" onclick="dimes()" id="dimes">
+                    <div class="dimes" id="dimes">
                         <h1>dimes</h1>
                         <div class="photo" id="photo">
 
@@ -514,7 +516,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="quaters" onclick="quaters()" id="quaters">
+                    <div class="quaters" id="quaters">
                         <h1>quaters</h1>
                         <div class="photo" id="photo">
                             
@@ -527,7 +529,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="half-dollar" onclick="halfDollars()" id="half-dollar">
+                    <div class="half-dollar" id="half-dollar">
                         <h1>half-dollar</h1>
                         <div class="photo" id="photo">
                             
@@ -540,7 +542,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="dollar" onclick="dollars()" id="dollar">
+                    <div class="dollar" id="dollar">
                         <h1>Dollar</h1>
                         <div class="photo" id="photo">
                             
@@ -553,7 +555,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fivedollar" onclick="fiveDollars()" id="fivedollar">
+                    <div class="fivedollar" id="fivedollar">
                         <h1>Five Dollar</h1>
                         <div class="photo" id="photo">
                             
@@ -566,7 +568,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tendollar" onclick="tenDollars()" id="tendollar">
+                    <div class="tendollar" id="tendollar">
                         <h1>Ten Dollar</h1>
                         <div class="photo" id="photo">
                         
@@ -579,7 +581,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="twentydollar" onclick="twentyDollars()" id="twentydollar">
+                    <div class="twentydollar" id="twentydollar">
                         <h1>twenty Dollar</h1>
                         <div class="photo" id="photo">
                             
@@ -592,7 +594,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="fiftydollar" onclick="fiftyDollars()" id="fiftydollar">
+                    <div class="fiftydollar" id="fiftydollar">
                         <h1>Fifty Dollar</h1>
                         <div class="photo" id="photo">
 
@@ -605,7 +607,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hundreddollar" onclick="hundredDollars()" id="hundreddollar">
+                    <div class="hundreddollar" id="hundreddollar">
                         <h1>Hundred Dollar</h1>
                         <div class="photo" id="photo">
 
@@ -621,6 +623,7 @@
                 </div>
                 <h2 id="news"></h2>
             </div>
+            
         </main>
     </body>
     <Script src="close.js"></Script><!--for opening next level-->

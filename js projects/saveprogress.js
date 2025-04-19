@@ -446,7 +446,7 @@ function startAutoCent() {
     if (!autoCentInterval) {
         autoCentInterval = setInterval(() => {
             totalCount += values.cent;
-            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+            UpdateTotalDisplay();
             centAuto.style.display = 'none';
             centAutoBody.style.display = 'none';
             increaseCents.style.display = 'flex';
@@ -462,7 +462,7 @@ function startAutoNickel() {
     if(!autoNickelInterval) {
         autoNickelInterval = setInterval(() => {
             totalCount += values.nickel;
-            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+            UpdateTotalDisplay();
             nickelAuto.style.display = 'none';
             nickelAutoBody.style.display = 'none';
             increaseNickels.style.display = 'flex';
@@ -478,7 +478,7 @@ function startAutoDime() {
     if(!autoDimeInterval) {
         autoDimeInterval = setInterval(() => {
             totalCount += values.dime;
-            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+            UpdateTotalDisplay();
             dimeAuto.style.display = 'none';
             dimeAutoBody.style.display = 'none';
             increaseDimes.style.display = 'flex';
@@ -494,7 +494,7 @@ function startAutoQuarter() {
     if(!autoQuaterInterval) {
         autoQuaterInterval =  setInterval(() => {
             totalCount += values.quarter;
-            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+            UpdateTotalDisplay();
             quaterAuto.style.display = 'none';
             qauterAutoBody.style.display = 'none';
             increaseQuater.style.display = 'flex';
@@ -510,7 +510,7 @@ function startAutoHFD() {
     if(!autoHDInterval) {
         autoHDInterval =  setInterval (() => {
             totalCount += values.halfDollar;
-            total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+            UpdateTotalDisplay();
             hDAuto.style.display = 'none';
             hDAutoBody.style.display = 'none';
             increaseHD.style.display = 'flex';
