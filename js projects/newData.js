@@ -35,7 +35,7 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
         debugInfo += `money info ${money}\n`;
         debugInfo += `Current Date: ${centralTime}\n`;
         debugInfo += `Error Log:\n${errorLog.join('\n')}\n`;
-    } catch(err) {
+    } catch (err) {
         debugInfo += `error collecting debug info: ${err.message}\n`;
         logError(err.message);
     }
@@ -57,14 +57,16 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
 
 //web open/close settings
 e.addEventListener('click', function() {
-    if(u.style.display === 'flex') {
-       u.style.display = 'none';
-       t.style.marginLeft = '12%';
+    u.classList.toggle('active');
+    if(u.classList.contains('active')) {
+        e.style.marginRight = '0%';
+       t.style.marginLeft = '2%';
+       t.style.fontSize = '1rem';
     } else {
-        t.style.marginLeft = '2%';
-    u.style.display = 'flex';
+        e.style.marginRight = '-47%';
+        t.style.marginLeft = '12%';
+        t.style.fontSize = '1.6rem';
     }
-
 })
 //form
 function reportButtn() {

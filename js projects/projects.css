@@ -57,7 +57,12 @@ form button {
     display: none;
 }
 .settings {
-    display: none;
+    display: flex;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+.settings.active {  
+    transform: translateX(0);
 }
 .overlay {
     display: none;
@@ -91,6 +96,7 @@ form button {
     background-color: #ffc107;
     font-weight: bold;
 }
+
 #news {
     position: absolute;
     opacity: 0;
@@ -149,7 +155,9 @@ nav h4 {
     display: none;
 }
 #bar-for-web {
-    margin-right: 3%;
+    transform: translateX(10%);
+    transition: trasnform 0.5s ease;
+    margin-right: -47%;
     font-size: 2rem;
 }
 #bar-for-web:hover {
@@ -492,7 +500,7 @@ nav h4:hover {
     display: none;
     flex-direction: column;
     overflow-y: auto;
-    height: 27vw;
+    height: 16vw;
     width: 100%;
     font-size: 1.9lvh;
 }

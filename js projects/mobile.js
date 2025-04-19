@@ -25,6 +25,108 @@ function isTouchDevice() {
     return isTouch && screenWidth >= 400 && screenWidth <= 700;
     
 }
+//tutorial for mobile use
+/*
+function showSteps() {
+    if(isTouchDevice()) {
+        const tutorialTitle = document.getElementById('tt');
+        const tutroialContent = document.getElementById('tc');
+        tutorialBox.style.display = 'flex';
+        const step = tutorialSteps[currentStep];
+        tutorialTitle.textContent = step.title;
+        tutroialContent.textContent = step.content;
+        assestButtn.style.pointerEvents = 'none';
+        awardButtn.style.pointerEvents = 'none';
+        document.getElementById('top-news').style.pointerEvents = 'none';
+        document.getElementById('upgrade-unlockbuttn').style.pointerEvents = 'none';
+        u.classList.remove('active');
+        e.style.marginRight = '-47%';
+        t.style.marginLeft = '12%';
+        t.style.fontSize = '1.6rem';
+        document.getElementById('nextButton').style.pointerEvents = 'none';
+        if(currentStep === 2) {
+            tutorialBox.style.top = '50%';
+            tutorialBox.style.left = '1%';
+        }
+        if(currentStep === 3) {
+            tutorialBox.style.left = '62%';
+        }
+        if(currentStep === 4) {
+            tutorialBox.style.top = '12%';
+            tutorialBox.style.left = '30%';
+            document.getElementById('assests').style.display = 'flex';
+            assestButtn.style.pointerEvents = 'none';
+            assestButtn.style.opacity = '0.5';
+        }
+        if(currentStep === 5) {
+            tutorialBox.style.top = '12%';
+            tutorialBox.style.left = '30%';
+            goodsUnlocked = true;
+            smallGoods.sgFirst.style.display = 'flex';
+            r.style.display = 'flex';
+            document.getElementById('assests').style.display = 'none';
+            document.getElementById('close-goods').style.pointerEvents = 'none';
+            smallGoods.sgFirst.style.pointerEvents = 'none';
+        }
+        if(currentStep === 6) {
+            goodsUnlocked = false;
+            smallGoods.sgFirst.style.display = 'none';
+            r.style.display = 'none';
+            awardUnlocked =  true;
+            awards.style.display = 'grid';
+            firstAward.style.display = 'grid';
+            firstAward.style.pointerEvents = 'none';
+        } 
+    }
+}
+function nextStep() {
+    if(isTouchDevice()) {
+            currentStep++;
+        if(currentStep < tutorialSteps.length) {
+            showSteps();
+        } else {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('arrow');
+            assestButtn.style.pointerEvents = 'auto';
+            tutorialBox.style.display = 'none';
+            goodsUnlocked = false;
+            smallGoods.sgFirst.style.display = 'none';
+            r.style.display = 'none';
+            document.getElementById('assests').style.display = 'none';
+            assestButtn.style.pointerEvents = 'auto';
+            assestButtn.style.opacity = '1';
+            awardUnlocked =  false;
+            awards.style.display = 'none';
+            firstAward.style.display = 'none';
+            firstAward.style.pointerEvents = 'auto';
+            awardButtn.style.pointerEvents = 'auto';
+            document.getElementById('top-news').style.pointerEvents = 'auto';
+            document.getElementById('upgrade-unlockbuttn').style.pointerEvents = 'auto';
+            document.getElementById('nextButton').style.pointerEvents = 'auto';
+            currentStep = 0;
+        }
+    }
+}
+document.getElementById('skipbuttn').addEventListener('click', function() {
+   if(isTouchDevice()) {
+    tutorialBox.style.display = 'none';
+    goodsUnlocked = false;
+    smallGoods.sgFirst.style.display = 'none';
+    r.style.display = 'none';
+    document.getElementById('assests').style.display = 'none';
+    assestButtn.style.pointerEvents = 'auto';
+    assestButtn.style.opacity = '1';
+    awardUnlocked =  false;
+    awards.style.display = 'none';
+    firstAward.style.display = 'none';
+    firstAward.style.pointerEvents = 'auto';
+    awardButtn.style.pointerEvents = 'auto';
+    document.getElementById('top-news').style.pointerEvents = 'auto';
+    document.getElementById('upgrade-unlockbuttn').style.pointerEvents = 'auto';
+    document.getElementById('nextButton').style.pointerEvents = 'auto';
+   }
+})
+*/
 
 
 
