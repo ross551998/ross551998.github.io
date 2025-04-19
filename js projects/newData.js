@@ -36,7 +36,7 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
         debugInfo += `error collecting debug info: ${err.message}\n`;
         logError(err.message);
     }
-    document.getElementById('debug_info').value = debugInfo;
+    document.getElementById('debug-info').value = debugInfo;
     emailjs.sendForm("service_jutg1vj", "template_n0cyenc", this)
         .then(() => {
             alert('problem report sent successfully! Thank you!');
