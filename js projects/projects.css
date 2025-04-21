@@ -702,7 +702,7 @@ nav h4:hover {
 /*phone view*/
 @media screen and (max-width: 896px) {
     .overlay {
-        display: none;
+        display: none
     }
     html, body {
         width: 100%;
@@ -770,7 +770,7 @@ nav h4:hover {
         display: none;
     }
     nav h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         margin-left: 5%;
         
     }

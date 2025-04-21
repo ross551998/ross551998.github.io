@@ -50,7 +50,7 @@ function logError() {
 
 
 //uncheck when ready for release
-/*
+
 function saveGame() {
     const savedData = {
         totalCount: totalCount,
@@ -417,6 +417,9 @@ function updateDisplay() {
         } catch(error) {
             console.error(`error with ${hf}`, error);
         }
+    }
+    for(let dollar in dollar) {
+        
     }
     doubleCheckall();
     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;

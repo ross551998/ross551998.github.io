@@ -22,7 +22,7 @@ function isTouchDevice() {
     (navigator.maxTouchPoints > 0) || (window.matchMedia("(hover: none) and (pointer: coarse)").matches);
 
     const screenWidth = window.innerWidth;
-    return isTouch && screenWidth >= 400 && screenWidth <= 700;
+    return isTouch && screenWidth >= 400 && screenWidth <= 800;
     
 }
 //tutorial for mobile use

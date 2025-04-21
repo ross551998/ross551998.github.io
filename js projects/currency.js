@@ -1545,6 +1545,7 @@ function increaseCent() {// this is done for now, ready for new version
         index = (index + 1) % pennyNews.length;
         pennyClickerUpgrade.pennyFifth.style.display = 'flex';
         pennyClickerUnlock.five = true;
+        mediumGoods.mgFirst.style.display = 'flex';
     }
     
 }
@@ -1619,14 +1620,15 @@ function increaseNickel() { // ready for new version
         tenthAward.style.display = 'grid';
         NCU.four = true;
     }
-    if(autoCentCallCount ===  250) {
+    if(autoNickelCallCount ===  250) {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
         newsContext.textContent = nickelNews[4];
         index = (index + 1) % nickelNews.length;
-        pennyClickerUpgrade.pennyFifth.style.display = 'flex';
+        nickeClickerUpgrade.nickelFifth.style.display = 'flex';
         NCU.five = true;
+        mediumGoods.mgSecond.style.display = 'flex';
     }
     
 }
@@ -1694,6 +1696,7 @@ function increasedime() {
         index = (index + 1) % dimeNews.length;
         dimeClickerUpgrade.dimeFourth.style.display = 'flex';
         DCU.four = true;
+        mediumGoods.mgThird.style.display = 'flex';
     }
     if(autoDimeCallCount === 250) {
         newsContext.style.animation = 'none';
@@ -1870,6 +1873,50 @@ function increaseDollar() {
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
         newsContext.textContent = 'need more money';
+    }
+    if(autoDollarCallCount === 10) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = dollarNews[0];
+        index = (index + 1) % dollarNews.length;
+        dollarClickerUpgrade.DFirst.style.display = 'flex';
+        dollar.first = true;
+    }
+    if(autoDollarCallCount === 25) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = dollarNews[1];
+        index = (index + 1) % dollarNews.length;
+        dollarClickerUpgrade.DSecond.style.display = 'flex';
+        dollar.two = true;
+    }
+    if(autoDollarCallCount === 50) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = dollarNews[2];
+        index = (index + 1) % dollarNews.length;
+        dollar.three = true;
+    }
+    if(autoDollarCallCount === 100) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = dollarNews[3];
+        index = (index + 1) % dollarNews.length;
+        dollarClickerUpgrade.DFourth.style.display = 'flex';
+        dollar.four = true;
+    }
+    if(autoDollarCallCount === 250) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = dollarNews[4];
+        index = (index + 1) % dollarNews.length;
+        dollarClickerUpgrade.DFifth.style.display = 'flex';
+        dollar.five = true;
     }
 }
 //five dollar counter

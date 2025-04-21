@@ -22,10 +22,33 @@ Object.entries(smallGoods, mediumGoods).forEach(([key, value]) => {
 // for adding any click value
 addClickValue(smallGoods.sgSecond, 68.00, "you've tripled click value");
 addClickValue(smallGoods.sgSixth, 142.00, "you've doubled click value of dimes");
+buySmallGood(mediumGoods.mgSecond, 420, 2, "you've doubled all coin values");
 buySmallGood(smallGoods.sgFirst, 110.00, 2, "you've doubled all coin values");
 buySmallGood(smallGoods.sgFourth, 97.00, 1.5, "you've add a small coin value");
 smallCashBurst(smallGoods.sgThird, 115.00, 22.25, "you've added small cash burst");
 smallCashBurst(smallGoods.sgFifth, 132.00, 32.25, "you've added small cash burst");
+smallCashBurst(mediumGoods.mgFirst, 250.00, 112.00, "you've added a mediumn cash burst");
+smallCashBurst(mediumGoods.mgFifth, 620.00, 123.00, "you've added a mediumn cash burst");
+
+mediumGoods.mgThird.addEventListener('click', function() {
+    if(totalCount >= 500.00) {
+        totalCount -= 500.00;
+        values.main = 12.00;
+        mediumGoods.mgThird.style.display = 'none';
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = "main clicker is now $12.00";
+    } else {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = "need more money!";
+    }
+})
+
+
+
 
 function addClickValue(button, cost, message) {
     button.addEventListener('click', () => {

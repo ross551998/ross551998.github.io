@@ -41,27 +41,71 @@ const dollarClickerUpgrade = {
     DFourth: document.getElementById('DFourth'),
     DFifth: document.getElementById('DFifth')
 }
-futureUpgrade(halfDollarClickerUpgrade.hdFirst, 160.00, 2, "you've doubled half-dollar per second", 'first');
-futureUpgrade(halfDollarClickerUpgrade.hdSecond, 430.00, 3, "you've tripled the half-dollar per second", 'second');
-futureUpgrade(halfDollarClickerUpgrade.hdFourth, 1290.00, 2, "you've double half-dollar per second", 'four');
-futureUpgrade(halfDollarClickerUpgrade.hdFifth, 1452.00, 3, "you've tripled half-dollar per seccond", 'five');
+const FiveDCU = {
+    fdFirst: document.getElementById('fiveFirst'),
+    fdSecond: document.getElementById('fiveSecond'),
+    fdThird: document.getElementById('fiveThird'),
+    fdFourth: document.getElementById('fiveFourth'),
+    fdFifth: document.getElementById('fiveFifth')
+}
+const TenDCU = {
+    tenFirst: document.getElementById('tenFirst'),
+    tenSecond: document.getElementById('tenSecond'),
+    tenThird: document.getElementById('tenThird'),
+    tenFourth: document.getElementById('tenFourth'),
+    tenFifth: document.getElementById('tenFifth'),
+}
+const TwentyDCU = {
+    TFirst: document.getElementById('twentyFirst'),
+    TSecond: document.getElementById('twentySecond'),
+    TThird: document.getElementById('twentyThird'),
+    TFourth: document.getElementById('twentyFourth'),
+    TFifth: document.getElementById('twentyFifth')
+}
+futureUpgrade(halfDollarClickerUpgrade.hdFirst, 160.00, 2, "you've doubled half-dollar per second", 'first', 'HFCU');
+futureUpgrade(halfDollarClickerUpgrade.hdSecond, 430.00, 3, "you've tripled the half-dollar per second", 'second', 'HFCU');
+futureUpgrade(halfDollarClickerUpgrade.hdFourth, 1290.00, 2, "you've double half-dollar per second", 'four', 'HFCU');
+futureUpgrade(halfDollarClickerUpgrade.hdFifth, 1452.00, 3, "you've tripled half-dollar per seccond", 'five', 'HFCU');
+futureUpgrade(dollarClickerUpgrade.DFirst, 205.00, 2, "you've doubled dollar per second", "first", 'dollar');
+futureUpgrade(dollarClickerUpgrade.DSecond, 525.00, 3, "you've tripled dollar per second", "second", 'dollar' );
+futureUpgrade(dollarClickerUpgrade.DThird, 4368.00, 2, "you've doubled dollar per second", 'four', 'dollar');
+futureUpgrade(dollarClickerUpgrade.DFifth, 16598.00, 3, "you've tripled dollar per second", 'five', 'dollar');
+
 //new way more advanced and more efficent
 
-function futureUpgrade(button, cost, multiplier, message, HFCUKey) {
+function futureUpgrade(button, cost, multiplier, message, key, group ) {
     button.addEventListener('click', () => {
         try {
             if(totalCount >= cost) {
                 totalCount -= cost;
-                values.halfDollar *= multiplier;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                perSecData.halfDPerSec = values.halfDollar;
-                upDateTotalPerSec();
-                button.style.display = 'none';
-                newsContext.style.animation = 'none';
-                void newsContext.offsetWidth;
-                newsContext.style.animation = 'slideInOut 3s';
-                newsContext.textContent = message;
-                HFCU[HFCUKey] = false;
+                if(group === 'HFCU') {
+                    values.halfDollar *= multiplier;
+                    total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
+                    perSecData.halfDPerSec = values.halfDollar;
+                    upDateTotalPerSec();
+                    button.style.display = 'none';
+                    newsContext.style.animation = 'none';
+                    void newsContext.offsetWidth;
+                    newsContext.style.animation = 'slideInOut 3s';
+                    newsContext.textContent = message;
+                    HFCU[key] = false;
+                } else {
+                    console.warn(`error with ${HFCU[key]}`);
+                }
+                if(group === 'dollar') {
+                    values.dollar *= multiplier;
+                    total.textContent = `$ ${totalCount.toLocaleString(2)}`;
+                    perSecData.dPerSec = values.dollar;
+                    upDateTotalPerSec();
+                    button.style.display = 'none';
+                    newsContext.style.animation = 'none';
+                    void newsContext.offsetWidth;
+                    newsContext.style.animation = 'slideInOut 3s';
+                    newsContext.textContent = message;
+                    dollar[key];
+                } else {
+                    console.warn(`error with ${dollar[key]}`);
+                }
             } else {
                 button.style.display = 'none';
                 newsContext.style.animation = 'none';
@@ -80,7 +124,7 @@ function futureUpgrade(button, cost, multiplier, message, HFCUKey) {
 
 
 //error for finding anything thats not right in the objects above
-Object.entries(dollarClickerUpgrade, halfDollarClickerUpgrade, quaterClickerUpgrade, dimeClickerUpgrade, nickeClickerUpgrade).forEach(([key, value]) => {
+Object.entries(TwentyDCU, FiveDCU, dollarClickerUpgrade, halfDollarClickerUpgrade, quaterClickerUpgrade, dimeClickerUpgrade, nickeClickerUpgrade).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
 let NCU = {
@@ -111,7 +155,13 @@ let HFCU = {
     four: false,
     five: false
 }
-
+let dollar = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
 
 
 
