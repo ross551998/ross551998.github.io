@@ -176,7 +176,7 @@ setupMobileNav();
 // Check on window resize (for dynamic devices like tablets)
 window.addEventListener('resize', setupMobileNav);
 
-//js manipulation of assests
+
 
 //for closing the sections
 document.getElementById('closeasset').addEventListener('click', () => {

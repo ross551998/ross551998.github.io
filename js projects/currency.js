@@ -1659,6 +1659,7 @@ function increasedime() {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = 'unlocked another good';
         smallGoods.sgFifth.style.display = 'flex';
     }
     if(autoDimeCallCount === 10) {

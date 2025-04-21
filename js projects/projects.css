@@ -157,7 +157,7 @@ nav h4 {
 #bar-for-web {
     transform: translateX(10%);
     transition: trasnform 0.5s ease;
-    margin-right: -47%;
+    margin-right: -36%;
     font-size: 2rem;
 }
 #bar-for-web:hover {

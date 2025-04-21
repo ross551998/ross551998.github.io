@@ -66,7 +66,6 @@ window.onload = function() {
 function isMobile() {
     return window.innerWidth <= 896;
 }
-
 function showSteps() {
     tutorialBox.style.display = 'flex';
     let steps = tutorialSteps[currentStep];
@@ -75,7 +74,7 @@ function showSteps() {
     u.classList.remove('active');
     try {
         if(steps.platform === 'both' && !isMobile()) {
-            e.style.marginRight = '-47%';
+            e.style.marginRight = '-36%';
             t.style.marginLeft = '12%';
             console.log('web ready');
             try {
@@ -84,7 +83,7 @@ function showSteps() {
                 } else if(currentStep === 5) {
                     tutorialBox.style.left = '60%';
                 } else if(currentStep === 6) {
-                    tutorialBox.style.top = '15%';
+                    tutorialBox.style.top = '';
                     tutorialBox.style.left = '32%';
                     document.getElementById('assests').style.display = 'flex';
                 } else if(currentStep === 7) {
@@ -93,12 +92,7 @@ function showSteps() {
                 } else if(currentStep === 8) {
                     r.style.display = 'none';
                     awards.style.display = 'grid';
-                } else {
-                    document.getElementById('assests').style.display = 'none';
-                    r.style.display = 'none';
-                    tutorialBox.style.display = 'none';
-                    console.error(`error with ${currentStep} web: ${isMobile()}`);
-                }
+                } 
             } catch(error) {
                 document.getElementById('assests').style.display = 'none';
                 r.style.display = 'none';
@@ -109,12 +103,6 @@ function showSteps() {
             if(currentStep === 2) {
                 tutorialBox.style.top = '52%';
                 console.log('working');
-                if(h.addEventListener('click', function() {
-                    currentStep++;
-                    showSteps();
-                    tutorialBox.style.top = '10%';
-                    console.log('testing');
-                }));
             } else if(currentStep === 3) {
                 tutorialBox.style.top = '10%';
                 nav.classList.add('show');
@@ -175,6 +163,7 @@ function nextStep() {
         goodsUnlocked = false;
         smallGoods.sgFirst.style.display = 'none';
         r.style.display = 'none';
+        e.style
         document.getElementById('assests').style.display = 'none';
         assestButtn.style.pointerEvents = 'auto';
         assestButtn.style.opacity = '1';
@@ -188,7 +177,7 @@ function nextStep() {
         document.getElementById('top-news').style.pointerEvents = 'auto';
         document.getElementById('upgrade-unlockbuttn').style.pointerEvents = 'auto';
         document.getElementById('nextButton').style.pointerEvents = 'auto';
-        currentStep === 0;
+        currentStep = 0;
     }
 }
 document.getElementById('skipbuttn').addEventListener('click', function() {

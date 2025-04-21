@@ -30,9 +30,10 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
     try {
         debugInfo += `totalCount: ${totalCount}\n`;
         debugInfo += `main clicker count: ${mainClickerCount}\n`;
-        debugInfo += `upgrades unlockec ${coinsUnlocked2}\n`;
+        debugInfo += `upgrades unlocked ${JSON.stringify(coinsUnlocked2, null, 2)}\n`;
         debugInfo += `awards unlocked ${awardUnlocked}\n`;
-        debugInfo += `money info ${money}\n`;
+        debugInfo += `values info ${JSON.stringify(values, null, 2)}\n`;
+        debugInfo += `total per sec info ${totalPerSec}\n`;
         debugInfo += `Current Date: ${centralTime}\n`;
         debugInfo += `Error Log:\n${errorLog.join('\n')}\n`;
     } catch (err) {
@@ -46,9 +47,11 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
             nav.classList.add('show');
             topNav.style.display = 'flex';
             mp.style.display = 'none';
+            p.style.display = 'none';
             this.reset();
         }, (error) => {
             console.error('failed...', error);
+            p.style.display = 'none';
             alert('oops!, something went wrong, please try refreshing page and try again.');
         })
 })
@@ -59,12 +62,12 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
 e.addEventListener('click', function() {
     u.classList.toggle('active');
     if(u.classList.contains('active')) {
-        e.style.marginRight = '0%';
-       t.style.marginLeft = '2%';
-       t.style.fontSize = '1rem';
+        e.style.marginRight = '5%';
+       t.style.marginLeft = '';
+       t.style.fontSize = '1.6rem';
     } else {
-        e.style.marginRight = '-47%';
-        t.style.marginLeft = '12%';
+        e.style.marginRight = '-36%';
+        t.style.marginLeft = '';
         t.style.fontSize = '1.6rem';
     }
 })
