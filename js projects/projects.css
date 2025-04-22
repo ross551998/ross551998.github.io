@@ -494,7 +494,12 @@ nav h4:hover {
 /*goods */
 .buy-goods {
     width: 100%;
-    
+    font-size: 1.4rem;
+}
+.buy-goods button {
+    border-radius: 15px;
+    width: 160px;
+    height: 30px;
 }
 .small-goods {
     display: none;
@@ -507,10 +512,13 @@ nav h4:hover {
 .small-goods h2 {
     text-decoration: underline;
     color: royalblue;
-    font-size: 1.4rem;
+    
 }
 .medium-goods {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 .first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg, .sixth-sg {
     display: none;
@@ -518,11 +526,6 @@ nav h4:hover {
     align-items: center;
     justify-content: center;
     font-size: 1.2em;
-}
-.first-sg button, .second-sg button, .third-sg button, .fourth-sg button, .fifth-sg button, .sixth-sg button {
-    border-radius: 15px;
-    width: 160px;
-    height: 30px;
 }
 .first-sg button:hover, .second-sg button:hover, .third-sg button:hover, .fourth-sg button:hover, .fifth-sg button:hover, .sixth-sg button:hover {
     scale: 1.2;
@@ -713,7 +716,7 @@ nav h4:hover {
         display: flex;
         
         padding-left: 3%;
-        font-size: 52px;
+        font-size: 11vw;
     }
     #bar-for-mobile:hover {
         scale: 1.4;
@@ -738,7 +741,8 @@ nav h4:hover {
         align-items: center;
         top: auto;
         bottom: 0;
-        height: 70px;
+        height: 18vw;
+        max-height: 105px;
         margin-top: 0;
         margin-left: 0;
         
@@ -770,9 +774,10 @@ nav h4:hover {
         display: none;
     }
     nav h1 {
-        font-size: 1.3rem;
+        font-size: 7vw;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         margin-left: 5%;
-        
     }
     .mobile-nav {
         position: fixed;
@@ -827,8 +832,8 @@ nav h4:hover {
     #mainclicker {
         margin-top: 1%;
         margin-right: 12%;
-        width: 360px;
-        height: 360px;
+        width: clamp(200px, 80vw, 430px);
+        height: clamp(200px, 80vw, 430px);
     }
     .pop-up {
         font-size: 1.8em;
@@ -836,7 +841,8 @@ nav h4:hover {
     }
     .displayword {
         width: 620px;
-        font-size: 1.4rem;
+        font-size: clamp(12px, 6.1vw, 36px );
+        gap: 1%;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -846,6 +852,7 @@ nav h4:hover {
         display: flex;
         align-items: center;
         flex-direction: row;
+        margin-bottom: 12%;
     }
     /*display or nav area for all the features*/
     .assest {
@@ -870,7 +877,7 @@ nav h4:hover {
         font-size: 1rem;
         border-radius: 12px;
         overflow-y: scroll;
-        justify-content: center;
+        
         align-content: center;
         border-bottom-right-radius: 0%;
         border-bottom-left-radius: 0%;
@@ -961,6 +968,17 @@ nav h4:hover {
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
+    .buy-goods button {
+        width: 80%;
+        height: 40px;
+        font-size: 1.2rem;
+        border-radius: 22px;
+    }
+    .buy-goods button:hover {
+        scale: 1.1;
+        cursor: pointer;
+        background-color: gold;
+    }
     .small-goods {
         height: 65vh;
         flex-direction: column;
@@ -975,22 +993,6 @@ nav h4:hover {
         color: transparent;
         text-align: center;
         font-size: 1.6rem;
-    }
-    .first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg, .sixth-sg {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .first-sg button, .second-sg button, .third-sg button, .fourth-sg button, .fifth-sg button, .sixth-sg button {
-        width: 80%;
-        height: 40px;
-        font-size: 1.2rem;
-        border-radius: 22px;
-    }
-    .fifth-sg button:hover, .first-sg button:hover, .second-sg button:hover, .third-sg button:hover, .fourth-sg button:hover, .sixth-sg button:hover {
-        scale: 1.1;
-        cursor: pointer;
-        background-color: gold;
     }
     #close-goods {
         display: flex;

@@ -47,9 +47,6 @@ mediumGoods.mgThird.addEventListener('click', function() {
     }
 })
 
-
-
-
 function addClickValue(button, cost, message) {
     button.addEventListener('click', () => {
         try {
@@ -88,17 +85,10 @@ function smallCashBurst(button, cost, add, message) {
                 setInterval(() => {
                     totalCount += add;
                     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                    newsContext.style.animation = 'none';
-                    void newsContext.offsetWidth;
-                    newsContext.style.animation = 'slideInOut 3s';
-                    newsContext.textContent = `you've added ${add} to your total`;
+                    showSmallBurstMessage(`you've added ${add}`);
                 }, 100000);
                 button.style.display = 'none';
-                newsContext.style.animation = 'none';
-                void newsContext.offsetWidth;
-                newsContext.style.animation = 'slideInOut 3s';
-                newsContext.textContent = message;
-                saveGame();
+                showSmallBurstMessage(message);
             } else {
                 newsContext.style.animation = 'none';
                 void newsContext.offsetWidth;
@@ -167,4 +157,10 @@ function buySmallGood(button, cost, multiplier, message) {
         }
     })
     
+}
+function showSmallBurstMessage(message) {
+    newsContext.style.animation = 'none';
+    void newsContext.offsetWidth;
+    newsContext.style.animation = 'slideInOut 3s';
+    newsContext.textContent = message;
 }

@@ -13,7 +13,7 @@ const twelfthAward = document.getElementById('atwelve');
 const thirteenthAward = document.getElementById('athirteen');
 
 firstAward.addEventListener('click', function() {
-    totalCount += 600.00;
+    totalCount += 120.00;
     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     firstAward.style.display = 'none';
 })

@@ -217,7 +217,7 @@ let moneyUnlockAmount = {
     fiftyDollarUA: 68000.00,
     hundredDollarUA: 180000.00
 }
-let totalCount = 0;
+let totalCount = 10000;
 let total = document.getElementById('display');
 let d = document.getElementById('dimes');
 let q = document.getElementById('quaters');
@@ -744,7 +744,7 @@ pennyClickerUpgrade.pennyFirst.addEventListener('click', function() {
     try {
         if(totalCount >= 25.00) {
             totalCount -= 25.00;
-            totalCount = values.cent *= 2;
+            values.cent *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.centPerSec = values.cent;
             upDateTotalPerSec();
@@ -768,7 +768,7 @@ pennyClickerUpgrade.pennySecond.addEventListener('click', function() {
     try {
         if(totalCount >= 115.00) {
             totalCount -= 115.00;
-            totalCount = values.cent *= 2;
+            values.cent *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.centPerSec = values.cent;
             upDateTotalPerSec();
@@ -789,7 +789,7 @@ pennyClickerUpgrade.pennyThird.addEventListener('click', function() {
     try {
         if(totalCount >= 250.00) {
             totalCount -= 250.00;
-            totalCount = values.cent *= 3;
+            values.cent *= 3;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.centPerSec = values.cent;
             upDateTotalPerSec();
@@ -1222,11 +1222,11 @@ function quaterUnlock() {
     }
 }
 function halfDollarUnlock() {
-    if(Hd.style.display === 'none' || Hd.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.HDA) {
+    if(Hd.style.display === 'none' || Hd.style.display === '' && totalCount >= moneyUnlockAmount.HAD) {
         Hd.style.display = 'flex';
         dollarunlock.style.display = 'flex';
         hDAutoBody.style.display = 'flex';
-        totalCount -= moneyUnlockAmount.HDA;
+        totalCount -= moneyUnlockAmount.HAD;
         total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         hD.style.display = 'none';
         hDAuto.style.display = 'flex';
@@ -1239,7 +1239,7 @@ function halfDollarUnlock() {
     }
 }
 function dollarUnlock() {//works for now might be bugs in here
-    if(dO.style.display === 'none' || dO.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.dollarUA) {
+    if(dO.style.display === 'none' || dO.style.display === '' && totalCount >= moneyUnlockAmount.dollarUA) {
         dO.style.display = 'flex';
         fdUnlock.style.display = 'flex';
         dollarAutoBody.style.display = 'flex';
@@ -1252,7 +1252,7 @@ function dollarUnlock() {//works for now might be bugs in here
         newsContext.style.animation = 'slideInOut 3s';
         newsContext.textContent = overallNew[0] || "you've unlocked medium goods";
         index = (index + 1) % overallNew.length;
-        document.getElementById('medium-goods').style.display = 'block';
+        document.getElementById('medium-goods').style.display = 'flex';
         
     } else {
         newsContext.style.animation = 'none';
@@ -1262,7 +1262,7 @@ function dollarUnlock() {//works for now might be bugs in here
     }
 }
 function fiveDollarUnlock() {
-    if(fiveDollar.style.display === 'none' || fiveDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.fiveDollarUA) {
+    if(fiveDollar.style.display === 'none' || fiveDollar.style.display === '' && totalCount >= moneyUnlockAmount.fiveDollarUA) {
         fiveDollar.style.display = 'flex';
         tdUnlock.style.display = 'flex';
         fiveDollarAutoBody.style.display = 'flex';
@@ -1278,7 +1278,7 @@ function fiveDollarUnlock() {
     }
 }
 function tenDollarUnlock() {
-    if(tenDollar.style.display === 'none' || tenDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.tenDollarUA) {
+    if(tenDollar.style.display === 'none' || tenDollar.style.display === '' && totalCount >= moneyUnlockAmount.tenDollarUA) {
         tenDollar.style.display = 'flex';
         twdUnlock.style.display = 'flex';
         tenDollarAutoBody.style.display = 'flex';
@@ -1294,7 +1294,7 @@ function tenDollarUnlock() {
     }
 }
 function twentyDollarUnlock() {
-    if(twentyDollar.style.display === 'none' || twentyDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.twentyDollarUA) {
+    if(twentyDollar.style.display === 'none' || twentyDollar.style.display === '' && totalCount >= moneyUnlockAmount.twentyDollarUA) {
         twentyDollar.style.display = 'flex';
         fiftyDUnlock.style.display = 'flex';
         twentyDollarAutoBody.style.display = 'flex';
@@ -1311,7 +1311,7 @@ function twentyDollarUnlock() {
     }
 }
 function fiftyDollarUnlock() {
-    if(fiftyDollar.style.display === 'none' || fiftyDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.fiftyDollarUA) {
+    if(fiftyDollar.style.display === 'none' || fiftyDollar.style.display === '' && totalCount >= moneyUnlockAmount.fiftyDollarUA) {
         fiftyDollar.style.display = 'flex';
         hundredDUnlock.style.display = 'flex';
         fiftyDollarAutoBody.style.display = 'flex';
@@ -1328,7 +1328,7 @@ function fiftyDollarUnlock() {
     }
 }
 function hundredDollarUnlock() {
-    if(hundredDollar.style.display === 'none' || hundredDollar.style.display === '' && Math.round(totalCount * 100) / 100 >= moneyUnlockAmount.hundredDollarUA) {
+    if(hundredDollar.style.display === 'none' || hundredDollar.style.display === '' && totalCount >= moneyUnlockAmount.hundredDollarUA) {
         hundredDollar.style.display = 'flex';
         hundredDollarAutoBody.style.display = 'flex';
         totalCount -= moneyUnlockAmount.hundredDollarUA;

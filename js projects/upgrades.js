@@ -162,6 +162,13 @@ let dollar = {
     four: false,
     five: false
 }
+let FDCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
 
 
 
@@ -181,7 +188,7 @@ nickeClickerUpgrade.nickelFirst.addEventListener('click',function() {
     try {
         if(totalCount >= 35.00) {
             totalCount -= 35.00;
-            totalCount = values.nickel *= 2;
+            values.nickel *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
@@ -205,7 +212,7 @@ nickeClickerUpgrade.nickelSecond.addEventListener('click',function() {
     try {
         if(totalCount >= 165.00) {
             totalCount -= 165.00;
-            totalCount = values.nickel *= 2;
+            values.nickel *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
@@ -229,7 +236,7 @@ nickeClickerUpgrade.nickelFourth.addEventListener('click',function() {
     try {
         if(totalCount >= 815.00) {
             totalCount -= 815.00;
-            totalCount = values.nickel *= 2;
+            values.nickel *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
@@ -253,7 +260,7 @@ nickeClickerUpgrade.nickelFifth.addEventListener('click',function() {
     try {
         if(totalCount >= 1080.00) {
             totalCount -= 1080.00;
-            totalCount = values.nickel *= 2;
+            values.nickel *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
@@ -278,7 +285,7 @@ dimeClickerUpgrade.dimeFirst.addEventListener('click', function() {
     try {
         if(totalCount >= 56.00) {
             totalCount -= 56.00;
-            totalCount = values.dime *=2;
+            values.dime *=2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
@@ -302,7 +309,7 @@ dimeClickerUpgrade.dimeSecond.addEventListener('click', function() {
     try {
         if(totalCount >= 198.00) {
             totalCount -= 198.00;
-            totalCount = values.dime *= 2;
+            values.dime *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
@@ -326,7 +333,7 @@ dimeClickerUpgrade.dimeFourth.addEventListener('click', function() {
     try {
         if(totalCount >= 964.00) {
             totalCount -= 964.00;
-            totalCount = values.dime *= 3;
+            values.dime *= 3;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
@@ -350,7 +357,7 @@ dimeClickerUpgrade.dimeFifth.addEventListener('click', function() {
     try {
         if(totalCount >= 1124.00) {
             totalCount -= 1124.00;
-            totalCount = values.dime *= 2;
+            values.dime *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.dimePerSec = values.dime;
             upDateTotalPerSec();
@@ -375,7 +382,7 @@ quaterClickerUpgrade.quaterFirst.addEventListener('click', function() {
     try {
         if(totalCount >= 82.00) {
             totalCount -= 82.00;
-            totalCount = values.quarter *= 2;
+            values.quarter *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
@@ -399,7 +406,7 @@ quaterClickerUpgrade.quaterSecond.addEventListener('click', function() {
     try {
         if(totalCount >= 240.00) {
             totalCount -= 240.00;
-            totalCount = values.quarter *= 2;
+            values.quarter *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
@@ -423,7 +430,7 @@ quaterClickerUpgrade.quaterFourth.addEventListener('click', function() {
     try {
         if(totalCount >= 1040.00) {
             totalCount -= 1040.00;
-            totalCount = values.quarter *= 3;
+            values.quarter *= 3;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();
@@ -447,7 +454,7 @@ quaterClickerUpgrade.quaterFifth.addEventListener('click', function() {
     try {
         if(totalCount >= 1260.00) {
             totalCount -= 1260.00;
-            totalCount = values.quarter *= 2;
+            values.quarter *= 2;
             total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
             perSecData.quarterPerSec = values.quarter;
             upDateTotalPerSec();

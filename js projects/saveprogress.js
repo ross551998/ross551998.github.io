@@ -418,8 +418,63 @@ function updateDisplay() {
             console.error(`error with ${hf}`, error);
         }
     }
-    for(let dollar in dollar) {
-        
+    //dollar upgrades
+    for(let D in dollar) {
+        try {
+            if(D[dollar]) {
+                console.log(`dollar ${D} is unlocked`);
+                switch(D) {
+                    case 'one':
+                        dollarClickerUpgrade.DFirst.style.display = 'flex';
+                        break;
+                    case 'two':
+                        dollarClickerUpgrade.DSecond.style.display = 'flex';
+                        break;
+                    case 'three':
+                        dollarClickerUpgrade.DThird.style.display = 'flex';
+                        break;
+                    case 'four':
+                        dollarClickerUpgrade.DFourth.style.display = 'flex'
+                        break;
+                    case 'five':
+                        dollarClickerUpgrade.DFifth.style.display = 'flex';
+                        break;
+                    default:
+                        console.warn(`dollar clicker ${D} is not recongized`);
+                }
+            }
+        } catch(error) {
+            console.error(`error with ${D}`, error);
+        }
+    }
+    //five dollar upgrades
+    for(let FD in TDCU) {
+        try {
+            if(FD[FDCU]) {  
+                console.log(`twenty dollar ${TD} is unlocked`);
+                switch(TD) {
+                    case 'one':
+                        FiveDCU.fdFirst.style.display = 'flex';
+                        break;
+                    case 'two':
+                        FiveDCU.fdSecond.style.display = 'flex';
+                        break;
+                    case 'three':
+                        FiveDCU.fdThird.style.display = 'flex';
+                        break;
+                    case 'four':
+                        FiveDCU.fdFourth.style.display = 'flex';
+                        break;
+                    case 'five':
+                        FiveDCU.fdFifth.style.display = 'flex';
+                        break;
+                    default:
+                        console.warn(`five dollar clicker ${FD} is not recongized`);
+                }
+            }
+        } catch(error) {
+            console.error(`error with ${TD}`, error);
+        }
     }
     doubleCheckall();
     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
