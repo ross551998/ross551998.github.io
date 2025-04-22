@@ -63,13 +63,15 @@ function webSaveGame() {
         FDCU: FDCU,
         dollar: dollar
     }
-    
+    newsContext.style.animation = 'none';
+    void newsContext.offsetWidth; 
+    newsContext.style.animation = 'slideInOut 3s'
+    newsContext.textContent = 'Game Saved!';
     localStorage.setItem('clickergamesaved', JSON.stringify(savedData));
     console.log('game saved');
 }
 function webLoadGame() {
     console.log('loading game...');
-    
     const savedGame = localStorage.getItem('clickergamesaved'); 
     if(savedGame) {
         const loadedState = JSON.parse(savedGame);
@@ -268,7 +270,7 @@ function updateDisplay() {
                         document.getElementById('mainThird').style.display = 'flex';
                         break;
                     case 'four':
-                        document.getElementById('mainFourth').style.display = 'flex';
+                        document.getElementById('mainForth').style.display = 'flex';
                         break;
                     case 'five':
                         document.getElementById('mainFifth').style.display = 'flex';
