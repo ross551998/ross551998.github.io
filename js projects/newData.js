@@ -63,10 +63,10 @@ e.addEventListener('click', function() {
     u.classList.toggle('active');
     if(u.classList.contains('active')) {
         e.style.marginRight = '5%';
-       t.style.marginLeft = '';
-       t.style.fontSize = '1.6rem';
+       t.style.marginLeft = '0.5%';
+       t.style.fontSize = '1rem';
     } else {
-        e.style.marginRight = '-36%';
+        e.style.marginRight = '-45%';
         t.style.marginLeft = '';
         t.style.fontSize = '1.6rem';
     }

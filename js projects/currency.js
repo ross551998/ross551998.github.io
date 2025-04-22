@@ -484,7 +484,21 @@ withDraw.addEventListener('click', function() {
 
 
 function upDateTotalPerSec() {
-    totalPerSec = perSecData.centPerSec + perSecData.nickelPerSec + perSecData.dimePerSec + perSecData.quarterPerSec + perSecData.halfDPerSec + perSecData.dPerSec + perSecData.fiveDPerSec + perSecData.tenDPerSec + perSecData.twentyDPerSec + perSecData.fiftyDPersec + perSecData.hundredDPersec;
+    if(!coinsUnlocked2) {
+        perSecData.centPerSec = 0;
+        perSecData.nickelPerSec = 0;
+        perSecData.dimePerSec = 0;
+        perSecData.quarterPerSec = 0;
+        perSecData.halfDPerSec = 0;
+        perSecData.dPerSec = 0;
+        perSecData.fiveDPerSec = 0;
+        perSecData.tenDPerSec = 0;
+        perSecData.twentyDPerSec = 0;
+        perSecData.fiftyDPersec = 0;
+        perSecData.hundredDPersec = 0;
+    } else {
+        totalPerSec = perSecData.centPerSec + perSecData.nickelPerSec + perSecData.dimePerSec + perSecData.quarterPerSec + perSecData.halfDPerSec + perSecData.dPerSec + perSecData.fiveDPerSec + perSecData.tenDPerSec + perSecData.tenDPerSec + perSecData.twentyDPerSec + perSecData.fiftyDPersec + perSecData.hundredDPersec;
+    }
     totalPerSecDisplay.textContent = `$ ${totalPerSec.toFixed(2)} per second`;
     if(totalPerSec >= 1000.00) {
         newsContext.style.animation = 'none';
@@ -926,14 +940,13 @@ function autoCent() {
 }
 function autoNickel() {
     autoNickelCallCount++;
-    if(!coinsUnlocked.nickel) {
+    if(!coinsUnlocked2.nickel) {
         console.log('nickels not unlocked yet');
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
         newsContext.textContent = 'unlock nickels first!';
-    }
-    if(totalCount >= moneyAutoAmount.NAM) {
+    } else if (totalCount >= moneyAutoAmount.NAM) {
         totalCount = totalCount - moneyAutoAmount.NAM;
         startAutoNickel(); 
         coinsUnlocked.nickel = true;
@@ -1004,22 +1017,9 @@ function autoDollar() {
     autoDollarCallCount++;
     if(totalCount >= moneyAutoAmount.dollarAM) {
         totalCount = totalCount - moneyAutoAmount.dollarAM;
-        if(!autoDInterval) {
-            autoDInterval = setInterval(() => {
-                totalCount +=values.dollar;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                dollarAuto.style.display = 'none';
-                dollarAutoBody.style.display = 'none';
-                increaseDollars.style.display = 'flex';
-                dollarTotal.style.display = 'flex';
-                dollarTotal.textContent = `${values.dollar.toFixed(2)} dollar per second`;
-                increaseDollarAmount.textContent = money.dollarMoney.toFixed(2);
-            }, 1000);
-            perSecData.dPerSec = values.dollar;
-            coinsUnlocked.dollar = true;
-            upDateTotalPerSec();
-            console.log('auto dollar started');
-        }
+        coinsUnlocked.dollar = true;
+        startAutoDollar();
+        console.log('auto dollar started');
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1031,22 +1031,9 @@ function autoFiveDollar() {
     autoFiveDollarCallCount++;
     if(totalCount >= moneyAutoAmount.fiveDollarAM) {
         totalCount = totalCount - moneyAutoAmount.fiveDollarAM;
-        if(!autoFiveDInterval) {
-            autoFiveDInterval = setInterval(() => {
-                totalCount += values.fiveDollar;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                fiveDollarAuto.style.display = 'none';
-                fiveDollarAutoBody.style.display = 'none';
-                increaseFiveDollars.style.display = 'flex';
-                fiveDollarTotal.style.display = 'flex';
-                fiveDollarTotal.textContent = `${values.fiveDollar.toFixed(2)} dollar per second`;
-                increaseFiveDollarAmount.textContent = money.fiveDollarMoney.toFixed(2);
-            }, 1000);
-            perSecData.fiveDPerSec = values.fiveDollar;
-            coinsUnlocked.fiveDollar = true;
-            upDateTotalPerSec();
-            console.log('auto five dollar');
-        }
+        coinsUnlocked.fiveDollar = true;
+        startAutoFiveDollar();
+        console.log('auto five dollar');
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1058,108 +1045,56 @@ function autoTenDollar() {
     autoTenDollarCallCount++;
     if(totalCount >= moneyAutoAmount.tenDollarAM) {
         totalCount = totalCount - moneyAutoAmount.tenDollarAM;
-        if(!autoTenDInterval) {
-            autoTenDInterval = setInterval(() => {
-                totalCount += values.tenDollar;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                tenDollarAuto.style.display = 'none';
-                tenDollarAutoBody.style.display = 'none';
-                increaseTenDollars.style.display = 'flex';
-                tenDollarTotal.style.display = 'flex';
-                tenDollarTotal.textContent =  `${values.tenDollar.toFixed(2)} dollar per second`;
-                increaseTenDollarAmount.textContent =  money.tenDollarMoney.toFixed(2);
-            }, 1000);
-            perSecData.tenDPerSec = values.tenDollar;
-            coinsUnlocked.tenDollar = true;
-            upDateTotalPerSec();
-            console.log('auto ten dollar');
-        } else {
-            newsContext.style.animation = 'none';
-            void newsContext.offsetWidth;
-            newsContext.style.animation = 'slideInOut 3s'
-            newsContext.textContent = 'need more money!';
-        }
+        coinsUnlocked.tenDollar = true;
+        startAutoTenDollar();
+        console.log('auto ten dollar');
+    } else {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoTwentyDollar() {
     autoTwentyDollarCallCount++;
     if(totalCount >= moneyAutoAmount.twentyDollarAM) {
         totalCount = totalCount - moneyAutoAmount.twentyDollarAM;
-        if(!autoTwentyDInterval) {
-            autoTwentyDInterval =  setInterval(() => {
-                totalCount += values.twentyDollar;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                twentyDollarAuto.style.display = 'none';
-                increaseTwentyDollars.style.display = 'flex';
-                twentyDollarAutoBody.style.display = 'none';
-                twentyDollarTotal.style.display = 'flex';
-                twentyDollarTotal.textContent = `${values.twentyDollar.toFixed(2)} dollar per second`;
-                increaseTwentyDollarAmount.textContent = money.twentyDollarMoney.toFixed(2);
-            }, 1000);
-            perSecData.twentyDPerSec = values.twentyDollar;
-            coinsUnlocked.twentyDollar = true;
-            upDateTotalPerSec();
-            console.log('auto twenty dollar');
-        } else {
-            newsContext.style.animation = 'none';
-            void newsContext.offsetWidth;
-            newsContext.style.animation = 'slideInOut 3s'
-            newsContext.textContent = 'need more money!';
-        }
+        coinsUnlocked.twentyDollar = true;
+        startTWD();
+        console.log('auto twenty dollar');
+    } else {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 function autoFiftyDollar() {
     autoFiftyDollarCallCount++;
     if(totalCount >= moneyAutoAmount.fiftyDollarAM) {
         totalCount = totalCount - moneyAutoAmount.fiftyDollarAM;
-        if(!autoFityDInterval) {
-            autoFityDInterval = setInterval(() => {
-                totalCount += values.fiftyDollar;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                fiftyDollarAuto.style.display = 'none';
-                fiftyDollarAutoBody.style.display = 'none';
-                increaseFiftyDollars.style.display = 'flex';
-                fiftyDollarTotal.style.display = 'flex';
-                fiftyDollarTotal.textContent = `${values.fiftyDollar.toFixed(2)} dollar per second`;
-                increaseFiftyDollarAmount.textContent =  money.fiftyDollarMoney.toFixed(2);
-            }, 1000);
-            perSecData.fiftyDPersec = values.fiftyDollar;
-            coinsUnlocked.fiftyDollar = true;
-            upDateTotalPerSec();
-            twelfthAward.style.display = 'grid';
-        } else {
-            newsContext.style.animation = 'none';
-            void newsContext.offsetWidth;
-            newsContext.style.animation = 'slideInOut 3s'
-            newsContext.textContent = 'need more money!';
-        }
+        coinsUnlocked.fiftyDollar = true;
+        startAFD();
+        twelfthAward.style.display = 'grid';
+    } else {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     } 
 }
 function autoHundredDollar() {
     autoHundredDollarCallCount++;
     if(totalCount >= moneyAutoAmount.hundredDollarAM) {
         totalCount =  totalCount - moneyAutoAmount.hundredDollarAM;
-        if(!autoHundredDInterval) {
-            autoHundredDInterval = setInterval(() => {
-                totalCount += values.hundredDollar;
-                total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
-                hundredDollarAuto.style.display = 'none';
-                hundredDollarAutoBody.style.display = 'none';
-                increaseHundredDollars.style.display = 'flex';
-                hundredDollarTotal.style.display = 'flex';
-                hundredDollarTotal.textContent =  `${values.hundredDollar.toFixed(2)} dollar per second`;
-                increaseHundredDollarAmount.textContent = money.hundredDollarMoney.toFixed(2);
-            }, 1000);
-            perSecData.hundredDPersec = values.hundredDollar;
-            coinsUnlocked.hundredDollar = true;
-            upDateTotalPerSec();
-            console.log('auto hundred dollar');
-        } else {
-            newsContext.style.animation = 'none';
-            void newsContext.offsetWidth;
-            newsContext.style.animation = 'slideInOut 3s'
-            newsContext.textContent = 'need more money!';
-        }
+        coinsUnlocked.hundredDollar = true;
+        startAHD();
+        console.log('auto hundred dollar');
+    } else {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s'
+        newsContext.textContent = 'need more money!';
     }
 }
 //open next levels
@@ -1246,6 +1181,7 @@ function dollarUnlock() {//works for now might be bugs in here
         totalCount -= moneyUnlockAmount.dollarUA;
         total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         dollarunlock.style.display = 'none';
+        coinsUnlocked2.dollar = true;
         dollarAuto.style.display = 'flex';
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1269,6 +1205,7 @@ function fiveDollarUnlock() {
         totalCount -= moneyUnlockAmount.fiveDollarUA;
         total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         fdUnlock.style.display = 'none';
+        coinsUnlocked2.fiveDollar = true;
         fiveDollarAuto.style.display = 'flex';
     } else {
         newsContext.style.animation = 'none';
@@ -1286,6 +1223,7 @@ function tenDollarUnlock() {
         total.textContent = `${totalCount.toFixed(2).toLocaleString()}`;
         tdUnlock.style.display = 'none';
         tenDollarAuto.style.display = 'flex';
+        coinsUnlocked2.tenDollar = true;
     }  else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth; 
@@ -1303,6 +1241,7 @@ function twentyDollarUnlock() {
         twdUnlock.style.display = 'none';
         console.log('twenty dollar unlocked');
         twentyDollarAuto.style.display = 'flex';
+        coinsUnlocked2.twentyDollar = true;
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth; 
@@ -1320,6 +1259,7 @@ function fiftyDollarUnlock() {
         fiftyDUnlock.style.display = 'none';
         console.log('fifty dollar unlocked');
         fiftyDollarAuto.style.display = 'flex';
+        coinsUnlocked2.fiftyDollar = true;
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth; 
@@ -1336,6 +1276,7 @@ function hundredDollarUnlock() {
         hundredDUnlock.style.display = 'none';
         console.log('hundred dollar unlocked');
         hundredDollarAuto.style.display = 'flex';
+        coinsUnlocked2.hundredDollar = true;
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth; 

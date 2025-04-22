@@ -157,7 +157,7 @@ nav h4 {
 #bar-for-web {
     transform: translateX(10%);
     transition: trasnform 0.5s ease;
-    margin-right: -36%;
+    margin-right: -45%;
     font-size: 2rem;
 }
 #bar-for-web:hover {
@@ -903,6 +903,17 @@ nav h4:hover {
         overflow-y: scroll;
         scrollbar-width: none;
     }
+    .centButton,.nickelButton, .dimeButton, .quaterButton, .HDButton, .DollarButton, .fiveDollarButton, .tenDollarButton, .twentyDollarButton, .fiftydollarbutton, .hundredDollarButton {
+        font-size: 3.2vh;
+        text-align: center;
+        padding-bottom: 12px;
+    }
+    .pennys, .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
+        height: 50vw;
+    }
+    .pennys button, .nickels button, .quaters button, .half-dollar button, .dollar button, .fivedollar button, .tendollar button, .twentydollar button, .fiftydollar button, .hundreddollar button {
+        width: 40vw;
+    }
     #mobile-use-only {
         display: flex;
         margin-top: 6%;
@@ -1032,6 +1043,7 @@ nav h4:hover {
     .gameContent {
         overflow-y: auto;
         height: 84vh;
+        scrollbar-width: none;
         
     }
     #news {
