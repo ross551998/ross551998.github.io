@@ -55,7 +55,13 @@ function webSaveGame() {
         upgradesUnlocked: upgradesUnlocked,
         coinsUnlocked2: coinsUnlocked2,
         mainClickerUnlock: mainClickerUnlock,
-        pennyClickerUnlock: pennyClickerUnlock
+        pennyClickerUnlock: pennyClickerUnlock,
+        NCU: NCU,
+        DCU: DCU,
+        QCU: QCU,
+        HFCU: HFCU,
+        FDCU: FDCU,
+        dollar: dollar
     }
     
     localStorage.setItem('clickergamesaved', JSON.stringify(savedData));
@@ -93,6 +99,12 @@ function webLoadGame() {
         coinsUnlocked2 = loadedState.coinsUnlocked2;
         mainClickerUnlock = loadedState.mainClickerUnlock;
         pennyClickerUnlock = loadedState.pennyClickerUnlock;
+        DCU = loadedState.DCU;
+        QCU = loadedState.QCU;
+        NCU = loadedState.NCU;
+        HFCU = loadedState.HFCU;
+        FDCU = loadedState.FDCU;
+        dollar = loadedState.dollar;
         updateDisplay();
         if(autoCentCallCount > 0) {
             startAutoCent();
@@ -316,11 +328,11 @@ function updateDisplay() {
         }
     }
     //nickel upgrades
-    for(let n in NCU) {
+    for(let nick in NCU) {
         try {
-            if(NCU[n]) {
-                console.log(`nickle clicker ${n} is unlocked`);
-                switch(n) {
+            if(NCU[nick]) {
+                console.log(`nickle clicker ${nick} is unlocked`);
+                switch(nick) {
                     case 'one':
                         nickeClickerUpgrade.nickelFirst.style.display = 'flex';
                         break;
@@ -337,11 +349,11 @@ function updateDisplay() {
                         nickeClickerUpgrade.nickelFifth.style.display = 'flex';
                         break;
                     default:
-                        console.warn(`nickel clicker ${n} is not recognized`);
+                        console.warn(`nickel clicker ${nick} is not recognized`);
                 }
             }
         } catch(error) {
-            console.error(`error with ${n}`, error);
+            console.error(`error with ${nick}`, error);
         }
     }
     //dime upgrades
@@ -350,7 +362,7 @@ function updateDisplay() {
             if(DCU[d]) {
                 console.log(`dime clicker ${d} is unlocked`);
                 switch(d) {
-                    case 'one':
+                    case 'first':
                         dimeClickerUpgrade.dimeFirst.style.display = 'flex';
                         break;
                     case 'two':
@@ -380,7 +392,7 @@ function updateDisplay() {
             if(QCU[q]) {
                 console.log(`quarter clicker ${q} is unlocked`);
                 switch(q) {
-                    case 'one':
+                    case 'first':
                         quaterClickerUpgrade.quaterFirst.style.display = 'flex';
                         break;
                     case 'two':
@@ -410,7 +422,7 @@ function updateDisplay() {
             if(HFCU[hf]) {
                 console.log(`half-dollar ${hf} is unlocked`);
                 switch(hf) {
-                    case 'one':
+                    case 'first':
                         halfDollarClickerUpgrade.hdFirst.style.display = 'flex';
                         break;
                     case 'two':
@@ -439,7 +451,7 @@ function updateDisplay() {
             if(D[dollar]) {
                 console.log(`dollar ${D} is unlocked`);
                 switch(D) {
-                    case 'one':
+                    case 'first':
                         dollarClickerUpgrade.DFirst.style.display = 'flex';
                         break;
                     case 'two':
@@ -468,7 +480,7 @@ function updateDisplay() {
             if(FD[FDCU]) {  
                 console.log(`twenty dollar ${TD} is unlocked`);
                 switch(TD) {
-                    case 'one':
+                    case 'first':
                         FiveDCU.fdFirst.style.display = 'flex';
                         break;
                     case 'two':

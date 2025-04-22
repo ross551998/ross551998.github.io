@@ -4,8 +4,25 @@ let goodsUnlocked = false;
 
 
 
-
-
+const mainClickerUpgrade = {
+    first: document.getElementById('mainFirst'),
+    second: document.getElementById('mainSecond'),
+    third: document.getElementById('mainThird'),
+    fourth: document.getElementById('mainForth'),
+    fifth: document.getElementById('mainFifth'),
+    sixth: document.getElementById('mainSixth'),
+    seventh: document.getElementById('mainSeventh'),
+    eighth: document.getElementById('maineigth'),
+    nighth: document.getElementById('mainnigth'),
+    tenth: document.getElementById('maintenth')
+}
+const pennyClickerUpgrade = {
+    pennyFirst: document.getElementById('pennyFirst'),
+    pennySecond: document.getElementById('pennySecond'),
+    pennyThird: document.getElementById('pennyThird'),
+    pennyFourth: document.getElementById('pennyFourth'),
+    pennyFifth: document.getElementById('pennyfifth')
+}
 const nickeClickerUpgrade = {
     nickelFirst: document.getElementById('nickelFirst'),
     nickelSecond: document.getElementById('nickelSecond'),
@@ -70,6 +87,10 @@ futureUpgrade(dollarClickerUpgrade.DFirst, 205.00, 2, "you've doubled dollar per
 futureUpgrade(dollarClickerUpgrade.DSecond, 525.00, 3, "you've tripled dollar per second", "second", 'dollar' );
 futureUpgrade(dollarClickerUpgrade.DThird, 4368.00, 2, "you've doubled dollar per second", 'four', 'dollar');
 futureUpgrade(dollarClickerUpgrade.DFifth, 16598.00, 3, "you've tripled dollar per second", 'five', 'dollar');
+futureUpgrade(FiveDCU.fdFirst, 290.00, 2, "you've doubled five dollar per second", ' first', 'FDCU');
+futureUpgrade(FiveDCU.fdSecond, 663.00, 3, "you've tripled five dollar per second", ' second', 'FDCU');
+futureUpgrade(FiveDCU.fdFourth, 5907.00, 2, "you've doubled five dollar per second", ' four', 'FDCU');
+futureUpgrade(FiveDCU.fdFifth, 23037.00, 3, "you've tripled five dollar per second", ' five', 'FDCU');
 
 //new way more advanced and more efficent
 
@@ -91,7 +112,7 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
                     HFCU[key] = false;
                 } else {
                     console.warn(`error with ${HFCU[key]}`);
-                }
+                } 
                 if(group === 'dollar') {
                     values.dollar *= multiplier;
                     total.textContent = `$ ${totalCount.toLocaleString(2)}`;
@@ -105,6 +126,20 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
                     dollar[key];
                 } else {
                     console.warn(`error with ${dollar[key]}`);
+                }
+                if(group === 'FDCU') {
+                    values.fiveDollar *= multiplier;
+                    total.textContent `$ ${totalCount.toFixed(2)}`;
+                    perSecData.fiveDPerSec = values.fiveDollar;
+                    upDateTotalPerSec();
+                    button.style.display = 'none';
+                    newsContext.style.animation = 'none';
+                    void newsContext.offsetWidth;
+                    newsContext.style.animation = 'slideInOut 3s';
+                    newsContext.textContent = message;
+                    FDCU[key];
+                } else {
+                    console.warn(`error with ${FDCU[key]}`);
                 }
             } else {
                 button.style.display = 'none';
@@ -127,8 +162,27 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
 Object.entries(TwentyDCU, FiveDCU, dollarClickerUpgrade, halfDollarClickerUpgrade, quaterClickerUpgrade, dimeClickerUpgrade, nickeClickerUpgrade).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
+let mainClickerUnlock = {
+    one: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false,
+    six: false,
+    seven: false,
+    eight: false,
+    nine: false,
+    ten: false,
+}
+let pennyClickerUnlock = {
+    one: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
 let NCU = {
-    first: false,
+    one: false,
     two: false,
     three: false,
     four: false,
@@ -170,11 +224,10 @@ let FDCU = {
     five: false
 }
 
-
-
-
-
-
+//data for all upgrades unlocked you can add to as well
+let allClickerUpgrades = {
+    NCU, DCU, QCU, HFCU, dollar, FDCU, pennyClickerUnlock, mainClickerUnlock
+}
 
 
 
@@ -193,7 +246,7 @@ nickeClickerUpgrade.nickelFirst.addEventListener('click',function() {
             perSecData.nickelPerSec = values.nickel;
             upDateTotalPerSec();
             nickeClickerUpgrade.nickelFirst.style.display = 'none';
-            NCU.first = false;
+            NCU.one = false;
             newsContext.style.animation = 'none';
             void newsContext.offsetWidth;
             newsContext.style.animation = 'slideInOut 3s';

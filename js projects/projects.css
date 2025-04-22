@@ -531,7 +531,16 @@ nav h4:hover {
     scale: 1.2;
     cursor: pointer;
 }
+#close-goods {
+    margin-left: 10%;
+    border:  3px solid black;
+    width: 80%;
+    text-align: center;
+    background-color: green;
+    font-size: 1rem;
+}
 #close-goods:hover {
+    scale: 1.1;
     cursor: pointer;
 }
 /*right side */

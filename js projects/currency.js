@@ -128,44 +128,6 @@ const doubleMC = {
     fifteenthMain: 875.19,
     sixteenthMain: 1312.79,
 }
-const mainClickerUpgrade = {
-    first: document.getElementById('mainFirst'),
-    second: document.getElementById('mainSecond'),
-    third: document.getElementById('mainThird'),
-    fourth: document.getElementById('mainForth'),
-    fifth: document.getElementById('mainFifth'),
-    sixth: document.getElementById('mainSixth'),
-    seventh: document.getElementById('mainSeventh'),
-    eighth: document.getElementById('maineigth'),
-    nighth: document.getElementById('mainnigth'),
-    tenth: document.getElementById('maintenth')
-}
-let mainClickerUnlock = {
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false,
-    six: false,
-    seven: false,
-    eight: false,
-    nine: false,
-    ten: false,
-}
-let pennyClickerUpgrade = {
-    pennyFirst: document.getElementById('pennyFirst'),
-    pennySecond: document.getElementById('pennySecond'),
-    pennyThird: document.getElementById('pennyThird'),
-    pennyFourth: document.getElementById('pennyFourth'),
-    pennyFifth: document.getElementById('pennyfifth')
-}
-let pennyClickerUnlock = {
-    one: false,
-    two: false,
-    three: false,
-    four: false,
-    five: false
-}
 let coinsUnlocked = {
     penny: false,
     nickel: false,
@@ -196,7 +158,7 @@ let coinsUnlocked2 = {
 const moneyAutoAmount = {
     NAM: 1.00,
     DAM: 14.40,
-    QAM: 165.00,
+    QAM: 100.00,
     HDAM: 384.00,
     dollarAM: 585.00,
     fiveDollarAM: 980.00,
@@ -217,7 +179,7 @@ let moneyUnlockAmount = {
     fiftyDollarUA: 68000.00,
     hundredDollarUA: 180000.00
 }
-let totalCount = 10000;
+let totalCount = 0;
 let total = document.getElementById('display');
 let d = document.getElementById('dimes');
 let q = document.getElementById('quaters');
@@ -1418,10 +1380,10 @@ function cents() {
 function increaseCent() {// this is done for now, ready for new version
     centTotal.textContent = `${values.cent.toFixed(2)} cents per second`;
     if(totalCount >= money.centMoney) {
+        totalCount -= money.centMoney;
         increaseCentAmount.textContent = money.centMoney.toFixed(2);
         autoCentCallCount++;//the count for how many times been called
         values.cent += pennyIncrement;
-        totalCount -= money.centMoney;
         money.centMoney += money.centMoney * 0.12;
         perSecData.centPerSec = values.cent;
         upDateTotalPerSec();
@@ -1500,9 +1462,10 @@ function nickels() {
 function increaseNickel() { // ready for new version
     nickelTotal.textContent = `${values.nickel.toFixed(2)} cents per second`;
     if(totalCount >= money.nickelMoney) {
+        totalCount -= money.nickelMoney;
         autoNickelCallCount++;
         values.nickel += nickelIncrement;
-        totalCount -= money.nickelMoney;
+        
         money.nickelMoney += money.nickelMoney * 0.24;
         increaseNickelAmount.textContent = money.nickelMoney.toFixed(2);
         perSecData.nickelPerSec = values.nickel;
@@ -1529,7 +1492,7 @@ function increaseNickel() { // ready for new version
         newsContext.textContent = nickelNews[0];
         index = (index + 1) % nickelNews.length;
         nickeClickerUpgrade.nickelFirst.style.display = 'flex';
-        NCU.first = true;
+        NCU.one = true;
     }
     if(autoNickelCallCount === 25) {
         newsContext.style.animation = 'none';
@@ -1885,6 +1848,51 @@ function increasefiveDollar() {
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s';
         newsContext.textContent = 'need more money';
+    }
+    if(autoFiveDollarCallCount === 10) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = fiveDollarNews[0];
+        index = (index + 1) % fiveDollarNews.length;
+        FiveDCU.fdFirst.style.display = 'flex';
+        FDCU.first = true;
+    }
+    if(autoFiveDollarCallCount === 25) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = fiveDollarNews[1];
+        index = (index + 1) % fiveDollarNews.length;
+        FiveDCU.fdSecond.style.display = 'flex';
+        FDCU.two = true;
+    }
+    if(autoFiveDollarCallCount === 50) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = fiveDollarNews[2];
+        index = (index + 1) % fiveDollarNews.length;
+        FiveDCU.fdThird.style.display = 'flex';
+        FDCU.three = true;
+    }
+    if(autoFiveDollarCallCount === 100) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = fiveDollarNews[3];
+        index = (index + 1) % fiveDollarNews.length;
+        FiveDCU.fdFourth.style.display = 'flex';
+        FDCU.four = true;
+    }
+    if(autoFiveDollarCallCount === 250) {
+        newsContext.style.animation = 'none';
+        void newsContext.offsetWidth;
+        newsContext.style.animation = 'slideInOut 3s';
+        newsContext.textContent = fiveDollarNews[4];
+        index = (index + 1) % fiveDollarNews.length;
+        FiveDCU.fdFifth.style.display = 'flex';
+        FDCU.five = true;
     }
 }
 //ten dollar counter

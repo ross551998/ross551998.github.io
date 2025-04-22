@@ -23,6 +23,7 @@ let u = document.getElementById('settings');
 const t = document.getElementById('title');
 const p = document.getElementById('problem');
 const centralTime = new Date().toLocaleString("en-US", { timeZone: "America/Chicago" });
+
 //for sending me problem forms
 document.getElementById('report-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -30,8 +31,20 @@ document.getElementById('report-form').addEventListener('submit', function(e) {
     try {
         debugInfo += `totalCount: ${totalCount}\n`;
         debugInfo += `main clicker count: ${mainClickerCount}\n`;
-        debugInfo += `upgrades unlocked ${JSON.stringify(coinsUnlocked2, null, 2)}\n`;
         debugInfo += `awards unlocked ${awardUnlocked}\n`;
+        debugInfo += `penny clicks ${autoCentCallCount}\n`;
+        debugInfo += `nickel clicks ${autoNickelCallCount}\n`;
+        debugInfo += `dime clicks ${autoDimeCallCount}\n`;
+        debugInfo += `quarter clicks ${autoQuaterCallCount}\n`;
+        debugInfo += `half-dollar clicks ${autoHDCentCallCount}\n`;
+        debugInfo += `dollar clicks ${autoDollarCallCount}\n`;
+        debugInfo += `five dollar clicks ${autoFiveDollarCallCount}\n`;
+        debugInfo += `ten dollar clicks ${autoTenDollarCallCount}\n`;
+        debugInfo += `twenty dollar clicks ${autoTwentyDollarCallCount}\n`
+        debugInfo += `fifty dollar clicks ${autoFiftyDollarCallCount}\n`;
+        debugInfo += `hundred dollar clicks ${autoHundredDollarCallCount}\n`
+        debugInfo += `idkyet unlocked ${JSON.stringify(coinsUnlocked2, null, 2)}\n`;
+        debugInfo += `clicker upgrades: ${JSON.stringify(allClickerUpgrades, null, 2)}\n`;
         debugInfo += `values info ${JSON.stringify(values, null, 2)}\n`;
         debugInfo += `total per sec info ${totalPerSec}\n`;
         debugInfo += `Current Date: ${centralTime}\n`;
