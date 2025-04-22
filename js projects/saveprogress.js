@@ -5,39 +5,16 @@
 //         \ /
 //localStorage.clear();
 
-/*
-document.getElementById('mobile-save-game').addEventListener('click', function() {
-    newsContext.style.animation = 'none';
-    void newsContext.offsetWidth;
-    newsContext.style.animation = 'slideInOut 3s';
-    newsContext.textContent = 'coming soon...!';
-})
+
+
 function loadGame() {
-    newsContext.style.animation = 'none';
-    void newsContext.offsetWidth;
-    newsContext.style.animation = 'slideInOut 3s';
-    newsContext.textContent = 'coming soon...!';
+    webLoadGame();
 }
 function saveGame() {
-    newsContext.style.animation = 'none';
-    void newsContext.offsetWidth;
-    newsContext.style.animation = 'slideInOut 3s';
-    newsContext.textContent = 'coming soon...!';
+    webSaveGame();
 }
-//for the web version 
-function webSaveGame() {
-    newsContext.style.animation = 'none';
-    void newsContext.offsetWidth;
-    newsContext.style.animation = 'slideInOut 3s';
-    newsContext.textContent = 'coming soon...!';
-}
-function webLoadGame() {
-    newsContext.style.animation = 'none';
-    void newsContext.offsetWidth;
-    newsContext.style.animation = 'slideInOut 3s';
-    newsContext.textContent = 'coming soon...!';
-}
-    */
+
+
 //log errors, warn, logs
 let logs = [];
 function logError() {
