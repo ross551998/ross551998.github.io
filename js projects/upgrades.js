@@ -1,6 +1,7 @@
 
 let r = document.getElementById('small-goods');
 let goodsUnlocked = false;
+let newsBusy = false;
 
 
 
@@ -96,6 +97,7 @@ futureUpgrade(FiveDCU.fdFifth, 23037.00, 3, "you've tripled five dollar per seco
 
 function futureUpgrade(button, cost, multiplier, message, key, group ) {
     button.addEventListener('click', () => {
+        console.log('group', group);
         try {
             if(totalCount >= cost) {
                 totalCount -= cost;
@@ -105,29 +107,17 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
                     perSecData.halfDPerSec = values.halfDollar;
                     upDateTotalPerSec();
                     button.style.display = 'none';
-                    newsContext.style.animation = 'none';
-                    void newsContext.offsetWidth;
-                    newsContext.style.animation = 'slideInOut 3s';
-                    newsContext.textContent = message;
+                    safeNewsUpdate(message);
                     HFCU[key] = false;
-                } else {
-                    console.warn(`error with ${HFCU[key]}`);
-                } 
-                if(group === 'dollar') {
+                } else if(group === 'dollar') {
                     values.dollar *= multiplier;
                     total.textContent = `$ ${totalCount.toLocaleString(2)}`;
                     perSecData.dPerSec = values.dollar;
                     upDateTotalPerSec();
                     button.style.display = 'none';
-                    newsContext.style.animation = 'none';
-                    void newsContext.offsetWidth;
-                    newsContext.style.animation = 'slideInOut 3s';
-                    newsContext.textContent = message;
+                    safeNewsUpdate(message);
                     dollar[key];
-                } else {
-                    console.warn(`error with ${dollar[key]}`);
-                }
-                if(group === 'FDCU') {
+                } else if(group === 'FDCU') {
                     values.fiveDollar *= multiplier;
                     total.textContent `$ ${totalCount.toFixed(2)}`;
                     perSecData.fiveDPerSec = values.fiveDollar;
@@ -139,15 +129,14 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
                     newsContext.textContent = message;
                     FDCU[key];
                 } else {
-                    console.warn(`error with ${FDCU[key]}`);
-                }
-            } else {
-                button.style.display = 'none';
-                newsContext.style.animation = 'none';
-                void newsContext.offsetWidth;
-                newsContext.style.animation = 'slideInOut 3s';
-                newsContext.textContent = message;
-                console.log('not working');
+                    button.style.display = 'none';
+                    newsContext.style.animation = 'none';
+                    void newsContext.offsetWidth;
+                    newsContext.style.animation = 'slideInOut 3s';
+                    newsContext.textContent = message;
+                    console.log('not working');
+                    console.warn(`unknown group: ${group}`);
+                }   
             }
         } catch(error) {
             logError(error.message);
@@ -155,7 +144,8 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
         }
     })
 }
-//new and more updated function for the upgrades 
+//testing
+
 
 
 //error for finding anything thats not right in the objects above
@@ -228,7 +218,18 @@ let FDCU = {
 let allClickerUpgrades = {
     NCU, DCU, QCU, HFCU, dollar, FDCU, pennyClickerUnlock, mainClickerUnlock
 }
-
+//resuable message 
+function safeNewsUpdate(message, duration = 3000) {
+    if(newsBusy) return;
+    newsBusy = true;
+    newsContext.style.animation = 'none';
+    void newsContext.offsetWidth;
+    newsContext.style.animation = 'slideInOut 3s';
+    newsContext.textContent = message;
+    setTimeout(() => {
+        newsBusy = false;
+    }, duration);
+}
 
 
 
@@ -349,10 +350,7 @@ dimeClickerUpgrade.dimeFirst.addEventListener('click', function() {
             newsContext.style.animation = 'slideInOut 3s';
             newsContext.textContent = "you've doubled dimes per second";
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000); 
+            console.log('testing ');
         }
     } catch(error) {
         console.error('error with dime first double');
@@ -446,10 +444,10 @@ quaterClickerUpgrade.quaterFirst.addEventListener('click', function() {
             newsContext.style.animation = 'slideInOut 3s';
             newsContext.textContent = "you've doubled quaters per second";
         } else {
-            noMoneyDisplay.textContent = 'need more money!';
-            setTimeout(() => {
-            noMoneyDisplay.textContent = '';
-            }, 1000); 
+            newsContext.style.animation = 'none';
+            void newsContext.offsetWidth;
+            newsContext.style.animation = 'slideInOut 3s';
+            newsContext.textContent = "need more money";
         }
     } catch(error) {
         console.error('first quater double not working');

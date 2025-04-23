@@ -602,7 +602,7 @@ function startAutoHFD() {
             hDAutoBody.style.display = 'none';
             increaseHD.style.display = 'flex';
             hDTotal.style.display = 'flex';
-            hDTotal.textContent = `${values.halfDollar.toFixed(2)} cent per sec`;
+            hDTotal.textContent = `${values.halfDollar.toFixed(2)} cents per second`;
             increaseHDAmount.textContent = money.halfDollarMoney.toFixed(2);
         }, 1000);
         perSecData.halfDPerSec = values.halfDollar;
