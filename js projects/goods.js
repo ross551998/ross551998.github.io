@@ -23,7 +23,8 @@ const smallGoods = {
     },
     sgFifth: {
        element: document.getElementById('sg-fifth'),//small cash burst
-       coinType: 'cash'
+       coinType: 'cash',
+        cost: 115.00
 
     },
     sgSixth: {
@@ -143,8 +144,8 @@ allGood.forEach(goodsGroup => {
                             console.log('its getting called');
                             setInterval(() => {
                                 totalCount += 23.25;
+                                
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-                                console.log(`gave out 23.25`);
                             }, 200)
                            element.style.display = 'none'; 
                         }
@@ -186,6 +187,7 @@ allGood.forEach(goodsGroup => {
                             console.log('another cash purse');
                             setInterval(() => {
                                 totalCount += 32.25;
+                                
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
                             }, 250)
                             element.style.display = 'none';

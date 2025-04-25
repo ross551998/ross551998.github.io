@@ -128,6 +128,17 @@ function futureUpgrade(button, cost, multiplier, message, key, group ) {
                     newsContext.style.animation = 'slideInOut 3s';
                     newsContext.textContent = message;
                     FDCU[key];
+                } else if(group === 'TDCU') {
+                    values.tenDollar *= multiplier;
+                    total.textContent = `$ ${totalCount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                    perSecData.tenDPerSec = values.tenDollar;
+                    upDateTotalPerSec();
+                    button.style.display = 'none';
+                    newsContext.style.animation = 'none';
+                    void newsContext.offsetWidth;
+                    newsContext.style.animation = 'slideInOut 3s';
+                    newsContext.textContent = message;
+                    TDCU[key];
                 } else {
                     button.style.display = 'none';
                     newsContext.style.animation = 'none';
@@ -213,10 +224,17 @@ let FDCU = {
     four: false,
     five: false
 }
+let TDCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false 
+}
 
 //data for all upgrades unlocked you can add to as well
 let allClickerUpgrades = {
-    NCU, DCU, QCU, HFCU, dollar, FDCU, pennyClickerUnlock, mainClickerUnlock
+    NCU, DCU, QCU, HFCU, dollar, FDCU, TDCU, pennyClickerUnlock, mainClickerUnlock
 }
 //resuable message 
 function safeNewsUpdate(message, duration = 3000) {

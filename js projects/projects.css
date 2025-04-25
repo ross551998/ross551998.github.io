@@ -553,7 +553,8 @@ nav h4:hover {
     border-top-right-radius: 14px;
     border-top-left-radius: 12px;
     overflow-y: auto;
-    height: 94vh;
+    height: 92.7vh;
+    scrollbar-width: none;
     
 }
 .gameContent button {
@@ -575,17 +576,20 @@ nav h4:hover {
     background-color: blue;
     border-radius: 16px;
     height: 130px;
-    color: snow;
     width: 90%;
 }
 #increaseCents, #increasenickels, #increasedimes, #increasequaters, #increaseHDs, #increasedollars, #increasefivedollars, #increasetendollars, #increasetwentydollars, #increasefiftydollars, #increasehundreddollars {
     align-items: center;
     flex-direction: column;
     margin-top: -18px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
 }
 #mobile-use-only {
     display: none;
 }
+
 /*image for background */
 .pennys {
     font-family: 'Times New Roman', Times, serif;
@@ -658,24 +662,40 @@ nav h4:hover {
     background-position-y: center;
 }
 .tendollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
     background: url(photos/tendollar\ making.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
 }
 .twentydollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
     background: url(photos/twentydollar\ making.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
 }
 .fiftydollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
     background: url(photos/fiftydollar\ making.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
 }
 .hundreddollar {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: rgb(35, 34, 34);
+    font-weight: bold;
     background: url(photos/hundred\ dollar\ making.png);
     background-size: cover;
     background-repeat: no-repeat;
