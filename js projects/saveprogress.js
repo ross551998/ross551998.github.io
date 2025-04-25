@@ -61,7 +61,12 @@ function webSaveGame() {
         QCU: QCU,
         HFCU: HFCU,
         FDCU: FDCU,
-        dollar: dollar
+        dollar: dollar,
+        TDCU: TDCU,
+        twentyDCU: twentyDCU,
+        fiftyDCU: fiftyDCU,
+        HDCU: HDCU,
+        goodsB: goodsB,
     }
     newsContext.style.animation = 'none';
     void newsContext.offsetWidth; 
@@ -107,6 +112,11 @@ function webLoadGame() {
         HFCU = loadedState.HFCU;
         FDCU = loadedState.FDCU;
         dollar = loadedState.dollar;
+        TDCU = loadedState.TDCU;
+        twentyDCU = loadedState.twentyDCU;
+        fiftyDCU = loadedState.fiftyDCU;
+        HDCU = loadedState.HDCU;
+        goodsB = loadedState.goodsB;
         updateDisplay();
         if(autoCentCallCount > 0) {
             startAutoCent();
@@ -251,6 +261,53 @@ function updateDisplay() {
             }
         } catch(error) {
             console.error(`error with ${un}`, error);
+        }
+    }
+    //goods 
+    for(let g in goodsB) {
+        try {
+            if(goodsB[g]) {
+                console.log(`good ${g} is unlocked`);
+                switch(g) {
+                    case 'sgOne':
+                        smallGoods.sgFirst.element.style.display = 'flex';
+                        break;
+                    case 'sgTwo':
+                        smallGoods.sgSecond.element.style.display = 'flex';
+                        break;
+                    case 'sgThree':
+                        smallGoods.sgSecond.element.style.display = 'flex';
+                        break;
+                    case 'sgFour':
+                        smallGoods.sgFourth.element.style.display = 'flex';
+                        break;
+                    case 'sgFive':
+                        smallGoods.sgFifth.element.style.display = 'flex';
+                        break;
+                    case 'sgSix':
+                        smallGoods.sgSixth.element.style.display = 'flex';
+                        break;
+                    case 'mgOne':
+                        mediumGoods.mgFirst.element.style.display = 'flex';
+                        break;
+                    case 'mgTwo':
+                        mediumGoods.mgSecond.element.style.display = 'flex';
+                        break;
+                    case 'mgThree': 
+                        mediumGoods.mgThird.element.style.display = 'flex';
+                        break;
+                    case 'mgFour':
+                        mediumGoods.mgFourth.element.style.display = 'flex';
+                        break;
+                    case 'mgFive':
+                        mediumGoods.mgFourth.element.style.display = 'flex';
+                        break;
+                    default:
+                        console.log('error with sgone');
+                }
+            }
+        } catch(err) {
+            console.error(`error with ${g}`, err)
         }
     }
     //main clicker upgrade
@@ -480,8 +537,8 @@ function updateDisplay() {
     for(let FD in FDCU) {
         try {
             if(FD[FDCU]) {  
-                console.log(`twenty dollar ${TD} is unlocked`);
-                switch(TD) {
+                console.log(`five dollar ${FD} is unlocked`);
+                switch(FD) {
                     case 'first':
                         FiveDCU.fdFirst.style.display = 'flex';
                         break;
@@ -502,10 +559,38 @@ function updateDisplay() {
                 }
             }
         } catch(error) {
-            console.error(`error with ${TD}`, error);
+            console.error(`error with ${FD}`, error);
         }
     }
-    doubleCheckall();
+    //ten dollar upgrades
+    for(let tenD in TDCU) {
+        try {
+            if(tenD[TDCU]) {
+                console.log(`ten dollar ${tenD} is unlocked`);
+                switch(tenD) {
+                    case 'first':
+                        TenDCU.tenFirst.style.display = 'flex';
+                        break;
+                    case 'two':
+                        TenDCU.tenSecond.style.display = 'flex'
+                        break;
+                    case 'three':
+                        TenDCU.tenThird.style.display = 'flex';
+                        break;
+                    case 'four':
+                        TenDCU.tenFourth.style.display = 'flex';
+                        break;
+                    case 'five':
+                        TenDCU.tenFifth.style.display = 'flex';
+                        break;
+                    default: 
+                        console.warn(`ten dollar clicker ${tenD} is not recognized`);
+                }
+            }
+        } catch(err) {
+            console.log(`error with ${tenD}`, err)
+        }
+    }
     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     increaseCentAmount.textContent = money.centMoney.toFixed(2);
     totalPerSecDisplay.textContent = `Total per second: $ ${totalPerSec}`;
@@ -514,20 +599,7 @@ function updateDisplay() {
         mobile_goods.style.display = 'grid';
     }
 }
-function doubleCheckall() {
-    if(autoCentCallCount >= 2) {
-        smallGoods.sgFirst.style.display = 'flex';
-    }
-    if(autoNickelCallCount >= 2) {
-        smallGoods.sgThird.style.display = 'flex';
-    }
-    if(autoDimeCallCount >= 2) {
-        smallGoods.sgFifth.style.display = 'flex';
-    }
-    if(autoQuaterCallCount >= 2) {
-        smallGoods.sgSixth.style.display = 'flex';
-    }
-}
+
 //for per sec timer*/
 function startAutoCent() {
     if (!autoCentInterval) {

@@ -36,7 +36,8 @@ const smallGoods = {
 const mediumGoods = {
     mgFirst:{
         element: document.getElementById('mg-first'),
-        coinType: 'cash'
+        coinType: 'cash',
+        cost: 25-.00
     },
     mgSecond: {
        element: document.getElementById('mg-second'),
@@ -45,21 +46,39 @@ const mediumGoods = {
     },
     mgThird: {
        element: document.getElementById('mg-third'),
-       coinType: 'cash'
+       coinType: 'cash',
+       cost: 500.00
     },
     mgFourth: {
         element: document.getElementById('mg-fourth'),
-        coinType: 'cash'
+        coinType: 'cash',
+        cost: 380.00
     },
     mgFifth: {
         element: document.getElementById('mg-fifth'),
-        coinType: 'cash'
+        coinType: 'cash',
+        cost: 620.00
     } 
 }
 //error for matching the objects above
 Object.entries(smallGoods, mediumGoods).forEach(([key, value]) => {
     if(!value) console.warn(`element with id${key} 'not found` );
 })
+let StoredDM = [23.25, 32.25, 112.00, 123.00];
+let goodsB = {
+    sgOne: true,
+    sgTwo: false,
+    sgThree: false,
+    sgFour: false,
+    SgFive: false,
+    SgSix: false,
+    MgOne: false,
+    MgTwo: false,
+    MgThree: false,
+    MgFour: false,
+    MgFive: false,
+}
+
 const allGood =[smallGoods, mediumGoods];
 allGood.forEach(goodsGroup => {
     for(let key in goodsGroup) {
@@ -103,8 +122,9 @@ allGood.forEach(goodsGroup => {
                                     }
                                 }
                             }
+                            goodsB.sgOne = false;
                             element.style.display = 'none';
-                            
+                             
                         }
                         if(key === 'sgSecond') {
                             for(let coin in coinsUnlocked) {
@@ -138,16 +158,21 @@ allGood.forEach(goodsGroup => {
                                     }
                                 }
                             }
+                            goodsB.sgTwo = false;
                             element.style.display = 'none';
                         }
                         if(key === 'sgThird') {
                             console.log('its getting called');
                             setInterval(() => {
                                 totalCount += 23.25;
-                                
+                                newsContext.style.animation = 'none';
+                                void newsContext.offsetWidth;
+                                newsContext.style.animation = 'slideInOut 3s';
+                                newsContext.textContent = `you've added ${StoredDM[0]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-                            }, 200)
-                           element.style.display = 'none'; 
+                            }, 20000)
+                           element.style.display = 'none';
+                           goodsB.sgThree = false; 
                         }
                         if(key === 'sgFourth') {
                             for(let coin in coinsUnlocked) {
@@ -181,27 +206,38 @@ allGood.forEach(goodsGroup => {
                                     }
                                 }
                             }
+                            goodsB.sgFour = false;
                             element.style.display = 'none';
                         }
                         if(key === 'sgFifth') {
                             console.log('another cash purse');
                             setInterval(() => {
                                 totalCount += 32.25;
-                                
+                                newsContext.style.animation = 'none';
+                                void newsContext.offsetWidth;
+                                newsContext.style.animation = 'slideInOut 3s';
+                                newsContext.textContent = `you've added ${StoredDM[1]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-                            }, 250)
+                            }, 25000)
                             element.style.display = 'none';
+                            goodsB.SgFive = false;
                         }
                         if(key === 'sgSixth') {
                             dimeIncrement *= 2;
                             element.style.display = 'none';
+                            goodsB.SgSix = false;
                         }
                         if(key === 'mgFirst') {
                             setInterval(() => {
                                 totalCount += 112.00;
+                                newsContext.style.animation = 'none';
+                                void newsContext.offsetWidth;
+                                newsContext.style.animation = 'slideInOut 3s';
+                                newsContext.textContent = `you've added ${StoredDM[2]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-                            }, 350)
+                            }, 35000)
                             element.style.display = 'none';
+                            goodsB.MgOne = false;
                         }
                         if(key === 'mgSecond') {
                             for(let k in coinsUnlocked) {
@@ -259,17 +295,50 @@ allGood.forEach(goodsGroup => {
                                 }
                             }
                             element.style.display = 'none';
+                            goodsB.MgTwo = false;
                         }
                         if(key === 'mgThird') {
                             values.main = 12.00;
                             element.style.display = 'none';
+                            goodsB.MgThree = false;
+                        }
+                        if(key === 'mgFourth') {
+                            for(let key in coinsUnlocked) {
+                                if(coinsUnlocked[key]) {
+                                    console.log(`item ${key} is unlocked`);
+                                    switch(key) {
+                                        case 'dollar':
+                                            values.dollar *= 2,
+                                            perSecData.dPerSec = values.dollar;
+                                            break;
+                                        case 'fiveDollar': 
+                                            values.fiveDollar *= 2,
+                                            perSecData.fiveDPerSec = values.fiveDollar;
+                                            break;
+                                        case 'tenDollar':
+                                            values.tenDollar *= 2,
+                                            perSecData.tenDPerSec = values.tenDollar;
+                                            break;
+                                        default:
+                                            console.log(`testing fourth medium goods`);
+
+                                    }
+                                }
+                            }
+                            element.style.display = 'none';
+                            goodsB.MgFour = false;
                         }
                         if(key === 'mgFifth') {
                             setInterval(() => {
                                 totalCount += 123.00;
+                                newsContext.style.animation = 'none';
+                                void newsContext.offsetWidth;
+                                newsContext.style.animation = 'slideInOut 3s';
+                                newsContext.textContent = `you've added ${StoredDM[3]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-                            })
+                            }, 45000)
                             element.style.display = 'none';
+                            goodsB.MgFive = false;
                         }
                         upDateTotalPerSec();
                         safeNewsUpdate(`upgrade applied: ${key}`);

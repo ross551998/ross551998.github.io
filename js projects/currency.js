@@ -180,7 +180,7 @@ let moneyUnlockAmount = {
     fiftyDollarUA: 196000.00,
     hundredDollarUA: 650000.00
 }
-let totalCount = 0;
+let totalCount = 10000;
 let total = document.getElementById('display');
 let d = document.getElementById('dimes');
 let q = document.getElementById('quaters');
@@ -1289,6 +1289,7 @@ function mainClicker() {
         mainClickerUpgrade.second.style.display = 'flex';
         smallGoods.sgFourth.element.style.display = 'flex';
         mainClickerUnlock.two = true;
+        goodsB.sgFour = true;
        
     }
     if(mainClickerCount === 200) {
@@ -1385,6 +1386,7 @@ function increaseCent() {// this is done for now, ready for new version
             newsContext.style.animation = 'slideInOut 3s';
             newsContext.textContent = "you've unlocked a good to buy!";
             smallGoods.sgFirst.element.style.display = 'flex';
+            goodsB.sgOne = true;
         }
         if(autoCentCallCount === 10) {
             newsContext.style.animation = 'none';
@@ -1434,6 +1436,7 @@ function increaseCent() {// this is done for now, ready for new version
             pennyClickerUpgrade.pennyFifth.style.display = 'flex';
             pennyClickerUnlock.five = true;
             mediumGoods.mgFirst.element.style.display ='flex';
+            goodsB.MgOne = true;
         }
     } else {
         newsContext.style.animation = 'none';
@@ -1461,6 +1464,7 @@ function increaseNickel() { // ready for new version
             newsContext.style.animation = 'slideInOut 3s';
             newsContext.innerText = 'unlocked another good to buy'
             smallGoods.sgThird.element.style.display = 'flex';
+            goodsB.sgThree = true;
             
         }
         if(autoNickelCallCount === 10) {
@@ -1480,6 +1484,7 @@ function increaseNickel() { // ready for new version
             index = (index + 1) % nickelNews.length;
             nickeClickerUpgrade.nickelSecond.style.display = 'flex';
             smallGoods.sgSecond.element.style.display = 'flex';
+            goodsB.sgTwo = true;
             NCU.two = true;
 
         }
@@ -1500,6 +1505,8 @@ function increaseNickel() { // ready for new version
             index = (index + 1) % nickelNews.length;
             nickeClickerUpgrade.nickelFourth.style.display = 'flex';
             tenthAward.style.display = 'grid';
+            mediumGoods.mgFourth.element.style.display = 'flex';
+            goodsB.MgFour = true;
             NCU.four = true;
         }
         if(autoNickelCallCount ===  250) {
@@ -1511,6 +1518,7 @@ function increaseNickel() { // ready for new version
             nickeClickerUpgrade.nickelFifth.style.display = 'flex';
             NCU.five = true;
             mediumGoods.mgSecond.element.style.display = 'flex';
+            goodsB.MgTwo = true;
         }
     } else {
         newsContext.style.animation = 'none';
@@ -1537,6 +1545,7 @@ function increasedime() {
             newsContext.style.animation = 'slideInOut 3s';
             newsContext.textContent = 'unlocked another good';
             smallGoods.sgFifth.element.style.display = 'flex';
+            goodsB.SgFive = true;
         }
         if(autoDimeCallCount === 10) {
             newsContext.style.animation = 'none';
@@ -1574,6 +1583,7 @@ function increasedime() {
             dimeClickerUpgrade.dimeFourth.style.display = 'flex';
             DCU.four = true;
             mediumGoods.mgThird.element.style.display = 'flex';
+            goodsB.MgThree = true;
         }
         if(autoDimeCallCount === 250) {
             newsContext.style.animation = 'none';
@@ -1603,10 +1613,8 @@ function increaseQuaters() {
         increaseQuaterAmount.textContent = money.quaterMoney.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         upDateTotalPerSec();
         if(autoQuaterCallCount === 2) {
-            newsContext.style.animation = 'none';
-            void newsContext.offsetWidth;
-            newsContext.style.animation = 'slideInOut 3s';
             smallGoods.sgSixth.element.style.display = 'flex';
+            goodsB.SgSix = true;
         }
         if(autoQuaterCallCount === 10) {
             newsContext.style.animation = 'none';
@@ -1633,6 +1641,8 @@ function increaseQuaters() {
             newsContext.textContent = qauterNews[2];
             index = (index + 1) % qauterNews.length;
             quaterClickerUpgrade.quaterThird.style.display = 'flex';
+            mediumGoods.mgFifth.element.style.display = 'flex';
+            goodsB.MgFive = true;
             QCU.three = true;
         }
         if(autoQuaterCallCount === 100) {
@@ -1863,11 +1873,7 @@ function increasetenDollar() {
         upDateTotalPerSec();
         console.log(autoTenDollarCallCount);
         if(autoTenDollarCallCount === 10) {
-            newsContext.style.animation = 'none';
-            void newsContext.offsetWidth;
-            newsContext.style.animation = 'slideInOuts 3s';
-            newsContext.textContent = tenDollarNews[0];
-            index = (index + 1) % dollarNews.length;
+            
             TenDCU.tenFirst.style.display = 'flex';
             TDCU.first = true;
         }
@@ -1922,6 +1928,21 @@ function increasetwentyDollar() {
         increaseTwentyDollarAmount.textContent =  money.twentyDollarMoney.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         perSecData.twentyDPerSec = values.twentyDollar;
         upDateTotalPerSec();
+        if(autoTwentyDollarCallCount === 10) {
+            twentyDCU.first = true;
+        }
+        if(autoTwentyDollarCallCount === 25) {
+            twentyDCU.two = true;
+        }
+        if(autoTwentyDollarCallCount === 50) {
+            twentyDCU.three = true;
+        }
+        if(autoTwentyDollarCallCount === 100) {
+            twentyDCU.four = true;
+        }
+        if(autoTwentyDollarCallCount === 250) {
+            twentyDCU.five = true;
+        }
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1940,6 +1961,21 @@ function increaseFiftyDollar() {
         increaseFiftyDollarAmount.textContent =  money.fiftyDollarMoney.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         perSecData.fiftyDPersec = values.fiftyDollar;
         upDateTotalPerSec();
+        if(autoFiftyDollarCallCount === 10) {
+            fiftyDCU.first = true;
+        }
+        if(autoFiftyDollarCallCount === 25) {
+            fiftyDCU.two = true;
+        }
+        if(autoFiftyDollarCallCount === 50 ) {
+            fiftyDCU.three = true;
+        }
+        if(autoFiftyDollarCallCount === 100) {
+            fiftyDCU.four = true;
+        }
+        if(autoFiftyDollarCallCount === 250) {
+            fiftyDCU.five = true;
+        }
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1958,6 +1994,21 @@ function increaseHundredDollar() {
         increaseHundredDollarAmount.textContent = money.hundredDollarMoney.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
         perSecData.hundredDPersec = values.hundredDollar;
         upDateTotalPerSec();
+        if(autoHundredDollarCallCount === 10) {
+            HDCU.first = true;
+        }
+        if(autoHundredDollarCallCount === 25) {
+            HDCU.two = true;
+        }
+        if(autoHundredDollarCallCount === 50) {
+            HDCU.three = true;
+        }
+        if(autoHundredDollarCallCount === 100) {
+            HDCU.four = true;
+        }
+        if(autoHundredDollarCallCount === 250) {
+            HDCU.five = true;
+        }
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;

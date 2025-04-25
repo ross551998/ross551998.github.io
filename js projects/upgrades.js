@@ -80,6 +80,7 @@ const TwentyDCU = {
     TFourth: document.getElementById('twentyFourth'),
     TFifth: document.getElementById('twentyFifth')
 }
+
 futureUpgrade(halfDollarClickerUpgrade.hdFirst, 160.00, 2, "you've doubled half-dollar per second", 'first', 'HFCU');
 futureUpgrade(halfDollarClickerUpgrade.hdSecond, 430.00, 3, "you've tripled the half-dollar per second", 'second', 'HFCU');
 futureUpgrade(halfDollarClickerUpgrade.hdFourth, 1290.00, 2, "you've double half-dollar per second", 'four', 'HFCU');
@@ -231,7 +232,27 @@ let TDCU = {
     four: false,
     five: false 
 }
-
+let twentyDCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
+let fiftyDCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
+let HDCU = {
+    first: false,
+    two: false,
+    three: false,
+    four: false,
+    five: false
+}
 //data for all upgrades unlocked you can add to as well
 let allClickerUpgrades = {
     NCU, DCU, QCU, HFCU, dollar, FDCU, TDCU, pennyClickerUnlock, mainClickerUnlock

@@ -520,6 +520,10 @@ nav h4:hover {
     align-items: center;
     text-align: center;
 }
+.medium-goods button:hover {
+    scale: 1.2;
+    cursor: pointer;
+}
 .first-sg, .second-sg, .third-sg, .fourth-sg, .fifth-sg, .sixth-sg {
     display: none;
     flex-direction: column;
@@ -530,6 +534,13 @@ nav h4:hover {
 .first-sg button:hover, .second-sg button:hover, .third-sg button:hover, .fourth-sg button:hover, .fifth-sg button:hover, .sixth-sg button:hover {
     scale: 1.2;
     cursor: pointer;
+}
+.first-mg, .second-mg, .third-mg, .fourth-mg, .fifth-mg, .sixth-mg {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
 }
 #close-goods {
     margin-left: 10%;
