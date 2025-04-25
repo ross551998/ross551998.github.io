@@ -180,7 +180,7 @@ let moneyUnlockAmount = {
     fiftyDollarUA: 196000.00,
     hundredDollarUA: 650000.00
 }
-let totalCount = 10000;
+let totalCount = 0;
 let total = document.getElementById('display');
 let d = document.getElementById('dimes');
 let q = document.getElementById('quaters');
