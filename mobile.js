@@ -22,7 +22,7 @@ function isTouchDevice() {
     (navigator.maxTouchPoints > 0) || (window.matchMedia("(hover: none) and (pointer: coarse)").matches);
 
     const screenWidth = window.innerWidth;
-    return isTouch && screenWidth >= 400 && screenWidth <= 800;
+    return isTouch && screenWidth <= 896;// fixed issue with different mobile screens
     
 }
 //tutorial for mobile use
@@ -127,7 +127,6 @@ document.getElementById('skipbuttn').addEventListener('click', function() {
    }
 })
 */
-
 
 
 // Set up the navigation only on touch screens

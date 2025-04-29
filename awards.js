@@ -69,7 +69,7 @@ eighthAward.addEventListener('click', function() {
     newsContext.textContent = 'you make as much as a small country';
 })
 ninthAward.addEventListener('click', function() { 
-    totalCount += 80000;
+    totalCount += 800;
     total.textContent = `$ ${totalCount.toFixed(2).toLocaleString()}`;
     ninthAward.style.display = 'none';
     newsContext.style.animation = 'none';

@@ -37,7 +37,7 @@ const mediumGoods = {
     mgFirst:{
         element: document.getElementById('mg-first'),
         coinType: 'cash',
-        cost: 25-.00
+        cost: 250.00
     },
     mgSecond: {
        element: document.getElementById('mg-second'),
@@ -168,7 +168,7 @@ allGood.forEach(goodsGroup => {
                                 newsContext.style.animation = 'none';
                                 void newsContext.offsetWidth;
                                 newsContext.style.animation = 'slideInOut 3s';
-                                newsContext.textContent = `you've added ${StoredDM[0]}`;
+                                newsContext.innerText = `you've added ${StoredDM[0]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
                             }, 20000)
                            element.style.display = 'none';
@@ -216,7 +216,7 @@ allGood.forEach(goodsGroup => {
                                 newsContext.style.animation = 'none';
                                 void newsContext.offsetWidth;
                                 newsContext.style.animation = 'slideInOut 3s';
-                                newsContext.textContent = `you've added ${StoredDM[1]}`;
+                                newsContext.innerText = `you've added ${StoredDM[1]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
                             }, 25000)
                             element.style.display = 'none';
@@ -233,7 +233,7 @@ allGood.forEach(goodsGroup => {
                                 newsContext.style.animation = 'none';
                                 void newsContext.offsetWidth;
                                 newsContext.style.animation = 'slideInOut 3s';
-                                newsContext.textContent = `you've added ${StoredDM[2]}`;
+                                newsContext.innerText = `you've added ${StoredDM[2]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
                             }, 35000)
                             element.style.display = 'none';
@@ -334,7 +334,7 @@ allGood.forEach(goodsGroup => {
                                 newsContext.style.animation = 'none';
                                 void newsContext.offsetWidth;
                                 newsContext.style.animation = 'slideInOut 3s';
-                                newsContext.textContent = `you've added ${StoredDM[3]}`;
+                                newsContext.innerText = `you've added ${StoredDM[3]}`;
                                 total.textContent = `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
                             }, 45000)
                             element.style.display = 'none';

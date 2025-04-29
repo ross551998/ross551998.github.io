@@ -58,7 +58,7 @@ let values = {
     fiftyDollar: 50.00,
     hundredDollar: 100.00,
     main: 0.01
-};
+}
 pennyIncrement = 0.01;
 nickelIncrement = 0.05;
 dimeIncrement = 0.10;
@@ -482,17 +482,21 @@ function upDateTotalPerSec() {
         newsContext.style.animation = 'slideInOut 3s'
         eighthAward.style.display = 'grid';
     }
+    /*
     if(totalPerSec >= 50.00) {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s'
         ninthAward.style.display = 'grid';
     }
+    */
     if(totalPerSec >= 700000.00) {
+        /*
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
         newsContext.style.animation = 'slideInOut 3s'
         thirteenthAward.style.display = 'grid';
+        */
     }
 }
 function unlock() {
@@ -1039,7 +1043,7 @@ function autoFiftyDollar() {
         totalCount = totalCount - moneyAutoAmount.fiftyDollarAM;
         coinsUnlocked.fiftyDollar = true;
         startAFD();
-        twelfthAward.style.display = 'grid';
+        //twelfthAward.style.display = 'grid';
     } else {
         newsContext.style.animation = 'none';
         void newsContext.offsetWidth;
@@ -1504,7 +1508,7 @@ function increaseNickel() { // ready for new version
             newsContext.textContent = nickelNews[3];
             index = (index + 1) % nickelNews.length;
             nickeClickerUpgrade.nickelFourth.style.display = 'flex';
-            tenthAward.style.display = 'grid';
+            //tenthAward.style.display = 'grid';
             mediumGoods.mgFourth.element.style.display = 'flex';
             goodsB.MgFour = true;
             NCU.four = true;
@@ -1652,7 +1656,7 @@ function increaseQuaters() {
             newsContext.textContent = qauterNews[3];
             index = (index + 1) % qauterNews.length;
             quaterClickerUpgrade.quaterFourth.style.display = 'flex';
-            eleventhAward.style.display = 'grid';
+            //eleventhAward.style.display = 'grid';
             QCU.four = true;
         }
         if(autoQuaterCallCount === 250) {
