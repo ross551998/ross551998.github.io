@@ -72,9 +72,10 @@ function showSteps() {
     tutorialTitle.textContent = steps.title;
     tutroialContent.textContent = steps.content;
     u.classList.remove('active');
+    settings.style.display = 'none';
     try {
         if(steps.platform === 'both' && !isMobile()) {
-            e.style.marginRight = '-36%';
+            
             t.style.marginLeft = '12%';
             console.log('web ready');
             try {

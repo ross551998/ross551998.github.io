@@ -10,9 +10,9 @@ html, body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: 	#333333;
+    color: snow;
     font-family: "Roboto";
-    background-color: rgb(112, 128, 144, 0.4);
+    background-image: url(photos/vecteezy_set-of-green-dollar-sign-3d_23171643-1.jpg);
     font-size: 24px;
     height: 100%;
     display: flex;
@@ -96,7 +96,32 @@ form button {
     background-color: #ffc107;
     font-weight: bold;
 }
-
+#setting2 {
+    background-color: #333333;
+    height: 86vh;
+    margin-top: 19vw;
+    border-radius: 26px;
+    font-size: 24px;
+    width: 31lvW;
+    text-align: center;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+}
+#setting2 h4:hover {
+    scale: 1.4;
+    cursor: pointer;;
+}
+#setting2 button {
+    width: 25vw;
+    height: 30px;
+    border-radius: 20px;
+}
+#setting2 button:hover {
+    scale: 1.2;
+    cursor: pointer;
+}
 #news {
     position: absolute;
     opacity: 0;
@@ -126,7 +151,7 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1000;
-    width: 100%;
+    width: 98%;
     display: flex;
     position: fixed;
     align-items: center; 
@@ -142,6 +167,8 @@ nav {
     overflow: hidden;
 }
 nav h1 {
+    font-family: "";
+    letter-spacing: 8px;
     text-align: left;
     font-size: 1.6rem;
     margin-left: 12%;
@@ -155,9 +182,9 @@ nav h4 {
     display: none;
 }
 #bar-for-web {
+    margin-right: -7%;
     transform: translateX(10%);
     transition: trasnform 0.5s ease;
-    margin-right: -45%;
     font-size: 2rem;
 }
 #bar-for-web:hover {
@@ -192,53 +219,12 @@ nav h4:hover {
     pointer-events: none;
     overflow: hidden;
 }
-.money {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-size: cover;
-    animation: fall linear infinite;
-}
-.money-symbol {
-    position: absolute;
-    font-size: 20px;
-    color: gold;
-    animation: fall linear infinite;
-}
-@keyframes fall {
-    from {
-        transform: translateY(-10%);
-        opacity: 1;
-    }
-    to {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-}
+
+
 
 
 
 /*LEFT SIDE */
-.gold-bar {
-    position: absolute;
-    width: 50px;
-    height: 25px;
-    background: linear-gradient(45deg, #ffd700, #ffc107, #b8860b);
-    border-radius: 4px;
-    box-shadow: 4px 4px 10px rgba(255, 215, 0);
-    transform: perspective(100px) rotateX(15deg);
-    animation: bars linear infinite;
-}
-@keyframes bars {
-    from {
-        transform: translateY(-50px) perspective(50px) rotateX(15deg);
-        opacity: 0.7;
-    }
-    to {
-        transform: translateY(40vh) perspective(50px) rotateX(15deg);
-        opacity: 1;
-    }
-}
 .upgrade-title {
     position: relative;
     display: flex;
@@ -252,11 +238,32 @@ nav h4:hover {
     flex-shrink: 0;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    background: url(photos/upgrades2.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: center;
-    
+    background-color: seagreen;
+    padding-bottom: 12px;
+}
+#money-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.money {
+    position: absolute;
+    font-size: 24px;
+    animation: float 4s linear forwards;
+    opacity: 1;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 #mobile-upgrades-only {
     display: none;
@@ -268,24 +275,24 @@ nav h4:hover {
     
 }
 #upgradetitle {
+    padding-top: 12px;
     font-size: 1.4rem;
     margin-top: 10px;
     letter-spacing: 8px;
+    text-align: center;
 }
 #upgrade-unlockbuttn {
     font-size: 1.2em;
+    position: relative;
     width: 70%;
+    border: 3px solid black;
     border-radius: 24px;
-    background: none;
-    border: 1px solid #3A3D98;
-    box-shadow:2px 2px 2px 2px green;
-    
 }
 #upgrade-unlockbuttn:hover {
-    cursor: pointer;
     scale: 1.1;
-    background: #F4C542;
-    box-shadow:3px 3px 3px 3px green inset;
+    cursor: pointer;
+    background-color: gold;
+    color: black;
 }
 .dime-upgrades, .quater-upgrades, .hd-upgrades, .dollar-upgrades, .fivedollar-upgrades, .tendollar-upgrades, .twentydollar-upgrades, .fiftyDollar-upgrades, .hundreddollar-upgrades {
     display: none;
@@ -373,16 +380,54 @@ nav h4:hover {
    justify-content: center;
    align-items: center;
 }
+
 #mainclicker {
     margin-top: 16%;
     width: 240px;
     height: 240px;
 }
 #mainclicker img {
+    animation: spin 10s linear infinite;
     width: 100%;
     height: 100%;
 }
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.sparkle-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+.sparkle {
+    width: 10px;
+    height: 10px;
+    background: white;
+    position: relative;
+    border-radius: 50%;
+    z-index: 100;
+    box-shadow: 0 0 8px 2px yellow;
+    animation: sparkle-fade 1s ease-out forwards;
+}
+@keyframes sparkle-fade {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
 .displayword {
+    text-align: center;
     font-size: 1rem;
 }
 #per-sec {
@@ -397,7 +442,7 @@ nav h4:hover {
     flex-direction: column-reverse;
     justify-content: center;
     height: 22lvw;
-    margin-top: -5%;
+    margin-top: -12%;
     background-color: slategrey;
     border-radius: 22px;
     width: 85%;
@@ -433,12 +478,15 @@ nav h4:hover {
     scale: 1.1;
     box-shadow: 1px 1px 1px 2px black;
 }
+.setting {
+    display: none;
+}
 .personal-vault {
     display: none;
     flex-direction: column;
     align-content: center;
     text-align: center;
-    margin-top: -2%;
+    margin-top: -5%;
     background-color: #333333;
     color: whitesmoke;
     border-radius: 22px;
@@ -558,7 +606,7 @@ nav h4:hover {
 .gameContent {
     display: flex;
     flex-direction: column;
-    background-color: slategrey;
+    background-color: rgb(61, 60, 60);
     align-items: center;
     width: 32%;
     border-top-right-radius: 14px;
@@ -567,6 +615,19 @@ nav h4:hover {
     height: 92.7vh;
     scrollbar-width: none;
     
+}
+.gameContent h1 {
+    color: hsla(0, 0%, 20%);
+    border-bottom: 3px solid black;
+    padding-bottom: 14px;
+    height: 44px;
+    background-color: rgb(121, 121, 121);
+    width: 100%;
+    text-align: center;
+}
+@keyframes loadfill {
+    from {width: 0%;}
+    to { width: 100%;}
 }
 .gameContent button {
     width: 200px;
@@ -583,11 +644,18 @@ nav h4:hover {
     margin-top: 10%;
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 6%;
-    background-color: blue;
     border-radius: 16px;
-    height: 130px;
+    padding-bottom: 6px;
     width: 90%;
+}
+.pennys h1 {
+    border-bottom: 3px solid black;
+    padding-bottom: 14px;
+    background-color: rgb(251, 255, 0);
+    width: 100%;
+    text-align: center;
 }
 #increaseCents, #increasenickels, #increasedimes, #increasequaters, #increaseHDs, #increasedollars, #increasefivedollars, #increasetendollars, #increasetwentydollars, #increasefiftydollars, #increasehundreddollars {
     align-items: center;
@@ -597,10 +665,14 @@ nav h4:hover {
     justify-content: center;
     text-align: center;
 }
+#increaseCentamount, #increasenickelamount, #increasedimeamount {
+    border-radius: 22px;
+    width: 325px;
+    height: 40px;
+}
 #mobile-use-only {
     display: none;
 }
-
 /*image for background */
 .pennys {
     font-family: 'Times New Roman', Times, serif;
@@ -611,6 +683,7 @@ nav h4:hover {
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
+    
 }
 .nickels {
     font-family: 'Times New Roman', Times, serif;
@@ -707,7 +780,7 @@ nav h4:hover {
     font-size: 24px;
     color: rgb(35, 34, 34);
     font-weight: bold;
-    background: url(photos/hundred\ dollar\ making.png);
+    background: url(photos/hundredd\ making.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -739,7 +812,7 @@ nav h4:hover {
 .increasedimes, .increasequaters, .increaseHDs, .increasedollars, .increasefivedollars, .increasetendollars, .increasetwentydollars, .increasefiftydollars, .increasehundreddollars {
     display: none;
 }
-.nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
+.fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
     display: none;
 }
 /*phone view*/
@@ -789,11 +862,12 @@ nav h4:hover {
     }
     .problem {
         display: none;
-        font-size: 18px;
-        justify-content: center;
+        font-size: 3.2vw;
+        scroll-behavior: smooth;
         text-align: center;
         align-items: center;
         margin-left: 0;
+        
     }
     #problem-category {
         margin-top: 1%;

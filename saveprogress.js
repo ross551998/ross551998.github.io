@@ -1,11 +1,3 @@
-//kill switch, DO NOT USE UNLESS YOU KNOW WHAT YOU ARE DOING
-//          |
-//          |
-//          |
-//         \ /
-//localStorage.clear();
-
-
 
 function loadGame() {
     webLoadGame();
@@ -13,22 +5,10 @@ function loadGame() {
 function saveGame() {
     webSaveGame();
 }
-
-
-//log errors, warn, logs
 let logs = [];
 function logError() {
     logs.push(`${new Date().toISOString()}: ${console.error()}`);
 }
-
-
-
-
-
-
-
-//uncheck when ready for release
-
 function webSaveGame() {
     const savedData = {
         totalCount: totalCount,
@@ -600,7 +580,6 @@ function updateDisplay() {
     }
 }
 
-//for per sec timer*/
 function startAutoCent() {
     if (!autoCentInterval) {
         autoCentInterval = setInterval(() => {
@@ -610,8 +589,8 @@ function startAutoCent() {
             centAutoBody.style.display = 'none';
             increaseCents.style.display = 'flex';
             centTotal.style.display = 'flex';
-            centTotal.textContent = `${values.cent.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} cents per second`;
-            increaseCentAmount.textContent = money.centMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
+            centTotal.textContent = `+$ ${values.cent.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} /second`;
+            increaseCentAmount.textContent = `increase by $ ${money.centMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }, 1000);
         perSecData.centPerSec = values.cent;
         upDateTotalPerSec();
@@ -626,8 +605,8 @@ function startAutoNickel() {
             nickelAutoBody.style.display = 'none';
             increaseNickels.style.display = 'flex';
             nickelTotal.style.display = 'flex';
-            nickelTotal.textContent = `${values.nickel.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} cents per second`;
-            increaseNickelAmount.textContent = money.nickelMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
+            nickelTotal.textContent = `+$ ${values.nickel.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} / second`;
+            increaseNickelAmount.textContent = `Increase by $ ${money.nickelMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }, 1000);
         perSecData.nickelPerSec = values.nickel;
         upDateTotalPerSec();
@@ -642,8 +621,8 @@ function startAutoDime() {
             dimeAutoBody.style.display = 'none';
             increaseDimes.style.display = 'flex';
             dimeTotal.style.display = 'flex';
-            dimeTotal.textContent = `${values.dime.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} cent per second`;
-            increaseDimeAmount.textContent = money.dimeMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
+            dimeTotal.textContent = `+$ ${values.dime.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} / second`;
+            increaseDimeAmount.textContent = `Increase by $ ${money.dimeMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }, 1000);
         perSecData.dimePerSec = values.dime;
         upDateTotalPerSec();
@@ -658,8 +637,8 @@ function startAutoQuarter() {
             qauterAutoBody.style.display = 'none';
             increaseQuater.style.display = 'flex';
             qauterTotal.style.display = 'flex';
-            qauterTotal.textContent = `${values.quarter.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} cent per second`;
-            increaseQuaterAmount.textContent = money.quaterMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
+            qauterTotal.textContent = `+$ ${values.quarter.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} / second`;
+            increaseQuaterAmount.textContent = `Increase by $ ${money.quaterMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }, 1000);
         perSecData.quarterPerSec = values.quarter;
         upDateTotalPerSec();
@@ -674,8 +653,8 @@ function startAutoHFD() {
             hDAutoBody.style.display = 'none';
             increaseHD.style.display = 'flex';
             hDTotal.style.display = 'flex';
-            hDTotal.textContent = `${values.halfDollar.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} cents per second`;
-            increaseHDAmount.textContent = money.halfDollarMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
+            hDTotal.textContent = `+$ ${values.halfDollar.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} / second`;
+            increaseHDAmount.textContent = `Increase by $ ${money.halfDollarMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }, 1000);
         perSecData.halfDPerSec = values.halfDollar;
         upDateTotalPerSec();
@@ -690,8 +669,8 @@ function startAutoDollar() {
             dollarAutoBody.style.display = 'none';
             increaseDollars.style.display = 'flex';
             dollarTotal.style.display = 'flex';
-            dollarTotal.textContent = `${values.dollar.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} dollar per second`;
-            increaseDollarAmount.textContent = money.dollarMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2});
+            dollarTotal.textContent = `+$ ${values.dollar.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})} / second`;
+            increaseDollarAmount.textContent = `Increase by $ ${money.dollarMoney.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }, 1000);
         perSecData.dPerSec = values.dollar;
         upDateTotalPerSec();
