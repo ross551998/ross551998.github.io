@@ -15,7 +15,7 @@ document.getElementById('iconchange').addEventListener('click', function() {
     newsContext.innerText = 'changed icon';
 })
 //version control for users
-const  currentVersion = "3.0.0";
+const  currentVersion = "3.0.1";
 const versionUrl = '/version.json'; // URL to fetch the version data
 async function shouldCheckForUpdates() {
     const lastCheck = localStorage.getItem('lastVersionCheck');

@@ -93,7 +93,9 @@ function showSteps() {
                 } else if(currentStep === 8) {
                     r.style.display = 'none';
                     awards.style.display = 'grid';
-                } 
+                } else { 
+                    awards.style.display = 'none';
+                }
             } catch(error) {
                 document.getElementById('assests').style.display = 'none';
                 r.style.display = 'none';
@@ -162,9 +164,8 @@ function nextStep() {
         assestButtn.style.pointerEvents = 'auto';
         tutorialBox.style.display = 'none';
         goodsUnlocked = false;
-        smallGoods.sgFirst.style.display = 'none';
+        smallGoods.sgFirst.element.style.display = 'none';
         r.style.display = 'none';
-        e.style
         document.getElementById('assests').style.display = 'none';
         assestButtn.style.pointerEvents = 'auto';
         assestButtn.style.opacity = '1';

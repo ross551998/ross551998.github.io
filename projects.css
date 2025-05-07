@@ -50,9 +50,7 @@ form button {
     margin-top: 3%;
     border-radius: 16px;
 }
-#disclosure {
-    font-size: 12px;
-}
+
 #mobile-use-close-form {
     display: none;
 }
@@ -97,6 +95,8 @@ form button {
     font-weight: bold;
 }
 #setting2 {
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #333333;
     height: 86vh;
     margin-top: 19vw;
@@ -888,7 +888,7 @@ nav h4:hover {
         display: none;
     }
     nav h1 {
-        font-size: 7vw;
+        font-size: 6vw;
         white-space: nowrap;
         text-overflow: ellipsis;
         margin-left: 5%;
@@ -1023,7 +1023,7 @@ nav h4:hover {
         padding-bottom: 12px;
     }
     .pennys, .nickels, .dimes, .quaters, .half-dollar, .dollar, .fivedollar, .tendollar, .twentydollar, .fiftydollar, .hundreddollar {
-        height: 50vw;
+        height: 69vw;
     }
     .pennys button, .nickels button, .quaters button, .half-dollar button, .dollar button, .fivedollar button, .tendollar button, .twentydollar button, .fiftydollar button, .hundreddollar button {
         width: 40vw;

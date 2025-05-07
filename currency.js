@@ -267,13 +267,6 @@ const settings = document.getElementById('setting2');
 function UpdateTotalDisplay() {
     total.textContent =  `$ ${totalCount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
 }
-
-
-
-
-
-
-
 awardButtn.addEventListener('click', function() {
     if(awardUnlocked) {
         if(awardButtn.style.pointerEvents === 'none' || assestButtn.style.display === 'flex') return;
@@ -298,7 +291,6 @@ closeAwards.addEventListener('click', function() {
     awardButtn.style.opacity = '1';
     awards.style.display = 'none';
 })
-
 openVault.addEventListener('click', function() {
     personalVault.style.display = 'flex';
     document.getElementById('assests').style.display = 'none';
